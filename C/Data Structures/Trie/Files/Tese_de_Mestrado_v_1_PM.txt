@@ -1,0 +1,2154 @@
+science too often trivializes the profound answering questions that are very different from the ones that were asked to formulate a question suitable for scientific research too often requires us to forget what it was that we really wanted to know
+earon davis
+
+
+agradecimentos morgado
+agradeco em primeiro lugar a escola superior de tecnologia e gestao do instituto superior politecnico de viseu pela oportunidade de frequentar o curso de mestrado e pelo privilegio de ter aprendido com o seu corpo docente conhecimentos teoricos e praticos que permitirao uma melhor abordagem as questoes e problematicas de teor funcional e tecnico enquanto profissional na area das tecnologias de informacao ao longo da vida
+agradeco em particular ao meu orientador doutor francisco morgado pela disponibilidade pelas palavras amigas e motivadores e pelos ensinamentos desde a primeira aula ha alguns anos atras nao so por ter sido um professor exemplar como tambem um amigo e porque sera para mim uma referencia e uma fonte de inspiracao para futuro pelo seu lado humano e pelo seu brilhante conhecimento da area da informatica um sincero bem haja
+agradeco a co orientadora doutora rosa martins da escola superior de saude do instituto superior politecnico de viseu pela receptividade e pelo apoio e entusiasmo que colocou enquanto profissional de saude e academica numa importante vertente da investigacao desta tese pela oportunidade de investigar com a escola superior de saude numa area que muito me cativa agradeco a toda a instituicao
+pelo esclarecimento de questoes especificas da elaboracao da parte pratica do projecto nomeadamente na arquitectura geral dos sistemas desenvolvidos agradecimentos especiais ao engenheiro benjamin soulier detentor de um titulo de mvp em azure pela microsoft suica e ao engenheiro charles laziosli pelos seus bons conselhos e palavras de motivacao
+a todos aqueles que de alguma forma fizeram parte desta longa caminhada e que nao poderei mencionar directamente fica o meu mais sincero obrigado pela partilha de conhecimentos e colaboracao pela forca e por todo o carinho dado
+em ultimo lugar mas nao menos importante agradeco a minha familia mais proxima em especial aos meus irmaos sobrinhos e aos meus pais maria dos anjos marcos e alfredo carvalho marcos tendo sido este ultimo o principal causador do meu interesse pela tese a incidir nesta area entretanto completamente recuperado dos problemas cardiovasculares gracas a eficiente intervencao preventiva dos profissionais de saude ficam as minhas palavras de agradecimento a todos voces por terem estado sempre presentes e por terem acreditado amo vos incondicionalmente
+
+resumo
+a tecnologia tem vindo a acompanhar e servir de suporte ao longo dos tempos a varias areas das ciencias e engenharia sendo um indubitavel pilar no desenvolvimento e evolucao
+dados apresentados pela organizacao mundial de saude oms indicam que as doencas cronicas de declaracao nao obrigatoria como a titulo de exemplo serao as doencas cardiovasculares representam a principal causa de morte no mundo neste ambito as mudancas nos habitos alimentares e a prossecucao de uma vida com maior sedentarismo aliadas a um maior consumo de alcool e tabaco conduzem a um autentico problema de saude publica na sociedade actual
+a area da medicina e hoje em dia um dos dominios onde a tecnologia mais interveio e auxiliou quer ao nivel da melhoria na capacidade de diagnostico quer ao nivel de implementacao de procedimentos tecnicos no combate aos mais variados problemas de saude
+esta dissertacao procurara aprofundar conhecimento em tres areas diferentes da saude da nanotecnologia e dos sistemas de informacao
+perante a area de saude ou medicina procurar se a explicar a fisiologia do coracao e arterias bem como as principais patologias cardiovasculares apresentando os respectivos conceitos sendo que no ambito desta dissertacao e preponderante considerar apenas a denominada aterosclerose abrangendo uma discussao sobre as suas causas sintomas e possiveis tratamentos na actualidade a aterosclerose e uma patologia cronica inflamatoria que resulta da acumulacao de ateromas formados no interior das arterias ao longo dos anos e que em determinadas circunstancias em virtude do atrito causado pela circulacao de sangue resulta na libertacao de partes os embolos responsaveis por provocar os acidentes vasculares cerebrais avc embolias pulmonares ou enfartes do miocardio conduzindo a lesoes irreversiveis nos doentes ou em ultimo caso a propria morte
+na area da nanotecnologia importara mencionar os estudos que decorrem estado da arte e que visam a viabilidade da sua utilizacao num futuro proximo com o intuito de se tornar uma solucao plausivel no combate de doencas cardiovasculares alguns avancos e experiencias neste dominio foram ja feitos com resultados finais positivos
+por fim a utilizacao de sistemas e tecnologias de informacao assenta no desenvolvimento de sistemas que visam reunir e compilar informacao numa enciclopedia digital sobre a area de saude incidindo nas patologias cardiovasculares permitira entre muitas outras funcoes avaliar o risco de problemas cardiovasculares mediante a introducao de alguma informacao por parte de um utilizador comum que podera constituir um historico ao longo do tempo do ponto de vista de um profissional de saude espera se conseguir que o sistema reproduza simulacoes de fenomenos relacionados com os problemas cardiovasculares
+no que diz respeito a colaboracao de pessoas e entidades esta dissertacao contara com a participacao de diversos profissionais ligados as areas de tecnologias de informacao e saude
+
+abstract
+the technology has been following and supporting along the last decades the various areas of science and engineering being thus considered an indubitable pillar in the development and evolution
+taking into consideration the figures provided by the world health organization who they clearly indicate that chronic diseases for instance cardiovascular diseases represents the world s main root cause of death this being said the changes in nutritive habits and the increase of sedentary lifestyle combined with a consumption of alcohol and smoking is contributing to a true and major health issue in today s society
+the area of medicine is nowadays one of the domains where the technology has been playing a crucial role by supporting and increasing the quality and accuracy of health diagnostics not only in terms of implementation of technical processes but also combating the different health issues
+the goal of this thesis is to dive and go in the deep knowledge of three different areas health nanotechnology and information technology
+in terms of health and medicine i am looking at explaining the physiology of the hearth and arteries as well as the main pathologies of cardiovascular diseases and by illustrating their respective concepts in the context of this thesis it is important only considering the atherosclerosis supported by a discussion of the main causes symptoms and possible current treatments the atherosclerosis is a condition in which an artery wall thickens as a result of the accumulation of fatty materials such as cholesterol responsible in provoking arteriosclerotic vascular disease or asvd pulmonary embolism or thromboembolism i e stroke resulting in irreversible injuries or death
+in the area of nanotechnology it is important to mention state of the art studies aiming at being used on the short term as a serious and potential solution to fight and cure cardiovascular diseases some important and recent experiences have shown positive and encouraging results
+finally the use of technology information systems relying in the development of systems aim at collecting and compiling information in a digital encyclopedia in the area of health focusing on pathology in cardiovascular diseases among other capabilities it will allow the possibility of analyzing and assessing the risk of cardiovascular issues by the means of a user introducing some information in the system and therefore contributing to build a history knowledge base over time from a health professional point of view it is expected that the system reproduces simulations according to cardiovascular issues and diseases
+this thesis is made thanks to the collaboration of people and entities who have been involved from different professional sectors in the area of information systems and health
+
+
+indice
+um  ponto introducao                                                                         quatro
+um  ponto um enquadramento da tematica                                                       catorze
+um  ponto dois motivacao e objectivos da dissertacao                                         catorze
+um  ponto tres estruturacao do documento de dissertacao                                      dezasseis
+dois  ponto metodologia de investigacao                                                      dezoito
+tres  ponto cardiologia e as patologias cardiovasculares                                     vinte e  dois
+tres  ponto um incidencia das patologias cardiovasculares no mundo                           vinte e  dois
+tres  ponto dois incidencia das patologias cardiovasculares em portugal                      vinte e  tres
+tres  ponto tres patologias cardiovasculares                                                 vinte e  tres
+tres  ponto quatro aterosclerose                                                             vinte e  quatro
+tres  ponto cinco factores de risco                                                          vinte e  seis
+tres  ponto cinco um colesterol                                                              vinte e  sete
+tres  ponto cinco dois hipertensao                                                           vinte e  oito
+tres  ponto cinco tres tabagismo                                                             trinta e  um
+tres  ponto seis metodos actuais de combate a aterosclerose                                  trinta e  um
+tres  ponto sete novas abordagens no combate a aterosclerose                                 trinta e  dois
+tres  ponto oito dieta e a aterogenese                                                       trinta e  tres
+quatro  ponto sistema diagnose your heart                                                    trinta e  sete
+quatro  ponto um aplicacoes e arquitectura                                                   trinta e  sete
+quatro  ponto dois aplicacao web diagnose your heart portal                                  trinta e  oito
+quatro  ponto dois um motivacao                                                              trinta e  oito
+quatro  ponto dois dois descricao funcional                                                  trinta e  nove
+quatro  ponto dois tres descricao tecnica                                                    trinta e  nove
+quatro  ponto dois quatro diagramas de casos de uso                                          quarenta e  um
+quatro  ponto dois cinco diagramas de sequencias                                             quarenta e  tres
+quatro  ponto dois seis diagramas de classes                                                 cinquenta
+quatro  ponto dois sete aspectos de destaque na tecnologia                                   cinquenta e  tres
+quatro  ponto dois sete um criacao de uma shared access signature                            cinquenta e  quatro
+quatro  ponto dois sete dois comunicacao entre a aplicacao web e o cliente silverlight
+xml ou json      cinquenta e  seis
+quatro  ponto dois sete tres comunicacao entre o cliente silverlight e a aplicacao
+web bridge pattern         seissenta
+quatro  ponto dois sete quatro comunicacao com a base de dados entity framework              seissenta e  quatro
+quatro  ponto dois sete cinco exposicao de funcionalidades atraves do web service                setenta e  um
+quatro  ponto tres aplicacao movel diagnose your heart registo de diagnosticos               setenta e  dois
+quatro  ponto tres um motivacao                                                              setenta e  dois
+quatro  ponto tres dois descricao funcional                                                  setenta e  dois
+quatro  ponto tres tres descricao tecnica                                                    setenta e  quatro
+quatro  ponto tres quatro diagramas de casos de uso                                          setenta e  cinco
+quatro  ponto tres cinco diagramas de sequencias                                             setenta e  seis
+quatro  ponto tres seis diagramas de classes                                                 oitenta
+quatro  ponto tres sete aspectos de destaque na tecnologia                                   oitenta e  tres
+quatro  ponto tres sete um ligacao binding de uma vista silverlight a uma classe
+com o modelo de vista            oitenta e  tres
+quatro  ponto tres sete dois consumo de metodos de um web service assincronamente
+autenticacao do utilizador e envio de autodiagnosticos             oitenta e  quatro
+quatro  ponto quatro aplicacao movel diagnose your heart simulador                           oitenta e  cinco
+quatro  ponto quatro um motivacao                                                            oitenta e  cinco
+quatro  ponto quatro dois descricao funcional                                                oitenta e  seis
+quatro  ponto quatro tres descricao tecnica                                                  oitenta e  sete
+quatro  ponto quatro quatro diagramas de casos de uso                                        oitenta e  sete
+quatro  ponto quatro cinco diagramas de sequencias                                           oitenta e  oito
+quatro  ponto quatro seis diagramas de classes                                               noventa
+quatro  ponto quatro sete aspectos de destaque na tecnologia                                 noventa
+quatro  ponto quatro sete um criacao dos objectos dos cenarios                               noventa e  um
+cinco  pontos de expansao e aspectos a melhorar                                             noventa e  dois
+seis  conclusao                                                                            noventa e  quatro
+referencias bibliograficas                                                                  noventa e  seis
+anexo a diagnose your heart portal descricao dos casos de uso                               noventa e  nove
+anexo b diagnose your heart registo de diagnostico descricao dos casos de uso              cento e  vinte e  tres
+anexo c diagnose your heart simulador descricao dos casos de uso                           cento e  trinta e  quatro
+
+
+
+indice de tabelas
+nao foi encontrada nenhuma entrada do indice de ilustracoes
+indice de figuras
+figura dois um esquematizacao de um modelo para o processo de investigacao vinte
+figura tres um histologia de um vaso sanguineo retirado de anatomia fisiologia seis a edicao seeley sthephens e tate dois mil e tres
+figura quatro um arquitectura geral dos sistemas de informacao trinta e oito
+figura quatro dois diagnose your heart portal diagramas de casos de uso quarenta e dois
+figura quatro tres diagrama de sequencias para login logout do utilizador quarenta e tres
+figura quatro quatro diagrama de sequencia para as opcoes de diagnostico quarenta e quatro
+figura quatro cinco diagrama de sequencia para as opcoes de cardiologia e nanotecnologia quarenta e cinco
+figura quatro seis diagrama de sequencia para as opcoes avancadas criacao de utilizador quarenta e seis
+figura quatro sete diagrama de sequencias para upload da fotografia quarenta e sete
+figura quatro oito diagrama de sequencias para as opcoes avancadas edicao de utilizadores quarenta e oito
+figura quatro nove diagrama de sequencias para as opcoes avancadas visualizacao de utilizadores e logins quarenta e nove
+figura quatro dez diagrama de sequencias para exposicao do web service cinquenta
+figura quatro onze diagnose your heart portal diagrama de empacotamento cinquenta e um
+figura quatro doze diagrama das classes dos controladores cinquenta e um
+figura quatro treze diagrama das classes do modelo cinquenta e dois
+figura quatro catorze diagrama das classes do service cinquenta e dois
+figura quatro quinze diagrama das classe de cloud cinquenta e tres
+figura quatro dezasseis modelo conceptual de dados para a base de dados sessenta e cinco
+figura quatro dezassete modelo logico de dados para a base de dados sessenta e seis
+figura quatro dezoito modelo fisico de dados para a base de dados sessenta e sete
+figura quatro dezanove mapeamento das tabelas relacionais em classes entity framwork sessenta e oito
+figura quatro vinte diagnose your heart registo de diagnosticos diagramas de casos de uso setenta e seis
+figura quatro vinte e um registo de diagnostico sincronizacao setenta e sete
+figura quatro vinte e dois registo de diagnostico consumo do web service setenta e oito
+figura quatro vinte e tres registo de diagnostico preenchimento de questionarios setenta e nove
+figura quatro vinte e quatro registo de diagnosticos viewmodellocator para instanciacao de modelos de vistas oitenta
+figura quatro vinte e cinco diagnose your heart registo de diagnosticos diagrama de empacotamento oitenta e um
+figura quatro vinte e seis diagrama das classes do modelo oitenta e um
+figura quatro vinte e sete diagrama das classes do servico de registo oitenta e um
+figura quatro vinte e oito diagrama das classes do servico de questionarios oitenta e dois
+figura quatro vinte e nove diagrama das classes de armazenamento oitenta e dois
+figura quatro trinta diagrama das classes do modelos de vistas oitenta e dois
+figura quatro trinta e um diagnose your heart simulador diagramas de casos de uso oitenta e oito
+figura quatro trinta e dois diagnose your heart simulador diagramas de sequencias geral oitenta e nove
+figura quatro trinta e tres diagnose your heart simulador diagramas de classes geral noventa
+
+acronimos
+
+
+
+
+um introducao
+este capitulo introdutorio pretende dar uma visao geral do trabalho realizado no contexto do projecto e dissertacao comecando por enquadrar a tematica na qual a dissertacao ira incidir a motivacao para a elaboracao da tese e a descricao da estruturacao deste documento de dissertacao
+um um enquadramento da tematica
+as doencas cardiovasculares sao consideradas com base em estudos feitos e apresentados pela organizacao mundial de saude oms como as principais causadoras de incapacidade ou morte nos doentes afectados
+a aterosclerose e a doenca que mais influencia tem na incidencia de problemas cardiovasculares as principais tecnicas utilizadas na medicina para o tratamento da aterosclerose sao bastante eficazes contudo sao invasivas algumas dessas tecnicas sao a angioplastia e a cirurgia de revascularizacao coronaria tambem conhecida como bypass coronario
+sendo a prevencao a forma mais eficaz de evitar os problemas cardiovasculares procurar se a demonstrar ao longo desta dissertacao que o recurso a sistemas de informacao pode surgir como um potencial aliado na prevencao e combate das patologias cardiovasculares
+a investigacao envolvera a apresentacao de conceitos da area de medicina que ajudem a explicar o aparecimento da aterosclerose sera feita uma analise dos actuais metodos de combate a aterosclerose estado da arte quer com os metodos tradicionais da medicina quer com as novas abordagens como e o caso da nanotecnologia
+relativamente a colaboracao de pessoas ou entidades esta dissertacao tera dois orientadores principais que acompanham respectivamente a vertente ligada as tecnologias de informacao e a vertente ligada a saude
+um dois motivacao e objectivos da dissertacao
+apesar dos bons resultados conseguidos com as tecnicas de combate a aterosclerose a taxa de mortalidade envolvendo doencas do foro cardiovascular e ainda elevada e torna pertinente sensibilizar cada vez mais a populacao para a importancia de seguir um caminho preventivo ou mesmo baseado na preocupacao de efectuar regularmente exames medicos
+a tecnologia nomeadamente os sistemas de informacao surgem como principal veiculo capaz de levar aos utilizadores a informacao de uma forma dinamica e mais apelativa
+o produto final deste projecto e dissertacao incide na concepcao de um conjunto de sistemas de informacao sendo que se pretende desenvolver um sistema de caracter didactico e interactivo orientada para toda a gente
+espera conseguir se juntar o maximo de informacao que concerne as doencas cardiovasculares nomeadamente a aterosclerose e toda uma serie de informacao da sua envolvente causas consequencias e tratamentos tradicionais ou novas abordagens nanotecnologia a ideia sera a de transmitir informacao util naquilo que sera uma especie de enciclopedia em formato de digital
+a interactividade nao sera posta de parte e espera se conseguir que um utilizador elementar consiga a titulo de exemplo introduzir dados a seu respeito o seu peso a sua altura se e fumador se e consumidor de alcool entre outros factores preponderantes ou mesmo resultados de exames medicos tais como os resultados dos valores de umas analises clinicas valor total de colesterol os valores de hdl os valores de ldl os valores de trigliceridos entre outros os resultados de uma simples medicao de pressao arterial valor da pressao sistolica e valor da pressao diastolica ou os resultados de uma medicao dos niveis de glicemia
+em virtude de todos estes dados o utilizador podera com base num relatorio de diagnostico com caracter simples gerado pelo sistema compreender a sua predisposicao para problemas cardiovasculares espera se que o possa vir a constituir um historico de dados podendo ser consultada em qualquer altura permitindo analisar a evolucao da saude das pessoas em relacao aos factores de risco com propensao para problemas cardiovasculares de um ponto de vista mais educacional se o utilizador for um estudante ou profissional da area de saude podera com este sistema simular atraves de funcionalidades bidimensionais dois d um cenario de arterias saudaveis arterias com aterosclerose e uma situacao de formacao de trombo ou embolo
+a materializacao final de toda esta investigacao incidira no desenvolvimento de um conjunto de sistemas de informacao
+um tres estruturacao do documento de dissertacao
+o documento de dissertacao encontra se organizado estruturalmente em seis capitulos
+capitulo um introducao
+capitulo dois metodologia de investigacao
+capitulo tres cardiologia e as patologias cardiovasculares
+capitulo quatro produto da dissertacao
+capitulo cinco pontos de expansao e aspectos a melhorar
+capitulo seis conclusao
+no capitulo um introducao procura se explicar o enquadramento da dissertacao com incidencia na area da saude pretende se explicar o objectivo da dissertacao a motivacao par a sua elaboracao e o produto do projecto por fim e feita uma explicacao sucinta da organizacao e estruturacao do documento de dissertacao
+no capitulo dois metodologia de investigacao procura se explicar a forma como ira ser conduzido o processo de investigacao tendo como base o problema e uma plausivel solucao para ajudar a resolver a investigacao quando aplicada no contexto de sistemas de informacao carece de uma reflexao em pontos particulares devidamente explicados neste capitulo
+no capitulo tres cardiologia e as patologias cardiovasculares procura se facultar informacao teorica da area da saude e de uma forma menos aprofundada da area da nanotecnologia resultantes da revisao de literatura a informacao recolhida serve de base para a concepcao do projecto pratico de investigacao
+no capitulo quatro sistema diagnose your heart e explicado o projecto pratico de investigacao o produto da dissertacao culminou na concepcao de tres aplicacoes e um web service e facultada uma visao funcional e de reflexao nos aspectos tecnicos de maior interesse para a aplicacao web e aplicacoes moveis
+no capitulo cinco ponto de expansao e aspectos a melhorar e um pequeno capitulo onde se procuram explicar os pontos que poderao requerer adaptacoes ou melhorias numa perspectiva tecnica
+no capitulo seis conclusao e feita uma pequena revisao do trabalho elaborado da experiencia adquirida e o resultado da investigacao que culmina na tese
+em complemento aos capitulos principais sao fornecidos tres anexos para complementar e enriquecer o conteudo da dissertacao
+
+
+dois
+metodologia de investigacao
+a investigacao e a criacao de novo conhecimento recorrendo a um processo adequado e que satisfaca as necessidades do investigador
+para garantir a qualidade do projecto e dissertacao de mestrado procurar se a utilizar um processo metodo de investigacao que oriente todo o estudo assim sendo o resultado da investigacao tera que se basear na utilizacao do dito processo e tera que trazer indubitavelmente algum tipo de valor acrescentado
+a finalidade desta investigacao assenta na tentativa de resolucao de um problema serio de saude publica atraves de uma prevencao que suscite interesse as pessoas e em ultima instancia que acabe por colmatar uma necessidade sem esquecer a vertente associada ao seu bem estar pretende se que a aplicacao sirva de sugestao alternativa para os utilizadores cuidarem da sua saude criando interesse atraves da experiencia de utilizacao trazida pelas novas tecnologias
+o produto da investigacao sera novo e diferenciado pelo facto de ser desenvolvido para plataformas lancadas nos ultimos tempos para o mercado das novas tecnologias e atraentes na experiencia de utilizacao que oferecem aos seus utilizadores ainda em relacao aos produtos da investigacao acaba por surgir tambem a exploracao de uma area como a saude e de novas ciencias como a nanotecnologia no auxilio ao combate de problemas cardiovasculares a sensibilizacao dos eventuais utilizadores tambem acaba por constituir um aspecto da maior importancia
+as fontes de ideias para a investigacao resultam de artigos cientificos recentes que pressupoem algum tipo de revisao dos mesmos trabalhos ja realizados na area ao qual se pretende dar algum seguimento e a eventos reportados na comunicacao social
+os topicos que foram alvo de analise e que merecem maior destaque no processo de investigacao sao o facto de se tratar de um produto novo a obtencao de resultados positivos em tempo reduzido para os utilizadores a inexistencia da necessidade de recursos extraordinarios para cumprir os requisitos funcionais e para terminar as motivacoes para a aprendizagem de topicos ou areas de investigacao novas a nanotecnologia a saude e o novo paradigma para a concepcao de sistemas de informacao para dispositivos moveis
+de acordo com o modelo do processo de investigacao presente na figura dois um a experiencia e motivacao assenta essencialmente na possibilidade de estudar uma area transversal como sera o caso da saude e procurar dar algum tipo de contributo tendo como base os sistemas de informacao embora existam algumas limitacoes no dominio de conceitos das areas da saude e nanotecnologia e expectavel retirar o maximo de informacao a partir da documentacao ja existente e entrar em contacto com profissionais destas areas para o esclarecimento de duvidas que possam eventualmente surgir
+a revisao de literatura existente permite ter uma ideia bastante exacta de questoes relacionadas com a area da saude contudo apenas bem compreensivel por peritos na area procura se introduzir aqui um novo paradigma utilizar os sistemas de informacao para levar uma tematica apenas compreendida por peritos ate a um utilizador elementar de uma forma interactiva mais simples e graficamente atraente pretende se contribuir para uma sensibilizacao que conduza a uma melhoria da sua saude e por consequente da qualidade de vida
+no que a questao de investigacao diz respeito pretende se demonstrar que e possivel sensibilizar pessoas comuns para a importancia da saude tornando acessivel a informacao e conhecimento recorrendo aos sistemas de informacao
+no referencial conceptual podera dizer se que o projecto e dissertacao incide em tres areas distintas a saude a nanotecnologia e os proprios sistemas de informacao si a ideia passara por compilar uma serie de informacao teorica que diz respeito a estas areas de forma a tornar mais simples a sua compreensao por parte de qualquer utilizador esperando se que lhe chegue informacao util a utilizacao de aplicacoes moveis e da plataforma da nuvem comummente designada de cloud constitui um desafio no sentido de tentar procurar satisfazer as funcionalidades pretendidas atraves do recurso a tecnologias actuais
+nas estrategias a que fara mais sentido de um ponto de vista de processo de investigacao sera essencialmente a concepcao e criacao
+os metodos para gerar dados no contexto deste projecto e dissertacao irao incidir principalmente em observacoes do trabalho de eventuais profissionais de saude e conforme ja foi mencionado em documentos de literatura da area e artigos cientificos quer para o contexto da saude quer para o contexto da nanotecnologia existe uma triangulacao triangulacao de metodos uma vez que as observacoes ajudarao a desenvolver a parte mais pratica dos sistemas de informacao que se pretendem conceber e os documentos ajudarao numa parte mais teorica e academica com o intuito de perceber a melhor forma de utilizar os sistemas de informacao
+por fim a analise de dados considera se essencialmente qualitativa uma vez que se procurara obter informacao de temas e categorias a partir de informacao textual ou imagens nao obstante e tendo como base outros estudos ja elaborados podera dizer se que havera uma vertente quantitativa no que a apresentacao de resultados estatisticos diz respeito
+
+figura um esquematizacao de um modelo para o processo de investigacao
+aprofundando um pouco a estrategia do processo de investigacao a concepcao e criacao e adequada no desenvolvimento de um sistema de informacao si
+ao inves de uma abordagem tipica com uma visao que contemple apenas analise concepcao e desenvolvimento vulgarmente utilizada no desenvolvimento de um sistema de informacao por parte de um qualquer analista programador pretende se aqui seguir uma vertente com uma metodologia bem definida e que oriente o estudo
+a investigacao baseada na estrategia de concepcao e criacao engloba uma visao de analise do problema explicacao do problema com enquadramento e evidenciado a sua pertinencia uma argumentacao com a comparacao de diferentes abordagens para resolver o problema uma justificacao ponderada acerca da abordagem escolhida e uma avaliacao critica com analise de pros e contras destacando os aspectos positivos e negativos em conclusao da investigacao com a abordagem escolhida
+algumas fases que merecem particular atencao nesta estrategia sao a identificacao do problema a sugestao de uma solucao o desenvolvimento com a solucao escolhida a avaliacao da investigacao e por fim a redaccao das principais conclusoes
+atendendo a que se trata de um sistema de informacao si sera sempre importante avaliar questoes como as funcionalidades a usabilidade a acessibilidade a estetica e por fim a pertinencia do sistema em termos de utilidade para com o utilizador final
+tres
+cardiologia e as patologias cardiovasculares
+este capitulo pretende descrever os principais resultados da revisao de literatura para a area da saude uma parte consideravel dos resultados aqui descritos foram preponderantes para a concepcao do produto sistemas de informacao que resultaram da dissertacao compreender os dados estatisticos que revelam a ocorrencia das patologias cardiovasculares na humanidade a fisiologia do coracao e seu modo de funcionamento e os principais factores de risco que podem ser a chave para a tomada de medidas preventivas contra as patologias cardiovasculares conferem uma nocao clara dos pontos passiveis de uma analise mais cuidada para a determinacao de um diagnostico util
+tres um incidencia das patologias cardiovasculares no mundo
+a organizacao mundial de saude oms apresenta informacao que revela as doencas cronicas como principal causa de morte no mundo e as responsaveis por causar danos irreversiveis e incapacidade na grande maioria das pessoas que atinge
+as designadas doencas cronicas de declaracao nao obrigatoria grupo onde se incluem as doencas cardiovasculares as doencas respiratorias a diabetes a obesidade e o cancro sao culpadas por cerca de cinquenta e nove por cento de um total de cinquenta e sete milhoes de mortes em cada ano que passa por si so representam um total de quarenta e seis por cento do total de doencas que atingem a populacao mundial afectando nao so pais desenvolvidos como tambem paises em vias de desenvolvimento um
+de uma forma directa os enfartes do miocardio e os acidentes vasculares cerebrais avc sao a causa de morte de cerca de doze milhoes de pessoas por ano enquanto a hipertensao e outras doencas do foro cardiaco sao responsaveis pela morte de tres nove milhoes de pessoas por ano contribuindo de uma forma indirecta surgem associadas outras patologias que cooperam de forma negativa para o agravamento dos problemas cardiovasculares nomeadamente a diabetes mellitus sobretudo a de tipo ii que atinge cento e setenta e sete milhoes de pessoas a obesidade que atinge trezentos milhoes de pessoas de um total de mil milhoes que sofrem de excesso de peso e a hipertensao arterial que afectas dezenas de milhoes de pessoas com maior incidencia nas pessoas de raca negra um
+de um ponto de vista geral a incidencia destas doencas fica directamente associada nao a um fenomeno de susceptibilidade genetica no mundo ocidental onde a sua elevada incidencia da azo a um conceito de realidade epidemiologica central nos seculos xx e xxi mas antes a mudanca nos comportamentos sociais os habitos alimentares pouco saudaveis que incluem uma alimentacao rica em gorduras saturadas e colesterol elevadas quantidades de acucar alimentos caloricos e elevadas quantidades de sal ingeridas contribuem para a epidemia mencionada de uma forma oposta uma dieta mediterranica e atlantica onde o equilibrio e diversidade sao respeitados na dose adequada de nutrientes que incluiriam valores aceitaveis de hidratos de carbono fibras minerais vitaminas e proteinas de origem vegetal poderiam ajudar a apaziguar a incidencia destes problemas oito o estilo de vida crescentemente sedentario onde o stress abunda e o tempo dedicado ao exercicio fisico e praticamente inexistente colaboram juntamente com outros factores tais como os valores de colesterol elevados a tensao arterial elevada e o crescente consumo de tabaco tabagismo e alcool para cerca de setenta e cinco por cento da incidencia das doencas cardiovasculares um
+tres dois incidencia das patologias cardiovasculares em portugal
+em portugal as doencas cardiovasculares sao a principal causa da mortalidade e incapacidade sete ficando quarenta por cento dos obitos directamente associado a estas patologias dois
+depreendendo que numa sociedade em que a evolucao e desenvolvimento foram ao longo dos anos contribuindo para a reducao dos principais flagelos da saude publica com a reducao da taxa de mortalidade por doencas infecciosas fatais a melhoria progressiva das qualidades nutricionais e sanitarias e um aperfeicoamento nas tecnicas e abordagens para o diagnostico e terapeutica das principais patologias que afectam a humanidade culminando num aumento da esperanca media de vida torna se um autentico paradoxo quando confrontamos os beneficios conseguidos atraves da evolucao das ciencias da saude apresentadas acima com aquilo que revela ser um profundo grau de desconhecimento ou negligencia por parte de uma populacao que ignora os principais factores de risco acabando por agravar um problema silencioso e muitas das vezes fatal as patologias cardiovasculares oito
+tres tres patologias cardiovasculares
+por norma as patologias cardiovasculares sao um conjunto de doencas que afectam todo o aparelho cardiovascular desde o coracao ate aos vasos sanguineos sao doencas na sua maioria assintomaticas ausentes de sintomatologia que acabam por ser descobertas quando provocam a falha de um orgao vital ou quando se manifestam atraves de um quadro clinico mais grave os exames medicos para diagnostico complementar sao por norma os unicos capazes de facultar uma real nocao do problema em causa dois
+das doencas deste foro mais comummente ouvidas podem destacar se as cardiopatias isquemicas doenca arterial coronaria estas cardiopatias surgem indubitavelmente associadas a uma outra doenca a aterosclerose a aterosclerose sera alvo de maior aprofundamento e estudo ao longo desta dissertacao dois
+tres quatro aterosclerose
+a aterosclerose e uma patologia que se caracteriza fundamentalmente pela acumulacao de substancias gordas por baixo do revestimento interno da parede arterial
+a parede arterial ou de um vaso sanguineo conforme e possivel constatar na figura tres um e em termos estruturais formada genericamente por camadas ou tunicas que incluem a intima a media e a adventicia de uma forma simplificada e percorrendo a parede da arteria do interior para o exterior encontramos o endotelio a membrana elastica interna celulas musculares lisas musculo liso a membrana elastica externa e tecido conectivo os vasa vasorum sao ainda pequenos canais responsaveis pela irrigacao das paredes dos vasos sanguineos tais como as arterias
+
+figura dois histologia de um vaso sanguineo retirado de anatomia fisiologia seis a edicao seeley sthephens e tate dois mil e tres
+
+
+assim a aterosclerose e uma doenca que tem inicio ainda durante uma idade juvenil e que vai progressivamente piorando com o passar do tempo em virtude de eventuais factores de risco ja mencionados podendo culminar em problemas cardiovasculares as arterias do organismo que regra geral sao mais vulneraveis e susceptiveis a problemas graves sao as arterias coronarias que alimentam com sangue o coracao e que face a um problema podem originar um enfarte do miocardio as arterias carotidas que irrigam o cerebro e que em virtude de um problema podem originar um acidente vascular cerebral avc tres outras arterias de media dimensao que levam sangue aos orgaos vitais do organismo humano vulgarmente afectadas podem ser as arterias basilares e cerebrais as arterias renais e as arterias iliacas e femorais e da maior relevancia ter presente que a aterosclerose e uma patologia que apresenta um caracter difuso isto e tratando se de uma doenca metabolica fundamental das paredes dos vasos sanguineos e comum encontrar aterosclerose proliferada em mais do que uma dada zona nas arterias fazendo desta uma doenca sistemica espalhada pelas arterias de todo o organismo humano oito
+numa perspectiva simples em termos organicos a aterosclerose costuma ter inicio quando determinados leucocitos ou globulos brancos que no caso especifico sao denominados de monocitos migram da corrente sanguinea para os tecidos a partir desse momento passam a ser designados de macrofagos estes leucocitos tem uma funcao essencialmente de proteccao sendo responsaveis pela defesa dos tecidos no organismo a morfologia dos vasos sanguineos e as caracteristicas da corrente sanguinea sao os principais motivadores para a formacao das placas ateroscleroticas ou ateromas uma vez que as arterias de grande e media dimensao nas zonas de ramificacao sujeitam o sangue a uma maior turbulencia provocando nao so uma lesao das paredes arteriais como tambem propiciam a formacao dos ateromas oito os macrofagos ao longo do tempo acumulam se nas paredes arteriais formando espessamentos constituindo celulas que acabam por se tornar depositos de substancias gordas que se distribuem e alojam heterogeneamente ao longo do revestimento interno da parede das arterias tres esses espessamentos sao essencialmente constituidos por colesterol celulas musculares lisas que constituem a propria parede da arteria e celulas de tecido conjuntivo formando se lesoes no interior da intima da arteria por norma os macrofagos deveriam ser capazes de eliminar todos os elementos das lipoproteinas contudo um dos componentes resultantes do metabolismo do colesterol os esteres de colesterol nao sao eliminados
+com os macrofagos preenchidos de esteres de colesterol estas celulas acabam por morrer com o tempo pelo facto das gorduras serem citotoxicas uma vez destruidos os macrofagos os esteres de colesterol espalham se no interior da parede da arteria nomeadamente na intima onde outrora os macrofagos se encontravam alojados podem acumular se tambem enzimas que podem ser excessivamente destrutivas formando se um nucleo lipidico rico em esteres de colesterol e envolvido por celulas inflamatorias e tecido fibroso oito
+quando afectadas pela aterosclerose as arterias vao perdendo a sua elasticidade e com os espessamentos formados nas paredes das arterias estas vao ficando sucessivamente mais estreitas em virtude dos ateromas as arterias podem acumular de igual modo depositos de calcio que se tornam frageis podendo levar a sua eventual deflagracao
+um ateroma que rompa fica sujeito a entrada de sangue que passa na corrente sanguinea podendo levar a um novo preenchimento que faca aumentar o seu tamanho na parede da arteria e consequentemente diminuir o lumen ou diametro arterial um ateroma rompido tambem podera derramar todo o seu conteudo de substancias gordas e desencadear a formacao de um trombo ou coagulo sanguineo que ira percorrer em forma de embolo o sistema circulatorio por sua vez o embolo pode tornar dificil a passagem de sangue na arteria ou em casos mais extremos e perigosos funcionar como um bloqueio que nao deixa passar sangue conduzindo a uma oclusao total tambem designada de embolia isquemia parcial ou total a embolia impede que uma determinada zona do organismo receba sangue e oxigenio como seria expectavel a falta de oxigenio no coracao conduz a uma dor aguda a denominada angina de peito por sua vez a falta de oxigenio nas extremidades do corpo humano tais como os membros inferiores conduz a uma caibra a denominada claudicacao intermitente contudo se a embolia ou obstrucao da arteria ocorrer durante um periodo de tempo elevado podem ocorrer lesoes graves por morte dos tecidos o designado enfarte ou necrose neste ambito e habitual ouvir falar em enfarte do miocardio ou acidente vascular cerebral avc tres
+tres cinco factores de risco
+e indubitavel que na area da medicina face a este problema de saude publica generalizado da se enfase a prevencao tentando com isto evitar os factores de risco que culminem em doencas cardiovasculares torna se assim importante compreender a razao pela qual os factores de risco podem influenciar ou agravar as doencas cardiovasculares
+tres cinco um colesterol
+as alteracoes de colesterol ou outras gorduras sao um dos factores de risco para doencas cardiovasculares em primeiro lugar as gorduras tambem denominadas de lipidos sao substancias ricas em energia sendo a primeira fonte para os processos metabolicos do organismo humano
+regra geral as gorduras provem dos alimentos ingeridos ou resultam do proprio funcionamento do figado e sao armazenadas nas denominadas celulas adiposas as celulas adiposas ajudam a isolar o corpo humano das variacoes termicas principalmente do frio e ajudam a protege lo de lesoes as gorduras podem facilmente ser encontradas nas membranas celulares na bainha de mielina que envolve as celulas nervosas propiciando a condutividade dos impulsos electricos no sistema nervoso e na bilis produzida pelo figado
+no sangue as gorduras assumem duas formas distintas o colesterol e os trigliceridos
+ao circularem no sangue as gorduras acabam por combinar se com determinadas proteinas constituindo as denominadas lipoproteinas existem varios tipos de lipoproteinas e que em funcao da sua genese podem ter diferentes funcoes no organismo e ser excretadas de forma distinta algumas lipoproteinas sao os quilomicrones as lipoproteinas de muito baixa densidade very low density lipoprotein vldl as lipoproteinas de baixa densidade low density lipoprotein ldl e as lipoproteinas de alta densidade high density lipoprotein hdl
+o organismo humano em funcao das necessidades regula a concentracao das lipoproteinas atraves de um balanco entre a sua sintese e respectiva eliminacao
+conforme mencionado as gorduras tem diferentes missoes e nem todas tem uma conotacao necessariamente negativa ou seja as lipoproteinas de alta densidade hdl consideradas como bom colesterol podem existir em elevado numero na corrente sanguinea uma vez que se complementam e combinam com as gorduras lipidos ou colesterol que circulam na corrente sanguinea e que ate ja que se encontram nos espessamentos das paredes arteriais o que ajuda na sua regulacao e eliminacao para fora do organismo humano atraves do figado em contrapartida as lipoproteinas de baixa densidade ldl consideradas como mau colesterol nao devem existir em elevado numero na corrente sanguinea visto que nao ajudam na eliminacao o que conduz consequente a uma maior probabilidade de formacao de ateromas nas arterias
+em suma se as lipoproteinas hdl podem ajudar com a questao de reducao de aterosclerose por outro lado as lipoproteinas ldl podem prejudicar indubitavelmente promovendo a acumulacao de mais ateromas
+embora seja uma questao um pouco subjectiva e paradigmatica e importante a concentracao destes elementos no sangue regra geral um bom valor para o colesterol total devera rondar valores entre cento e sessenta mg dl miligramas por decilitro de sangue e duzentos mg dl de sangue sendo que valores inferiores serao ainda melhores o valor das lipoproteinas ldl nao devera ultrapassar os cento e trinta mg dl de sangue e as lipoproteinas hdl deverao ter um valor superior a quarenta mg dl de sangue sendo que estas ultimas deverao idealmente representar um quarto do valor total de colesterol no sangue isto e cerca de vinte e cinco por cento de forma complementar encontramos as gorduras que habitualmente se encontram armazenadas nas celulas adiposas os trigliceridos que podem influenciar tambem a formacao de aterosclerose pelo que os seus valores nao deverao ultrapassar os cento e cinquenta mg dl de sangue
+varias sao as patologias que podem estar associadas a alteracoes do colesterol ou outras gorduras um exemplo e a hiperlipidemia ou hiperlipoproteinemia hlp que nao e mais do que uma condicao que revela a existencia de valores elevados de colesterol trigliceridos ou mesmo de ambos no organismo humano regra geral os valores surgem associados ao tipo de alimentacao levada a cabo por cada pessoa contudo sao na maior parte das vezes temporarios deve se ainda a agentes tais como a existencia de antecedentes familiares questao genetica a obesidade a ausencia de exercicio fisico o alcoolismo o tabagismo a diabetes mellitus e em certos casos a uma glandula de tiroide hipoactiva hipotiroidismo quatro
+tres cinco dois hipertensao
+a hipertensao arterial e outro dos factores de risco para doencas cardiovasculares regra geral a hipertensao arterial nao tem qualquer sintoma associado contudo caracteriza se por um aumento substancial da pressao dentro das arterias do organismo que pode levar a um aumento de risco de problemas cardiovasculares nomeadamente de acidente vascular cerebral avc enfarte do miocardio ruptura de um aneurisma insuficiencia cardiaca ou lesoes nos rins
+sucintamente o coracao durante um batimento ou ciclo cardiaco tem dois momentos distintos a sistole em que ha uma contraccao e o sangue e empurrado para fora atraves das arterias e a diastole em que ha um relaxamento e o sangue entra proveniente das veias qualquer um destes momentos compreende um mecanismo mais complexo de subfases no coracao mas essa analise nao tera relevancia para ja neste ambito
+uma pressao arterial elevada ou hipertensao implica valores elevados tanto para a pressao sistolica como para a pressao diastolica embora esta ultima nao tenha que ser necessariamente verdade e considerada hipertensao arterial quando em repouso o valor da pressao sistolica ultrapassa os cento e quarenta mmhg milimetros de mercurio e o valor da pressao diastolica ultrapassa os noventa mmhg
+na hipertensao a idade e um factor preponderante sendo que o aumento de idade favorece o aparecimento da mesma
+de um ponto de vista organico existem duas razoes plausiveis para que surja hipertensao ou o coracao bombeia o sangue com mais forca e aumenta o volume de sangue que e expulso para as arterias em cada batimento aumentando a pressao arterial ou as grandes arterias ja perderam a sua flexibilidade o que as torna rigidas e com as paredes densas nao ocorrendo uma extensao das mesmas durante a sistole a esta condicao e dado o nome de arteriosclerose e surge intimamente ligada a formacao de aterosclerose deposicao de ateromas nas paredes arteriais
+nesta situacao como as arterias nao ajudam a bombear o sangue a sua passagem e feita com uma maior dificuldade e num espaco mais reduzido o que conduz a um aumento da pressao arterial
+a pressao arterial tambem podera aumentar durante a vasoconstricao ou seja quando as arterias de pequenas dimensoes ou arteriolas se contraem momentaneamente para a estimulacao dos nervos ou de hormonas circulantes no sangue uma outra razao que pode conduzir a pressao arterial elevada e o aumento de liquido no sistema circulatorio ou seja um aumento do volume de sangue como resultado do eventual mau funcionamento dos rins orgao responsavel pela eliminacao de agua e sal
+o sistema nervoso simpatico sns que faz parte integrante do sistema nervoso autonomo sna e responsavel pelo aumento temporario da pressao arterial a titulo de exemplo perante uma ameaca uma discussao ou uma atitude de medo assim a frequencia ou batimentos cardiacos aumentam e ocorre uma contraccao das arterias na sua maioria a excepcao ocorre nos musculos onde ha uma dilatacao para favorecer a chegada de sangue adicionalmente o sistema nervoso simpatico interage com os rins de modo a que nao seja eliminada agua ou sal o que conduz a um aumento do volume de sangue esse aumento leva tambem a que as glandulas supra renais libertem duas hormonas que provocam a estimulacao do coracao e da generalidade dos vasos sanguineos a adrenalina ou epinefrina e a noradrenalina ou norepinefrina
+os rins ocupam um lugar de destaque na regulacao da pressao arterial funcionando como um mecanismo de compensacao fulcral quando a pressao arterial fica elevada a compensacao leva a que os rins iniciem uma eliminacao da agua e sal do organismo o que leva a uma consequente diminuicao do volume de sangue e a uma descida da pressao arterial por outro lado quando a pressao arterial baixa substancialmente a compensacao leva a que os rins reduzam a eliminacao da agua e sal do organismo o que leva a um aumento do volume de sangue e a uma subida da pressao arterial
+uma outra forma de regulacao da tensao arterial a principal e atraves do sistema renina angiotensina aldosterona que permite em situacoes de pressao arterial baixa aumentar a pressao arterial ate normalizar nos rins a producao da enzima renina leva a uma activacao da hormona angiotensina que provoca a contraccao dos musculos das paredes das arteriolas vasoconstricao aumentando a pressao arterial por sua vez a hormona angiotensina tambem conduz a estimulacao da secrecao da hormona aldosterona nas glandulas supra renais o que leva a uma retencao de sal sodio bem como a eliminacao de potassio com a diminuicao acentuada do sodio a agua nao e retida e ocorre um aumento do volume de sangue que por consequente aumenta a pressao arterial
+existem dois tipos de hipertensao a primaria ou essencial e a secundaria a hipertensao primaria ou essencial que surge mais comummente pode ter varias causas a obesidade o consumo excessivo de alcool ou sal o stress um estilo de vida sedentario com ausencia de exercicio e a predisposicao genetica hereditariedade a hipertensao secundaria surge raramente e encontra se ligada a outras patologias ou condicoes por exemplo a existencia de um tumor benigno nas glandulas supra renais que segregam as hormonas adrenalina e noradrenalina designado de feocromocitoma este tumor pode provocar a libertacao exagerada destas hormonas levando a um aumento da pressao arterial alem dos cuidados necessarios com os factores mencionados na hipertensao primaria ou essencial e habitual o uso de alguns grupos de farmacos no auxilio do tratamento cinco
+tres cinco tres tabagismo
+o tabaco e outro dos factores de risco em doencas cardiovasculares e a explicacao e relativamente simples se for tido em causa que a nicotina presente nos cigarros leva entra muitas outras situacoes os rins a produzir mais adrenalina ou epinefrina atraves das glandulas supra renais tal fenomeno vai conduzir a uma contraccao das paredes das arterias aumentando a pressao arterial naturalmente com a pressao arterial elevada havera uma maior tendencia para a ocorrencia de lesoes no interior das arterias lesoes endoteliais que por consequente ficam mais susceptiveis a formacao de placas ateroscleroticas seis
+perante tantas incidencias associadas as patologias cardiovasculares a prevencao e divulgacao tornam se um dos maiores aliados das pessoas no sentido de evitar factores de risco
+tres seis metodos actuais de combate a aterosclerose
+atraves de tecnicas invasivas a medicina e a cardiologia em concreto ja conseguem de hoje em dia minimizar os efeitos da aterosclerose no organismo humano com o intuito de atrasar ou contornar eventuais problemas cardiovasculares
+uma das tecnicas habitualmente utilizada e a angioplastia sendo que tem duas variantes a angioplastia com balao ou a angioplastia com stent e importante reter que este tipo de intervencao e levado a cabo quando ha uma enorme quantidade de aterosclerose a afectar as arterias que irrigam directamente o coracao ou seja as arterias coronarias
+as arterias coronarias que se subdividem a partir da arteria aorta em arteria coronaria esquerda e arteria coronaria direita a arteria coronaria esquerda forma dois ramos a arteria circunflexa e a arteria descendente anterior cada um dos ramos e a arteria coronaria direita sao responsaveis por levar o sangue a diferentes partes do miocardio quando afectadas pela aterosclerose a conducao de sangue ao musculo do coracao pode ficar extremamente comprometida sendo o enfarte do miocardio um cenario possivel
+no sentido de evitar um ataque cardiaco pode ser levada avante uma intervencao cirurgica invasiva denominada de angioplastia que independentemente da variante utilizada pode ajudar a eliminar parte da obstrucao nas arterias a angioplastia regra geral e feita de um modo preventivo e permite com base noutros exames realizados previamente eliminar os ateromas quando e conhecido o local a intervir
+para compreender o local onde os ateromas estao localizados e feito um exame medico baseado em tecnicas de cateterismo conhecida por angiografia a angioplastia podera ser feita no mesmo momento introduzindo uma pequena sonda no doente atraves de uma arteria periferica que podera ser no pulso braco ou mais vulgarmente na regiao inguinal onde se encontra a arteria femoral quando a sonda chega ao inicio da arteria com aterosclerose e libertado um liquido de contraste que permite visualizar o interior da arteria filmando a em varias posicoes angiografia posteriormente se for necessario intervir a sonda encontra se munida com dois cateteres um cateter externo ou guia e um cateter interno que tem um pequeno balao insuflavel que desliza por um guia metalico da sonda no local da obstrucao
+no local afectado pela aterosclerose o balao pode ser insuflado varias vezes de modo a apertar contra as paredes das arterias os ateromas aumentando por si so o diametro da arteria uma variante deste procedimento pode consistir na colocacao de um pequeno artificio metalico em malha designado de stent que pode ser deixado no local onde o balao foi insuflado de modo a prevenir nova formacao de placa aterosclerotica quando a angioplastia se revela insuficiente um outro procedimento que e considerado e a intervencao cirurgica para revascularizacao coronaria ou bypass coronario em suma este procedimento extremamente invasivo implica uma incisao no torax do doente com anestesia geral de modo a que o cirurgiao possa fazer um contorno das arterias obstruidas recorrendo a um implante de novas arterias que permitam que o sangue seja conduzido por vias alternativas ate ao miocardio em detrimento das arterias coronarias afectadas irreversivelmente com aterosclerose a estes procedimentos tradicionais normalmente e associado o uso de farmacos que permitem aumentar as probabilidades de sucesso pos cirurgico sete
+tres sete novas abordagens no combate a aterosclerose
+na actualidade novas abordagens sao investigadas de modo a poderem providenciar uma solucao para o combate a aterosclerose e doencas cardiovasculares num futuro proximo
+a nanotecnologia parece constituir uma alternativa viavel com algumas investigacoes conduzidas nesta area a obter resultados bastante positivos serao apresentados seguidamente alguns estudos
+segundo o artigo cientifico molecular imaging in atherosclerosis thrombosis and vascular inflammation publicado no journal of the american heart association da autoria de robin p choudhury do departamento de medicina cardiovascular da universidade de oxford no reino unido e edward a fisher da escola de medicina da universidade de nova iorque nos estados unidos da america tecnicas utilizando a nanotecnologia podem ser preponderantes na ajuda ao diagnostico nomeadamente utilizando outro tipo de material de contraste em exames como a ressonancia magnetica rmn ou a tomografia por emissao de positroes pet para deteccao de aterosclerose e outras lesoes arteriais a ideia passa por focar a ideia no facto de poderem ser utilizadas particulas de contraste para uma melhor deteccao compreensao e diagnostico nove
+outros estudos avancam a engenharia biomolecular como solucao plausivel para a concepcao de nano particulas capazes de ser marcadas com isotopos radioactivos e ajudar quer no diagnostico quer na possivel entrega de farmacos com uma precisao notavel em determinadas celulas do organismo por via endovenosa a aterosclerose sera um dos alvos tendo sido realizados alguns estudos com registo de patentes para ideias envolvendo o uso da nanotecnologia no brasil alguns estudos publicados e dirigidos pelo professor raul cavalcante maranhao da faculdade de ciencias farmaceuticas da universidade de sao paulo aborda uma metodologia deste genero dez
+embora muitos das abordagens se encontrem em fase de estudos e testes caminha se a passos largos nessa direccao para que no futuro venham a ser utilizadas formas de diagnostico e tratamento de doencas cardiovasculares baseadas na nanotecnologia
+tres oito dieta e a aterogenese
+relativamente aos problemas cardiacos determinadas questoes tem vido a ser levantadas por investigadores da area de medicina e bioquimica com base em duas permissas porque razao os problemas cardiovasculares apenas surgem como uma autentica epidemia no mundo ocidental e porque razao os outros animais a excepcao dos gorilas o porquinho da india e os seres humanos nao padecem de ataques ataques cardiacos
+cada uma destas perguntas tem uma resposta distinta
+quando se tenta explicar a razao da principal causa de morte no mundo ocidental estar relaccionada com problemas cardiovasculares a resposta esta principalmente na dieta os habitos alimentares diarios da populacao associados a um estilo de vida que nao corrobora com uma actividade fisica permanente e saudavel sao fortes motivadopres para o aparecimento das doencas do coracao muitos sao os factores de risco mencionados tais como a existencia de antecendentes familiares numa perspectiva genetica ou herditaria a obesidade a ausencia de exercicio fisico o tabagismo o alcoolismo a diabetes mellitus com foco no tipo ii ou em determinados casos mais raros o hipotiroidismo os elevados valores de colesterol associados aos valores de uma pressao arterial elevada hipertensao contribuem determinantemente para o agravamento de patologias cardiovasculares que pdoem levar a morte ou incapacidade a essencia destes problemas esta fortemente relaccionada com os habitos alimentares
+com uma sociedade despreocupada em relacao ao equilibrio e diversidade da sua dieta a alimentacao rica em colesterol e gorduras saturadas elevadas quantidades de acucar e alimentos caloricos com elevadas quantidades de sal contribui negativamente para o agravamento dos factores de risco
+por norma qualquer individuo consegue a mesma quantidade de proteinas e dosagem adequada de nutrientes recorrendo a uma dieta que se baseie no consumo de gorduras vegetais ao inves do consumo de gorduras animais tal aspecto melhora a saude geral das arterias diminuindo o risco potencial de formacao de aterosclerose
+relativamente ao facto de raramente outros animais sofrerem de patologias cardiovasculares em comparacao com os seres humanos nomeadamente o enfarte do miocardio conhecido por ataque cardiaco deve se a um aspecto muito simples de explicar e que foi trazido a comunidade cientifica pela primeira pelo quimico linus pauling vencedor de dois nobel prizes e actualmente publicado numa obra do medico alemao matthias rath why animals don t get heart attacks but people do
+ao longo da obra os estudos levados a cabo pelos dois investigadores procuram provar que a presenca de vitamina c na corrente sanguinea e absolutamente determinante para minimizar os riscos associados as doencas cardiovasculares que se encontrem directamente relaccionadas com formacao de aterosclerose
+a parede interna da arteria numa camada designada de endotelio tunica intima e constituida por fibras de colagenio essencialmente do tipo viii
+o miocardio e irrigado pelas arterias coronarias o enfarte do miocardio sucede quando o sangue deixa de irrigar devidamente uma parte do coracao em consequencia de uma oclusao nas arterias formada em parte por placas ateroscleroticas
+com o stress ou turbulencia causada pela circulacao de sangue de um local onde a pressao arterial e menor devido a um maior diametro da arteria arteria aorta para locais onde a pressao arterial aumenta em virtude de um menor diametro das arterias arterias coronarias ocorre frequentemente uma lesao das paredes internas das arterias isto e das paredes do endotelio
+a formacao dessas lesoes arteriosclerose contribui para uma acumulacao de ateromas na parede arterial visto que com o desgaste provocado ocorre uma perda de elasticidade por parte das arterias
+na formacao dessas lesoes as fibras de colagenio que constituem a parede do endotelio sao afectadas e acabam mesmo por quebrar as ligacoes de um ponto de vista quimico quando as fibras de colagenio quebram podem ficar susceptiveis a formar ligacoes com um tipo especifico de mau colesterol uma combinacao de lipoproteinas de baixa densidade ldl associadas a apoproteinas de tipo a que dao origem a uma subclasse de lipoproteinas lp a
+atendendo ao facto anterior o colesterol comeca a acumular juntamente com calcio nas paredes internas das arterias
+atendendo a este cenario e sabendo que as paredes das arterias sofrem lesoes o recurso a vitamina c pode ser importante na reconstrucao das fibras de colagenio para evitar o tipo de combinacao supramencionado
+a resposta a questao porque e que os seres humanos tem ataques cardiacos e outros animais nao tem incide precisamente no facto do organismo humano nao ter capacidade de sintetizar vitamina c que de outro modo poderia ajudar na recuperacao das fibras de colagenio danificadas nas paredes internas das arterias
+outros animais possuem ainda a capacidade de produzir vitamina c ao nivel do organismo
+a forma de ajudar a minimizar a lesao arterial podera estar na dieta com um maior consumo de alimentos ricos em vitamina c para evitar uma ausencia ou defice desta vitamina o que o ser humano nao pode produzir organicamente tera que ir buscar necessariamente ao exterior atraves da alimentacao
+sao raros os animais que ja nao possuem uma capacidade intrinseca de produzir vitamina c contudo os seres humanos fazem parte desse mesmo grupo a investigacao demonstrou que apenas os animais que nao produzem vitamina c contem ateromas na parede interna das arterias
+aprofundando um pouco mais esta questao quando uma lesao ocorre na parede interna da arteria nomeadamente no endotelio sao as plaquetas sanguineas que primeiro aderem ao local onde estas lesoes ocorrem as plaquetas aderem as fibras de colagenio danificadas e tambem aderem umas as outras durante o processo de agregacao das plaquetas e com o intuito de provocar vasoconstricao sao libertadas hormonas adrenalina ou epinefrina e aumenta a quantidade de neurotransmissores a serotonina
+em torno do tecido com lesao acaba por ocorrer a coagulacao do sangue onde ocorre a coagulacao de sangue podera surgir um trombo ou coagulo por sua vez se este for libertado pode percorrer a corrente sanguinea em forma de embolo conforme explicado ao longo deste capitulo um embolo pode provocar uma obstrucao de uma arteria perantes este cenario as plaquetas podem ser uma catalisador da aterogenese ou seja acelerar a formacao de placas ateroscleroticas ou ateromas na parede arterial aterosclerose
+
+quatro
+sistema diagnose your heart
+o objectivo deste capitulo passa por descrever o produto final da dissertacao durante o processo de investigacao decorreu paralelamente um projecto que culminou no desenvolvimento de sistemas de informacao o objectivo desses sistemas de informacao incide essencialmente numa prova de conceito poc prove of concept demonstrar que a tecnologia pode desempenhar um papel importante no diagnostico e prevencao das patologias cardiovasculares ao levar a informacao ate aos utilizadores de uma forma didactica permitindo lhes compreender a importancia que certos factores podem ter no desenvolvimento de doencas do foro cardiaco enquanto de uma forma interactiva e ludica ficam a saber detalhes sobre a sua saude constitui aquela que foi inicialmente determinada como principal finalidade da dissertacao
+quatro um aplicacoes e arquitectura
+de um modo generico podera dizer se que o resultado da dissertacao incidiu na concepcao de sistemas de informacao que permitem recolher dados do utilizador atraves de questionarios numa aplicacao movel mostrar informacao util sobre as patologias cardiovasculares e tratar os resultados dos questionarios de modo a estabelecer um diagnostico e determinar a tendencia do utilizador para doencas do foro cardiaco numa aplicacao web e por fim conseguir simular alguns dos problemas cardiacos de modo a apresentar ao utilizador com uma abordagem simples e interactiva os fenomenos que decorrem no interior das arterias usando uma aplicacao movel
+o produto da dissertacao e constituido por tres aplicacoes e um web service
+diagnose your heart portal aplicacao web
+diagnose your heart registo de diagnosticos aplicacao movel
+diagnose your heart simulador aplicacao movel
+a arquitectura geral pode ser consultada na figura quatro um
+
+figura tres arquitectura geral dos sistemas de informacao
+cada uma das aplicacoes sera explicada nos subcapitulos seguintes com maior detalhe e sera dado enfase a algumas particularidades inovadoras no ambito tecnologico merecedoras de maior destaque
+quatro dois aplicacao web diagnose your heart portal
+a principal aplicacao desenvolvida tem o nome de diagnose your heart portal e e uma aplicacao web
+quatro dois um motivacao
+com esta aplicacao pretende dar se a possibilidade ao utilizador de aceder a uma serie de informacao centralizada que constitui uma enciclopedia digital da area da saude a informacao disponibilizada atraves de conteudo literario e videos de documentarios oferece aos utilizadores um bom repositorio de informacao para poderem complementar o seu conhecimento ou aprender mais sobre os problemas cardiovasculares e consequencias foi tomada em consideracao a importancia de oferecer uma aplicacao facilmente acessivel atraves da internet para que os utilizadores pudessem monitorizar a evolucao do seu estado de saude e respectiva propensao para os problemas cardiovasculares
+quatro dois dois descricao funcional
+torna se importante compreender o encadeamento das aplicacoes e a forma como interagem entre si a figura quatro um mostra a arquitectura das aplicacoes desenvolvidas os autodiagnosticos sao preenchidos atraves da aplicacao movel diagnose your heart registo de diagnosticos e a interpretacao e exposicao dos resultados sao da responsabilidade da logica de negocio da aplicacao diagnose your heart portal
+o utilizador podera ver relatorios interpretados pela aplicacao que mostram a avaliacao qualitativa do valor dos parametros de autodiagnosticos existem graficos de barras e de linhas que mostram a evolucao da saude do utilizador ao longo do tempo os parametros estudados serao expostos ao longo deste capitulo mas resultam da investigacao ao longo da dissertacao pretende se essencialmente analisar os factores de risco conhecidos e que podem conduzir a problemas cardiovasculares
+a aplicacao dispoe de diversas paginas com conteudo teorico que tratam de expor parte da investigacao na area da saude e da nanotecnologia aplicada a saude
+o utilizador podera ver videos de documentarios sobre as duas areas supramencionadas
+a informacao literaria aliada aos videos permite atingir com clarividencia o conceito de enciclopedia digital que se pretendia
+a aplicacao vai permitir de igual modo realizar operacoes administrativas tais como a criacao de novos utilizadores para as aplicacoes a edicao de dados dos utilizadores e a consulta dos acessos feitos pelos utilizadores logins
+as funcionalidades sao descritas com maior detalhe no subcapitulo quatro dois quatro atraves de uml com respectivas descricoes
+quatro dois tres descricao tecnica
+a aplicacao diagnose your heart portal utiliza tecnologia de estado da arte
+trata se de uma aplicacao web alojada na nuvem cloud da plataforma microsoft windows azure
+baseada em tecnologia net esta aplicacao surge como um web role de windows azure na pratica significa que uma vez na nuvem tera uma maquina virtual dedicada com windows server dois mil e oito r dois onde se encontrara lancada deployed
+o desenvolvimento utiliza as boas praticas de programacao por essa razao a escolha recaiu na framework asp net mvc tres nao sendo o objectivo entrar em grande detalhe o modelo mvc permite separar de forma clara e logica as varias camadas de uma aplicacao as vistas views responsaveis pela parte grafica design contem sintaxe razor tornando possivel a utilizacao de codigo xhtml em conjunto com codigo servidor c ou visual basic
+a titulo de exemplo uma vista fortemente tipificada permite basear o seu tipo num objecto grosso modo significa que as propriedades da classe do objecto em causa ficam disponiveis na vista
+por norma os objectos sao passados para uma vista quando uma accao action de um controlador controller e invocada
+por fim o modelo model tera todo o codigo da logica de negocio incluindo o acesso a bases de dados
+uma vista pode ser baseada num objecto cuja classe existe no modelo mas o controlador fara sempre uma ponte de comunicacao entre ambos
+desta forma qualquer alteracao na parte grafica de uma vista nao afecta as restantes camadas bem como uma alteracao no acesso a base de dados feita no modelo nao afecta as restantes camadas o codigo fica simples de compreender oferecendo uma maior consistencia logica e compelindo o programador a programar correctamente
+para as aplicacoes foi criada uma base de dados relacional onde a informacao sera armazenada a base de dados e baseada em sql azure e vai guardar informacao dos autodiagnosticos e dos utilizadores registados
+na framework mvc o modelo e responsavel por aceder a base de dados no contexto desta aplicacao foi utilizada uma camada intermedia atraves da entity framework que permite ter um mapeamentos das tabelas da base de dados relacional em classes do lado da aplicacao este mapeamento objecto relacional permite aceder a base de dados atraves de uma simples manipulacao de classes que podera utilizar linguagem linq
+para que a aplicacao movel diagnose your heart registo de diagnosticos possa realizar operacoes na base de dados nomeadamente validar as credenciais de um utilizador e inserir um novo autodiagnostico e necessario que a aplicacao web diagnose your heart portal exponha atraves de um web service os metodos existentes no seu modelo
+o web service e baseado em microsoft windows communication foundation expondo uma interface com metodos acessiveis por referencia ou atraves de rest o resultado devolvido e serializado em json
+uma outra caracteristica tecnica desta aplicacao passa pela utilizacao dos servicos de armazenamento de ficheiros da plataforma windows azure atraves do azure blob storage diferentes contentores blob containers irao conter as fotografias dos utilizadores criados e os videos de documentarios respectivamente um cliente silverlight e utilizado para garantir o armazenamento da fotografia num repositorio de imagens do windows azure storage
+os aspectos tecnicos sao descritos com maior detalhe no subcapitulo quatro dois cinco atraves de uml as questoes passiveis de merecer maior destaque pela sua importancia serao descritas no subcapitulo quatro dois sete
+quatro dois quatro diagramas de casos de uso
+os diagramas de casos de uso que se seguem sao importantes na perspectiva de demonstrar as funcionalidades da aplicacao diagnose your heart portal na optica do utilizador sendo que o nivel de detalhe permite compreender o que o utilizador podera esperar do sistema
+para cada caso de uso uma tabela detalhada explica com o auxilio de imagens da aplicacao a forma de interaccao entre o sistema e o utilizador a informacao pode ser consultada no anexo a do documento
+esta foi a forma escolhida para explicar o sistema de informacao aos possiveis leitores deste documento que nao possuam conhecimentos tecnicos informaticos aprofundados
+a figura quatro dois mostra os diagramas de caso de uso para o sistema diagnose your heart portal
+
+figura quatro diagnose your heart portal diagramas de casos de uso
+quatro dois cinco diagramas de sequencias
+os diagramas de sequencias pretendem demonstrar a visao mais tecnica da aplicacao diagnose your heart portal a interaccao e troca de mensagens entre objectos permite facultar uma ideia sobre o funcionamento do sistema para as funcionalidades mais comuns e previamente descritas nos casos de uso os diagramas respeitam com o nivel de detalhe maximo a arquitectura anteriormente explicada
+o diagrama de sequencia da figura quatro tres mostra a forma como o processo de login e logout e processado quando o utilizador acede ao sistema
+
+figura cinco diagrama de sequencias para login logout do utilizador
+o diagrama de sequencia da figura quatro quatro procura mostrar as actividades efectuadas quando o utilizador interage com as opcoes do menu diagnostico
+
+figura seis diagrama de sequencia para as opcoes de diagnostico
+o diagrama de sequencias da figura quatro cinco confere uma visao das interaccoes do utilizador com as opcoes dos menus cardiologia e nanotecnologia que mostram as paginas estaticas de contextos mais teoricos
+
+figura sete diagrama de sequencia para as opcoes de cardiologia e nanotecnologia
+o diagrama de sequencias da figura quatro seis mostra o processo de criacao de um novo utilizador
+
+figura oito diagrama de sequencia para as opcoes avancadas criacao de utilizador
+o diagrama de sequencias da figura quatro sete mostra com um detalhe funcional alto nivel as interaccoes resultantes de um upload de uma foto para um novo utilizador que ira ser armazenada num repositorio do blob storage de windows azure
+
+figura nove diagrama de sequencias para upload da fotografia
+o diagrama de sequencias da figura quatro oito mostra o processo de edicao de utilizadores
+
+figura dez diagrama de sequencias para as opcoes avancadas edicao de utilizadores
+o diagrama de sequencias da figura quatro nove confere uma visao das interaccoes do utilizador administrador com as opcoes do menu avancadas nomeadamente visualizacao da informacao dos utilizadores e respectivos logins nas diferentes aplicacoes
+
+figura onze diagrama de sequencias para as opcoes avancadas visualizacao de utilizadores e logins
+o ultimo diagrama de sequencias figura quatro dez mostra a forma como o web service integrado na aplicacao e exposto para ser consumido pela aplicacao movel diagnose your heart registo de diagnosticos
+
+figura doze diagrama de sequencias para exposicao do web service
+quatro dois seis diagramas de classes
+os diagramas de classes conferem uma visao da forma como esta aplicacao se encontra estruturada em termos logicos e de codigo
+a figura quatro onze mostra um diagrama de empacotamento que agrupa as classes em unidades logicas que servem um mesmo proposito a visao mais generica atraves de pacotes garante uma diminuicao da complexidade sobre a visao do sistema o modelo mvc consegue ser interpretado de uma forma mais natural
+
+figura treze diagnose your heart portal diagrama de empacotamento
+para os controladores controllers as principais classes aparecem com maior detalhe na figura quatro doze
+
+figura catorze diagrama das classes dos controladores
+
+as classes e interfaces do modelo model surgem na figura quatro treze e nas classes do modelo que reside a logica de negocio
+
+figura quinze diagrama das classes do modelo
+a figura quatro catorze ostenta as classes e interface do service mostrando essencialmente os metodos que sao expostos para consumo do web service
+
+figura dezasseis diagrama das classes do service
+no ultimo pacote figura quatro quinze surge uma visao das classes responsaveis pela comunicacao com sistema de armazenamento blob storage do windows azure
+
+figura dezassete diagrama das classe de cloud
+quatro dois sete aspectos de destaque na tecnologia
+um dos pontos que merece destaque na aplicacao diagnose your heart portal e a forma como a comunicacao e feita entre a aplicacao web asp net mvc tres e um cliente silverlight que faz parte dessa mesma aplicacao embora um cliente silverlight seja um projecto em si no contexto web o ficheiro com extensao xap pode ser carregado numa qualquer pagina permitindo que o controlo silverlight fique disponivel
+visto que a aplicacao respeita o modelo mvc a parte grafica e feita atraves das vistas views local onde o controlo silverlight sera colocado rendered
+na aplicacao web o controlo silverlight vai permitir carregar uma fotografia para um novo utilizador criado ou seja fazer o upload de um ficheiro de imagem que ira ser armazenado num repositorio de ficheiros blob no windows azure azure storage
+se o ficheiro de imagem for de tamanho reduzido a utilizacao do controlo silverlight nao tera grande impacto contudo se o ficheiro de imagem for em hd alta definicao e de um tamanho consideravelmente maior sera importante pensar nas questoes de desempenho e usar o cliente silverlight com o proposito de fazer o upload directamente para o repositorio no windows azure ao fazer o upload directamente atraves de uma aplicacao que esta no lado do cliente e retirada uma carga significativa ao servidor e portanto a aplicacao web o desempenho melhora para outros utilizadores que se encontrem a utilizar a pagina
+o windows azure e em concreto um qualquer repositorio de ficheiros blob container da cloud nao vao permitir por questoes de seguranca o upload directo de um ficheiro para que esse upload seja viavel sera necessario conferir permissoes para aceder ao repositorio
+neste caso a aplicacao silverlight vai necessitar de permissoes para poder enviar o ficheiro para o repositorio
+no windows azure as permissoes de acesso aos contentores de dados sao providenciadas por um mecanismo denominado de shared access signatures assinaturas de acesso partilhado
+quatro dois sete um criacao de uma shared access signature
+o processo de criacao de uma shared access signature encontra se ilustrado no diagrama de sequencias da figura quatro sete
+uma shared access signature nao e mais do que uma cadeia de caracteres que sera concatenada no final de um uri garantindo uma abordagem rest esse uri aponta para um determinado repositorio de ficheiros blob do windows azure a shared access signature vai especificar o tipo de acesso que pode ser feito ao repositorio leitura ou escrita e durante quanto tempo sera valido esse acesso
+nao sendo o objectivo entrar em grande detalhe o repositorio de fotografias tera um uri semelhante a http diagnoseyourheartportal cloudapp net photocontainer uma shared access signature sera uma query string com o formato st dois mil e onze dez oito se dois mil e onze dez oito sr c sp w si ywjjzgvmzw tres d tres sig dd oito ih bh cinco jfmo
+apesar de parecer ilegivel a query string com a shared access signature e formada de uma maneira logica
+analisando devidamente o primeiro parametro st dois mil e onze dez oito equivale ao momento inicial da validade st signed start o segundo se dois mil e onze dez oito equivale ao momento em que a validade expira se signed expiry o terceiro sr c indica que se trata de um container ou seja o repositorio sr signed resource o quarto sp w indica o tipo de permissao write ou seja de escrita sp signed permission o quinto si ywjjzgvmzw tres d tres contem a assinatura codificada si signature o sexto e ultimo parametro sig dd oito ih bh cinco jfmo tem um identificador univoco para a assinatura onze
+quando este uri e passado para o cliente silverlight o mesmo passa a ter permissoes de escrita de apenas alguns minutos no repositorio photocontainer do azure blob storage
+no codigo da aplicacao e necessario efectuar esta operacao em dois passos
+num primeiro momento criar uma politica de acesso silverlight silverlight access policy que evita os problemas comummente designados de cross domain errors tambem validos para outro tipo de clientes tais como aplicacoes flash e em que se torna necessario exemplificar o que o cliente silverlight esta autorizado a fazer neste caso o cliente silverlight ira aceder ao blob storage do windows azure e fazer pedidos http http get requests doze na pratica torna se necessario criar um ficheiro xml com a nomenclatura clientaccesspolicy xml que tenha conteudo que diga o que o cliente silverlight pode fazer este ficheiro e colocado na raiz root dos contentores de blob o seguinte snippet mostra o codigo referente a criacao da politica de acesso para o cliente silverlight
+var blobforrootcontainer blobclient getblobreference clientaccesspolicy xml
+blobforrootcontainer properties contenttype text xml
+blobforrootcontainer uploadtext xml version um zero encoding utf oito
+access policy
+cross domain access
+policy
+allow from http methods http request headers
+domain uri
+domain uri http
+allow from
+grant to
+resource path include subpaths true
+grant to
+policy
+cross domain access
+access policy
+o segundo momento e a criacao propriamente dita da shared access signature para o repositorio photocontainer com permissoes de escrita validas para um periodo de vinte minutos o snippet que se apresenta mostra o codigo utilizado
+cloudblobcontainer blobcontainer cloudblobclient getcontainerreference photocontainer
+cloudblobcontainer createifnotexist
+
+var sharedaccesssignaturewritingpolicy new sharedaccesspolicy
+sharedaccesssignaturewritingpolicy permissions sharedaccesspermissions write
+sharedaccesssignaturewritingpolicy sharedaccessexpirytime datetime utcnow timespan fromminutes vinte
+
+var sharedaccesssigniaturewrite cloudblobcontainer getsharedaccesssignature sharedaccesssignaturewritingpolicy
+string uri new uribuilder cloudblobcontainer uri
+
+query sharedaccesssigniaturewrite trimstart
+uri absoluteuri
+
+uma vez criada a shared access signature e importante passar o uri para a aplicacao silverlight a fim de poder ter permissoes para o upload de uma determinada fotografia
+outro ponto de grande interesse esta em compreender a comunicacao entre a aplicacao web e o cliente silverlight sendo que existem pelo menos duas formas de passar o uri para o cliente silverlight
+um atraves da vista view onde se encontra o html xml do controlo de upload o controlo de upload carrega o projecto silverlight atraves do ficheiro xap o uri pode ser passado pela tag initparams ou
+dois atraves de uma chamada assincrona a partir do projecto silverlight a uma accao action de um controlador controller da aplicacao web mvc que possa devolver o uri serializado em json
+no ponto seguinte ambas as perspectivas sao explicadas contudo na pratica a segunda foi utilizada na comunicacao entre as duas aplicacoes o formato json e considerado um formato mais compacto e leve do que o formato xml que introduz um maior overhead catorze em virtude desse facto a escolha recaiu em json
+quatro dois sete dois comunicacao entre a aplicacao web e o cliente silverlight xml ou json
+xml
+a comunicacao entre a aplicacao web e o cliente silverlight utilizando xml encontra se descrita de seguida
+o controlo silverlight e carregado rendered numa vista view no caso desta aplicacao o controlo e carregado numa parte de uma vista que pode ser denominada de vista parcial partial view na terminologia mvc o snippet que se segue mostra o codigo dessa vista parcial
+model string
+
+object data data application x silverlight dois type application x silverlight dois width cem height cem
+param name source value url content clientbin silverlightuploadsas xap
+param name onerror value onsilverlighterror
+param name background value f sete f dois f quatro
+param name minruntimeversion value quatro zero zero
+param name autoupgrade value true
+param name initparams value uriparameter model
+
+object iframe id sl historyframe style visibility hidden height zero px width zero px border zero px iframe
+
+tratando se de uma vista parcial fortemente tipificada com um modelo de string model string significa que no momento de ser invocada por uma accao de um controlador esta vista tera que receber um parametro com uma string esse parametro passado pelo controlador e o uri
+ao passar o uri atraves da tag initparams param name initparams value uriparameter model torna se importante alterar o codigo do projecto silverlight para que o parametro passado via xml atraves da tag seja passado para o construtor da principal classe da aplicacao silverlight o snippet a seguir mostra o codigo necessario para passar o parametro para o construtor
+private void application startup object sender startupeventargs e
+
+this rootvisual new mainpage e initparams
+
+
+uma vez no construtor da principal classe da aplicacao silverlight apenas se torna necessario recuperar o uri recebido e atribuir o valor a uma variavel do tipo string visto que uma tag xml e uma combinacao chave valor key value torna se necessario recuperar o valor da tag atraves de uma variavel do tipo idictionary string string ao confirmar a existencia de um parametro com o nome uriparameter e que o mesmo tem um valor nao nulo o passo seguinte e a recuperacao do uri recebido catorze o snippet que se segue mostra o codigo necessario para recuperar o uri
+public mainpage idictionary string string initparameters
+
+initializecomponent
+
+if initparameters containskey uriparameter string isnullorempty initparameters uriparameter
+
+uri initparameters uriparameter
+
+
+
+json
+a comunicacao entre a aplicacao web e o cliente silverlight utilizando json encontra se descrita de seguida
+a alternativa ao xml e que foi utilizada para esta aplicacao foi uma chamada assincrona a partir do projecto silverlight a uma accao action de um controlador controller da aplicacao web mvc em resposta a essa chamada e devolvido o uri serializado em json
+no interior do construtor da principal classe da aplicacao silverlight e feita a chamada a uma accao action do controlador controller advancedcontroller denominada de populatesilverlightuploadcontrol esta invocacao e feita pela aplicacao cliente silverlight a aplicacao web o snippet que se segue mostra o codigo da chamada
+public mainpage
+
+initializecomponent
+
+progressbar datacontext filetoupload
+progresspercentage datacontext filetoupload
+
+uri mvcserviceuri new uri populatesilverlightuploadcontrol urikind relative
+
+webclient webclient new webclient
+
+webclient openreadasync mvcserviceuri
+webclient openreadcompleted openreadcompleted
+
+
+como se trata de uma chamada assincrona feita via webclient e necessario um eventhandler para tratar o resultado quando a resposta chegar o resultado vem serializado em json e para recuperar o uri apenas se torna necessario tratar o resultado como um jsonarray o snippet apresentado de seguida mostra o eventhandler e a recuperacao do uri recebido
+private void openreadcompleted object sender openreadcompletedeventargs e
+
+if e error null
+
+return
+
+
+jsonarray completeblobinformation jsonarray jsonvalue load e result
+
+uri completeblobinformation zero
+
+
+visto que a aplicacao web tem um modelo baseado em mvc a chamada de uma accao num controlador por parte da aplicacao silverlight requer que seja adicionada uma rota route para que seja devidamente interpretado o pedido por parte da aplicacao web catorze o snippet seguinte mostra a rota necessaria para que a aplicacao web reconheca para onde encaminhar o pedido
+routes maproute
+populatesilverlightuploadcontrol
+populatesilverlightuploadcontrol
+new controller advanced action populatesilverlightuploadcontrol
+
+a accao populatesilverlightuploadcontrol do controlador advancedcontroller e responsavel por passar o uri serializado em json o snippet que se segue mostra o codigo da accao que devolve um jsonresult
+cachecontrol httpcacheability nocache httpget
+public jsonresult populatesilverlightuploadcontrol
+
+list string blobinfo null
+
+if string isnullorempty blobinformation
+
+blobinfo new list string blobinformation
+
+return json blobinfo jsonrequestbehavior allowget
+
+
+quatro dois sete tres comunicacao entre o cliente silverlight e a aplicacao web bridge pattern
+quando o upload e concluido torna se pertinente que a aplicacao web seja notificada pelo cliente silverlight
+outro ponto de grande interesse esta em compreender a comunicacao no sentido inverso isto e entre o cliente silverlight e a aplicacao web
+o bridge pattern e um padrao de desenho que pode ser usado neste contexto este padrao de desenho permite que se estabeleca a comunicacao entre um cliente silverlight e uma aplicacao web que aloja esse mesmo cliente quinze
+neste caso o cliente silverlight comunica a conclusao do upload da fotografia de um novo utilizador invocando uma funcao javascript no lado cliente da aplicacao web ou seja que se encontra numa vista view
+o cliente silverlight passa como parametro o uri final se num primeiro instante a aplicacao web enviava um uri que apontava para um contentor de ficheiros no windows azure storage juntamente com uma shared access signature que conferia direitos de escrita com uma validade de vinte minutos num segundo momento o cliente silverlight apos efectuar esse upload vai enviar o uri final que aponta para o ficheiro da imagem ou fotografia que ja se encontra armazenada nesse contentor de ficheiros
+a passagem do uri final e feita por duas razoes importantes
+um confirmar o sucesso do upload da fotografia a aplicacao web antes que permita guardar a restante informacao do novo utilizador que esta a ser criado
+dois o envio do uri final que aponta para a fotografia do utilizador e que tera que ser armazenada com a restante informacao do utilizador na base de dados
+com o uri da fotografia a ser armazenado em base de dados e guardada a referencia que aponta para o ficheiro blob da fotografia em momentos posteriores a fotografia pode ser mostrada em modo de leitura carregando a a partir do local onde esta armazenada
+o snippet seguinte mostra o uso do bridge pattern para notificar a aplicacao web e enviar o uri final htmlpage window invoke uploadcomplete fileuri para uma funcao javascript dezasseis
+public int percentage
+
+get
+
+return percentage
+
+set
+
+percentage value
+notifypropertychanged percentage
+
+if value cem
+
+htmlpage window invoke uploadcomplete fileuri
+
+
+
+
+uma vez na funcao javascript e verificada a existencia de conteudo no parametro passado ou seja no uri final e e removida a shared access signature visto ja nao ser necessaria ainda do lado cliente e utilizado jquery para passar o uri para um campo escondido hidden field da vista quando a vista for submetida atraves de http post apos o utilizador clicar no botao criar todos os dados incluindo o uri da fotografia sao submetidos os snippet que se segue mostra respectivamente a funcao javascript e o campo escondido
+script
+function uploadcomplete fileuri
+if fileuri null
+hiddenphotouri val fileuri split zero
+
+
+script
+
+html hiddenfor model model photourl new id hiddenphotouri
+
+com todos os dados do formulario de criacao de um novo utilizador preenchidos e com a fotografia armazenada no contentor do windows azure blob storage resta ao utilizador submeter os dados via http post para uma accao de um controlador que submeta os dados para o lado do servidor o que se segue mostra a accao createuser do controlador advancedcontroller utilizada para criar um novo utilizador em base dados neste codigo esta tambem patente a utilizacao dos net providers para membership e role dezassete
+httppost
+public actionresult createuser userdyh userdyh formcollection collection
+
+if modelstate isvalid
+
+try
+
+string encryptedpassword encryption passwordencryption userdyh password
+userdyh password encryptedpassword
+
+bool usercreationsuccess datarepository createnewuser userdyh
+
+if usercreationsuccess
+
+membership createuser userdyh username userdyh password
+
+bool rolealreadyexists false
+string userrolename datarepository getuserrolenamebyroleidentifier int parse userdyh rolelistselected
+
+rolealreadyexists roles roleexists userrolename
+
+if rolealreadyexists
+
+roles addusertorole userdyh username userrolename
+
+else
+
+roles createrole userdyh rolelistselected
+roles addusertorole userdyh username userrolename
+
+
+
+catch membershipcreateuserexception ex
+
+switch ex statuscode
+
+case membershipcreatestatus invalidusername
+throw new exception string format username error zero ex message
+case membershipcreatestatus invalidpassword
+throw new exception string format password error zero ex message
+
+
+catch exception ex
+
+throw new exception string format other error zero ex message
+
+
+return redirecttoaction index home
+
+
+return view userdyh
+
+
+uma vez no servidor os dados poderao ser armazenados em base de dados ao chamar a funcao datarepository createnewuser userdyh esta ser feita uma chamada a terceira camada da aplicacao web o modelo model neste momento e compreensivel o papel do controlador controller em levar os dados de uma vista view ate ao modelo model onde a logica de negocio se encontra e o armazenamento na base de dados ocorre
+quatro dois sete quatro comunicacao com a base de dados entity framework
+um novo ponto de interesse e o armazenamento de informacao em base de dados a base de dados concebida para armazenar a informacao referente as aplicacoes diagnose your heart foi projectada para ser uma base de dados relacional
+a figura quatro dezasseis mostra o modelo conceptual de dados da base de dados com o diagrama entidade relacionamento os tipos de dados e relacionamentos entre tabelas encontram se evidenciados
+
+figura dezoito modelo conceptual de dados para a base de dados
+
+a figura quatro dezassete mostra o modelo logico de dados da base de dados concebida a forma como os dados das tabelas estarao relacionados obedecendo ao modelo relacional com chaves primarias a ser referencias por chaves estrangeiras encontra se demonstrado
+
+figura dezanove modelo logico de dados para a base de dados
+a figura quatro dezoito mostra o modelo fisico de dados da base de dados neste modelo ja e possivel constatar que o sql azure e o sistema de gestao de base de dados
+
+figura vinte modelo fisico de dados para a base de dados
+
+uma forma de comunicar com a base de dados atraves de uma camada intermedia que na aplicacao web se vai colocar entre o modelo model e a propria base de dados relacional em sql azure passa pela utilizacao da denominada net entity framework
+a entity framework permite obter um mapeamento objecto relacional isto e as tabelas da base de dados relacional sao mapeadas para classes na aplicacao web um novo registo linha numa tabela equivale a um objecto passado atraves de metodos especificos para a classe dezoito
+a figura quatro dezanove mostra o mapeamento objecto relacional com as classes geradas a partir das tabelas
+a vantagem de utilizar entity framework incide na navegacao que se torna possivel fazer em objectos que estejam relacionados um exemplo no contexto desta aplicacao poderia ser para um determinado diagnostico obter as informacoes do utilizador neste caso a navegacao foi feita do lado n para o lado um mais interessante podera ser obter todos os diagnosticos de um utilizador este seria o caso de navegacao do lado um para o lado n um utilizador pode deter varios diagnosticos
+
+figura vinte e um mapeamento das tabelas relacionais em classes entity framwork
+
+a linguagem linq permite a consulta em variadas fontes de dados possui operadores que facilitam a manipulacao de coleccoes dezanove voltando ao modelo model da aplicacao web onde a logica de negocio se encontra implementada a funcao que permite criar um novo utilizador datarepository createnewuser userdyh faz internamente uso de entity framework para adicionar um novo objecto utilizador userdyh classe e por consequente um registo de um utilizador na base de dados base de dados o snippet que se segue mostra o codigo utilizado para adicionar um novo utilizador
+public bool createnewuser userdyh userdyh
+
+bool flagresult false
+
+if userdyh null
+
+userdyh iduser generateuniqueidentifier
+
+storedb userdyhs addobject userdyh
+storedb savechanges
+
+flagresult true
+
+
+return flagresult
+
+
+o metodo addobject adiciona o objecto do tipo utilizador com as propriedades preenchidas desde do momento de submeter o formulario da vista view o metodo savechanges propaga as alteracoes ate a base de dados relacional em sql azure
+se o objectivo fosse obter todos os diagnosticos de um determinado utilizador poderia ser usado linq para manipular as coleccoes de objectos do tipo diagnostico generaldiagnoseinformationview o snippet que se segue mostra a consulta de todos os diagnosticos de um determinado utilizador e o armazenamento em objectos de uma nova classe onde apenas e colocada a informacao relevante que interessa reter da consulta
+public ienumerable generaldiagnoseinformationclass getdiagnosesinformationbyuser string username
+
+ienumerable generaldiagnoseinformationclass resultobject null
+
+if string isnullorempty username
+
+ienumerable generaldiagnoseinformationview resultentityframework storedb generaldiagnoseinformationviews where u u username username
+
+resultobject from r in resultentityframework select new generaldiagnoseinformationclass
+
+iddiagnoseinformation r iddiagnoseinformation
+weight r weight
+height roundheight r height
+systolicbloodpressure r systolicbloodpressure
+diastolicbloodpressure r diastolicbloodpressure
+bloodglucoselevel r bloodglucoselevel
+smooker convertsmookerdrinkerdruguser r issmooker
+drinker convertsmookerdrinkerdruguser r isdrinker
+druguser convertsmookerdrinkerdruguser r isdruguser
+hasbloodculture r hasbloodculture
+hasecg r hasecg
+hdlcolesterol r hdlcolesterol
+ldlcolesterol r ldlcolesterol
+vldlcolesterol r vldlcolesterol
+totalcolesterol r totalcolesterol
+triglycerideslevel r triglycerideslevel
+glucoselevel r glucoselevel
+amplitudeaverage r amplitudeaverage
+durationaverage r durationaverage
+morphologydescription r morphologydescription
+heartrate r heartrate
+username r username
+photourl r photourl
+fullname r fullname
+birthday r birthday
+gender r gender
+race r race
+role r role
+
+
+
+return resultobject
+
+
+sabendo que toda a logica de negocio se encontra no modelo model da aplicacao web incluindo o acesso a base de dados torna se importante expor alguns das funcionalidades que acedem directamente a base de dados para aplicacao movel diagnose your heart registo de diagnostico e importante averiguar se um utilizador e valido e efectuar o registo de novos autodiagnosticos a forma de expor essas operacoes traduz se na integracao de um web service na aplicacao web que permita o consumo das funcionalidades de interesse por parte de outras aplicacoes a aplicacao movel diagnose your heart registo de diagnostico faz parte dessas aplicacoes
+quatro dois sete cinco exposicao de funcionalidades atraves do web service
+para promover o acesso da aplicacao movel diagnose your heart registo de diagnostico as funcionalidades da base de dados foi criado um web service baseado em windows communication foundation wcf
+o wcf da framework net permite tornar a aplicacao web diagnose your heart portal numa aplicacao orientada a servicos service oriented que permite comunicar com qualquer outra aplicacao atraves da internet vinte
+o web service concebido expoe dois metodos e pode ser consumido por qualquer aplicacao net comum atraves do adicionar de uma referencia ou via rest api para permitir o consumo por qualquer tipo de aplicacao cliente o web service tambem se encontra dotado para receber pedidos e fornecer respostas em formato json o snippet que se segue mostra a interface do web service para os dois metodos expostos
+servicecontract
+public interface idiagnoseyourheartservice
+
+operationcontract
+webinvoke bodystyle webmessagebodystyle bare
+uritemplate validateuserandloginservice jsonobject jsonobject
+method get
+requestformat webmessageformat json
+responseformat webmessageformat json
+bool validateuserandloginservice string username string password string accessmethod
+
+operationcontract
+webinvoke bodystyle webmessagebodystyle bare
+uritemplate registernewdiagnoseservice jsonobject jsonobject
+method post
+requestformat webmessageformat json
+responseformat webmessageformat json
+bool registernewdiagnoseservice string username
+string password
+double weight
+double height
+int systolicbloodpressure
+int diastolicbloodpressure
+int bloodglucoselevel
+bool issmooker
+bool isdrinker
+bool isdruguser
+bool hasbloodculture
+bool hasecg
+double hdlcolesterol
+double ldlcolesterol
+double vldlcolesterol
+double totalcolesterol
+double triglycerideslevel
+double glucoselevel
+double amplitudeaverage
+double durationaverage
+string morphologydescription
+int heartrate
+
+
+quatro tres aplicacao movel diagnose your heart registo de diagnosticos
+em complemento a aplicacao web diagnose your heart portal foi criada uma aplicacao movel para efectuar o registo de autodiagnosticos dos utilizadores
+quatro tres um motivacao
+em complemento a aplicacao web diagnose your heart portal foi criada uma aplicacao movel para efectuar o registo de autodiagnosticos dos utilizadores a aplicacao movel diagnose your heart registo de diagnosticos foi concebida para tornar mais simples e cativante o envio de informacao de diagnostico em qualquer local o utilizador com acesso a internet pode enviar informacoes sobre os parametros que permitem estabelecer um diagnostico o que permitira analisar a sua propensao para os problemas cardiovasculares
+quatro tres dois descricao funcional
+no subcapitulo quatro dois foi feita uma analise da aplicacao diagnose your heart portal a aplicacao com a logica de negocio que permite a interpretacao e exposicao dos resultados de diagnosticos preenchidos relembrando a arquitectura geral dos sistemas da figura quatro um a aplicacao movel diagnose your heart registo de diagnostico permite o preenchimento de diferentes questionarios que apos tratamento irao permitir avaliar a saude do utilizador
+quando o utilizador e criado na aplicacao web passa a ter acesso nao so ao portal onde pode consultar a informacao dos diagnosticos como tambem podera autenticar se na aplicacao movel do seu smartphone e utilizar o sistema movel diagnose your heart
+esta aplicacao de cariz simples permite ao utilizador preencher tres tipos de questionarios que atraves de perguntas lhe conferem a possibilidade de transmitir informacao util para um diagnostico
+os questionarios aceitam apenas respostas abertas ou de escolha multipla em funcao da pergunta feita
+os tres questionarios sao o resultado de um agrupamento logico das perguntas o primeiro questionario procura recolher a informacao de caracter geral sobre o utilizador peso altura pressao sistolica maxima pressao diastolica minima valor de glicemia com respostas abertas se o utilizador e fumador se consome alcool e se consome drogas com respostas de escolha multipla sim ou nao o primeiro questionario e obrigatorio para poder submeter a informacao de autodiagnostico como e possivel constatar a informacao pedida pode ser preenchida pelo utilizador depois de calmamente medir cada um dos valores com os instrumentos necessarios e que vulgarmente as pessoas podem ter em casa alternativamente o utilizador encontra se num local publico depois de efectuar as medicoes numa farmacia ou centro de saude e opta por registar a informacao na sua aplicacao movel
+mesmo com o primeiro questionario respondido o utilizador pode guardar as respostas como rascunho para mais tarde alterar ou inclusive guarda las em modo permanente mas sem as enviar para submissao
+o segundo e terceiro questionario requerem respostas mais especificas e so possiveis se o utilizador efectuou exames complementares de diagnostico o segundo questionario e opcional e recolhe informacao sobre eventuais dados de umas analises clinicas se o utilizador possui informacao adicional de analises clinicas com resposta de escolha multipla sim ou nao indicacao do valor das lipoproteinas de alta densidade hdl o valor das lipoproteinas de baixa densidade ldl o valor das lipoproteinas de muito baixa densidade vldl o valor do colesterol total o valor dos trigliceridos e o valor da glicose com respostas abertas o terceiro questionario tambem e opcional e recolhe informacao sobre dados de um eventual electrocardiograma ecg se o utilizador possui informacao adicional de um electrocardiograma com resposta de escolha multipla sim ou nao e a indicacao do valor do ritmo cardiaco com resposta aberta
+se o utilizador sai de um farmacia ou centro de saude e decide passar num laboratorio de analises clinicas para saber o resultado de uma colheita de sangue efectuada entao podera facilmente preencher o segundo diagnostico a imagem do que fez no primeiro a mesma ordem de ideias aplica se para o terceiro questionario caso o utilizador possua o resultado de um electrocardiograma
+todos estes dados sao introduzidos tactilmente numa aplicacao movel em que a usabilidade se encontra aliada a simplicidade de utilizacao
+uma vez que os questionarios se encontrem preenchidos o utilizador pode submeter a informacao sincronizando a com a aplicacao web principal diagnose your heart portal desde que tenha acesso a internet
+o utilizador pode ainda contactar directamente o numero de urgencia medica atraves de um simples clique
+as funcionalidades sao descritas com maior detalhe no subcapitulo quatro tres quatro atraves de uml com respectivas descricoes
+quatro tres tres descricao tecnica
+o sistema diagnose your heart registo de diagnostico e uma aplicacao movel destinada a equipamentos smartphone com windows phone sete instalado
+a tecnologia utilizada para o seu desenvolvimento incide em net e na framework silverlight para windows phone sete
+o desenvolvimento procura utilizar uma vez mais as boas praticas de programacao tendo como base um projecto existente e utilizado pela microsoft no windows phone sete hands on labs com o objectivo de ensinar o modelo mvvm para a framework silverlight do windows phone sete microsoft prism e a designacao dada ao guia de boas praticas mvvm vinte e um
+um pouco a semelhanca do modelo mvc para a web o modelo mvvm tambem procura separar de forma clara e logica as varias camadas de uma aplicacao movel as vistas views responsaveis pela parte grafica design contem a linguagem declarativa xaml de silverlight com uma sintaxe caracteristica as vistas encontram se ligadas via binding aos modelos de vistas view models que na pratica sao classes vulgares por fim o modelo model tera o codigo central da aplicacao e no caso especifico desta aplicacao movel e onde se encontra feita a referencia ao web service que permite assincronamente verificar se o utilizador e valido e submeter questionarios de autodiagnostico
+os aspectos tecnicos sao descritos com maior detalhe no subcapitulo quatro tres cinco atraves de uml as questoes passiveis de merecer maior destaque pela sua importancia serao descritas no subcapitulo quatro tres sete
+quatro tres quatro diagramas de casos de uso
+para facultar uma melhor percepcao da aplicacao diagnose your heart registo de diagnostico serao seguidamente apresentados os diagramas de casos de uso que explicam os sistema com um maior nivel de detalhe na optica do utilizador
+para cada caso de uso uma tabela detalhada explica com o auxilio de imagens da aplicacao a forma de interaccao entre o sistema e o utilizador a informacao pode ser consultada no anexo b do documento
+desta forma os leitores deste documento que nao possuam conhecimentos tecnicos informaticos aprofundados poderao ter um melhor entendimento do sistema de informacao descrito
+a figura quatro vinte mostra os diagramas de caso de uso para o sistema diagnose your heart registo de diagnostico
+
+figura vinte e dois diagnose your heart registo de diagnosticos diagramas de casos de uso
+quatro tres cinco diagramas de sequencias
+os diagramas de sequencias que se seguem pretendem mostrar a visao mais tecnica da aplicacao diagnose your heart registo de diagnostico a percepcao sobre o funcionamento do sistema e explicada com algum detalhe atraves da troca de mensagens entre os objectos nos diagramas
+o diagrama de sequencias da figura quatro vinte e um mostra o processo de sincronizacao o processo de sincronizacao garante o carregamento dos questionarios no caso de ainda nao se encontrarem carregados e efectua o envio de questionarios de autodiagnostico que se encontrem preenchidos
+
+figura vinte e tres registo de diagnostico sincronizacao
+para que os diagnosticos sejam submetidos em base de dados e imperativo invocar o web service que permite validar o utilizador e enviar as informacoes referentes aos autodiagnosticos a figura quatro vinte e dois mostra o diagrama de sequencias de acesso ao web service
+
+figura vinte e quatro registo de diagnostico consumo do web service
+o diagrama de sequencias da figura quatro vinte e tres mostra o processo de preenchimento de um questionario de autodiagnostico e o cenario em que se pretende guardar o questionario como rascunho passivel de alteracao nas respostas ou guardar em modo de submissao pronto a ser submetido num momento de sincronizacao
+
+figura vinte e cinco registo de diagnostico preenchimento de questionarios
+o modelo mvvm liga as vistas views aos modelos de vistas view models via propriedade binding em qualquer das vistas com linguagem declarativa xaml de silverlight para centralizar a forma como e feita a instanciacao de um modelo de vista existe um modelo de vista especifico que permite efectuar o registo de uma classe e g um qualquer view model e a passagem de parametros para a mesma o diagrama de sequencias da figura quatro vinte e quatro mostra o viewmodellocator responsavel por essa operacao
+
+figura vinte e seis registo de diagnosticos viewmodellocator para instanciacao de modelos de vistas
+
+quatro tres seis diagramas de classes
+os diagramas de classes permitem ter uma nocao da estrutura da aplicacao em termos logicos e de codigo
+a figura quatro vinte e cinco mostra um diagrama de empacotamento que agrupa as classes em unidades logicas que servem um mesmo proposito os pacotes garantem uma reducao da complexidade sobre a visao geral do sistema o modelo mvvm consegue ser apresentado de uma forma natural para a aplicacao movel
+
+figura vinte e sete diagnose your heart registo de diagnosticos diagrama de empacotamento
+
+no modelo model os servicos e respectivas classes foram estruturadas e organizadas de forma logica as principais classes aparecem com maior detalhe na figura quatro vinte e seis
+
+figura vinte e oito diagrama das classes do modelo
+as classes do servico de registo sao expostas na figura quatro vinte e sete
+
+figura vinte e nove diagrama das classes do servico de registo
+para o servico de questionarios as classes sao exibidas na figura quatro vinte e oito
+
+figura trinta diagrama das classes do servico de questionarios
+as classes que fazem parte do armazenamento sao mostradas na figura quatro vinte e nove
+
+figura trinta e um diagrama das classes de armazenamento
+o modelo de vistas view models que estabelece a comunicacao entre as vistas views e o modelo model atendendo aos principios do mvvm dispoe das seguintes classes
+
+figura trinta e dois diagrama das classes do modelos de vistas
+
+quatro tres sete aspectos de destaque na tecnologia
+a aplicacao diagnose your heart registo de diagnostico e uma aplicacao movel baseada na framework silverlight para windows phone sete
+com a aplicacao do modelo mvvm o objectivo passa por reduzir o codigo servidor code behind que existe nas vistas views para evitar ter o codigo de uma vista no code behind da mesma o modelo mvvm e a framework silverlight presenteiam a possibilidade de ligar a vista a uma determinada classe de modelo de vista view model que sera responsavel por gerir a ligacao entre as suas propriedades e os controlos existentes na vista
+a vista que permite efectuar a autenticacao do utilizador possui um botao que permite contactar directamente o numero de emergencia medica inem
+quatro tres sete um ligacao binding de uma vista silverlight a uma classe com o modelo de vista
+o snippet que se segue mostra o codigo que liga faz o binding da vista appsettingsview ao respectivo modelo de vista appsettingsviewmodel
+datacontext binding source staticresource viewmodellocator path appsettingsviewmodel
+os controlos da interface grafica n da vista view encontram se ligados as propriedades publicas da classe do seu modelo de vista view model para o cenario anteriormente mencionado o snippet que se segue mostra a ligacao do botao da vista que permite contactar o numero de emergencia medica inem a sua propriedade no modelo de vista
+button content ligar o numero de urgencia medica
+i interaction behaviors
+infrastructure buttoncommand commandbinding binding callcommand
+i interaction behaviors
+button
+
+a ligacao binding do controlo e feita a uma propriedade denominada de callcommand no modelo de vista view model ao qual a vista view se encontra ligada e possivel verificar a funcionalidade atribuida a propriedade callcommand o snippet seguinte mostra o codigo associado ao botao que permite efectuar uma chamada directa para o numero de emergencia medica inem
+this callcommand new delegatecommand
+new phonecalltask
+
+displayname contactar codu inem
+phonenumber cento e doze
+show
+
+para que a vista seja ligada ao respectivo modelo de vista e passado o path com o nome do modelo de vista desejado a uma classe centralizada denomindado de viewmodellocator esta classe acaba por ser um modelo de vista view model capaz de instanciar os restantes o codigo do snippet que se segue mostra que o proprio modelo de vista pretendido e uma propriedade da classe viewmodellocator
+public appsettingsviewmodel appsettingsviewmodel
+
+get
+
+return this containerlocator container resolve appsettingsviewmodel
+
+
+
+a instanciacao e passagem de parametros para o construtor do modelo de vista pretendido sao feitas na classe containerlocator do modelo model o snippet seguinte mostra o codigo responsavel por essa operacao e feita a instanciacao do modelo de vista view model appsettingsviewmodel e sao passados os parametros necessarios para o respectivo construtor
+this container register
+c new appsettingsviewmodel
+c resolve isettingsstore
+c resolve iregistrationserviceclient
+c resolve inavigationservice
+reusedwithin reusescope none
+
+quatro tres sete dois consumo de metodos de um web service assincronamente autenticacao do utilizador e envio de autodiagnosticos
+a autenticacao do utilizador e o envio de autodiagnosticos preenchidos requer o consumo do web service exposto pela aplicacao diagnose your heart portal
+para que a aplicacao movel consiga autenticar o utilizador que a esta a utilizar e enviar a informacao de questionarios de autodiagnostico preenchidos e necessario consumir os metodos do web service que providenciam essas funcionalidades
+a chamada aos metodos do web service e feita assincronamente
+como a aplicacao movel e baseada em net a ligacao ao web service foi feita directamente atraves da adicao de uma referencia para o mesmo vinte e dois contudo o web service encontra se disponivel para consumo atraves de rest api por parte de uma qualquer outra aplicacao cliente
+o snippet que se segue mostra o codigo necessario para registar um novo diagnostico na base de dados efectuando a respectiva chamada ao metodo do web service como se trata de uma chamada assincrona um eventhandler e acrescentado para receber o resultado isto e receber um valor booleano que indique se a insercao do diagnostico foi feita com sucesso
+diagnoseyourheartsaasintegratedwebservice
+registernewdiagnoseserviceasync settingsstore username
+settingsstore password
+diagnoseinformation weight
+diagnoseinformation height
+diagnoseinformation systolicbloodpressure
+diagnoseinformation diastolicbloodpressure
+diagnoseinformation bloodglucoselevel
+diagnoseinformation issmooker
+diagnoseinformation isdrinker
+diagnoseinformation isdruguser
+diagnoseinformation hasbloodculture
+diagnoseinformation hasecg
+diagnoseinformation hdlcolesterol
+diagnoseinformation ldlcolesterol
+diagnoseinformation vldlcolesterol
+diagnoseinformation totalcolesterol
+diagnoseinformation triglycerideslevel
+diagnoseinformation glucoselevel
+zero
+zero
+string empty
+diagnoseinformation heartrate
+
+
+diagnoseyourheartsaasintegratedwebservice registernewdiagnoseservicecompleted
+new eventhandler registernewdiagnoseservicecompletedeventargs
+objectsender eventargs
+
+issuccessfull diagnoseregister eventargs result
+
+
+quatro quatro aplicacao movel diagnose your heart simulador
+para completar a gama de aplicacoes diagnose your heart decidiu desenvolver se uma aplicacao movel independente das duas aplicacoes anteriormente apresentadas que permite criar cenarios em duas dimensoes simulando o interior das arterias
+quatro quatro um motivacao
+a aplicacao movel diagnose your heart simulador foi criada a pensar nos profissionais de saude e estudantes da area a melhor forma de evitar as patologias cardiovasculares passa pela prevencao a aplicacao movel permite simular cenarios em duas dimensoes de um processo chamado aterogenese a aterogenese e uma doenca que reflecte a deposicao de gorduras de uma forma gradual nas paredes das arterias ao longo do tempo oito poder alertar as pessoas mostrando cenarios em duas dimensoes com os quais o utilizador ate pode interagir pode ser a melhor forma de levar as pessoas a fomentar a sua consciencia sobre os verdadeiros riscos associados as patologias cardiovasculares um cenario de utilizacao desta aplicacao pode ser em campanhas de sensibilizacao ou rastreios
+quatro quatro dois descricao funcional
+a aplicacao diagnose your heart simulador e uma aplicacao movel de caracter simples que permite a interaccao tactil do utilizador com cenarios de aterogenese
+a aplicacao possui um menu onde e dada a oportunidade ao utilizador de escolher um de tres cenarios
+cenario um uma arteria saudavel neste cenario o utilizador pode interagir com o sistema arrastando globulos vermelhos eritrocitos pelo ecra o facto de se tratar de uma arteria saudavel e sem aterosclerose permite um movimento natural e sem dificuldades
+cenario dois uma arteria com aterosclerose neste cenario o utilizador pode interagir com o sistema arrastando globulos vermelhos eritrocitos pelo ecra o facto de se tratar de uma arteria com placas ateroscleroticas formadas na parede da arteria o movimento e feito com maior dificuldade evitando os obstaculos na parede da arteria
+cenario tres uma arteria com aterosclerose e ocluida neste cenario o utilizador pode interagir com o sistema arrastando globulos vermelhos eritrocitos ou mesmo o trombo que se encontra a ocluir a arteria o facto de se tratar de uma arteria com placas ateroscleroticas formadas na parede da arteria e com um trombo que se encontra a tapar o espaco de passagem dos globulos vermelhos o movimento nao e possivel sem antes desobstruir a arteria o contacto permanente dos globulos vermelhos com o trombo de gordura pode levar a sua fragmentacao restituindo a passagem do fluxo sanguineo
+as funcionalidades sao descritas com maior detalhe no subcapitulo quatro dois quatro atraves de uml com respectivas descricoes
+quatro quatro tres descricao tecnica
+a aplicacao diagnose your heart simulador e uma aplicacao movel baseada na framework xna para windows phone sete
+a principal razao para que as duas aplicacoes moveis nao se encontrem juntas e precisamente em virtude da complexidade que surge subjacente a integracao das duas frameworks silverlight e xna num mesmo projecto de aplicacao windows phone sete vinte e tres atendendo a que o proposito das aplicacoes moveis e distinto a sua separacao acaba por ser natural nao representando qualquer inconveniente
+a aplicacao movel utiliza a framework xna para poder construir cenarios de simulacao em duas dimensoes tal situacao nao seria possivel de uma forma natural com a framework silverlight visto nao ter sido concebida para esse proposito
+a aplicacao movel para simulacao faz uso de uma api existente denominada de farseer essa api constituiu um motor de fisica de duas dimensoes concebido para desenhar jogos em dois d vinte e quatro uma das plataformas que suporta o uso desta api e o windows phone sete
+os aspectos tecnicos sao descritos com maior detalhe no subcapitulo quatro quatro cinco atraves de uml as questoes passiveis de merecer maior destaque pela sua importancia serao descritas no subcapitulo quatro quatro sete
+quatro quatro quatro diagramas de casos de uso
+para conferir ao utilizador uma melhor nocao do potencial da aplicacao movel diagnose your heart simulador serao apresentados de seguida os diagramas de caso de uso
+para cada caso de uso uma tabela detalhada explica com o auxilio de imagens da aplicacao a forma de interaccao entre o sistema e o utilizador a informacao pode ser consultada no anexo c do documento
+como se espera que o publico alvo desta aplicacao sejam profissionais e estudantes da area da saude a forma de apresentar as funcionalidades da aplicacao de uma forma intuitiva e mais detalhada foi a de recorrer aos diagramas e respectivas descricoes detalhadas
+a figura quatro trinta e um mostra os diagramas de caso de uso para o sistema diagnose your heart simulador
+
+figura trinta e tres diagnose your heart simulador diagramas de casos de uso
+quatro quatro cinco diagramas de sequencias
+os diagramas de sequencias que se seguem pretendem providenciar uma conspeccao mais tecnica da aplicacao diagnose your heart simulador nao e objectivo detalhar a api farseer mas apenas as principais interaccoes entre objectos que permitem proporcionar os cenarios de simulacao
+o diagrama de sequencias da figura quatro trinta e dois mostra o funcionamento geral da aplicacao e respectiva criacao de todos os cenarios de simulacao
+
+figura trinta e quatro diagnose your heart simulador diagramas de sequencias geral
+quatro quatro seis diagramas de classes
+os diagramas de classes permitem facultar detalhes da forma logica como o codigo se encontra estruturado no contexto da aplicacao
+a figura quatro trinta e tres mostra o diagrama de classes geral para a aplicacao movel de simulacao
+
+figura trinta e cinco diagnose your heart simulador diagramas de classes geral
+quatro quatro sete aspectos de destaque na tecnologia
+a aplicacao diagnose your heart simulador e uma aplicacao movel baseada na framework xna para windows phone sete
+um principio basico que interessa compreender na concepcao de aplicacoes do tipo xna e que de uma forma simplificada existem apenas dois metodos principais sobre os quais toda a logica se centraliza um para posicionar os elementos no ecra segundo determinadas coordenadas e outro metodo para desenhar os objectos nas respectivas coordenadas
+este processo e iterativo pois para um sistema de coordenadas no plano cartesiano para um momento t um o objecto encontra se na posicao x um y um mas se for um objecto dinamico ao qual e conferido movimento num momento t dois e expectavel que se encontre na posicao x dois y dois
+para conceber os cenarios alguns objectos tiveram que ser posicionados e desenhados tratando se de um motor de fisica a api farseer simplifica bastante a forma como a programacao e feita sendo que a utilizacao das suas classes torna ainda mais transparente o modus operandi inerente ao xna e mais natural construir cenarios que seriam a partida complexos
+quatro quatro sete um criacao dos objectos dos cenarios
+os objectos que foram concebidos para os cenarios desta aplicacao movel foram as paredes das arterias os globulos vermelhos as placas ateroscleroticas e o trombo
+o snippet que se segue mostra o metodo que tem que ser chamado para carregar as paredes das arterias uma na parte superior do ecra e outra na parte inferior do ecra esta funcao apenas vai indicar a disposicao onde serao posicionadas o metodo responsavel pelo desenho tratara de as colocar no cenario
+private void loadarterialwalls
+
+for int wall zero wall um wall
+
+arterialwalls wall bodyfactory createrectangle world seis zero f tres f um f
+arterialwalls wall isstatic true
+arterialwalls wall restitution zero dois f
+arterialwalls wall friction zero dois f
+
+
+arterialwalls zero position new vector dois um f doze seis cinco f
+arterialwalls um position new vector dois um f doze seis cinco f
+
+sprite new sprite screenmanager assets texturefromshape arterialwalls zero fixturelist zero shape materialtype dots color sandybrown zero oito f
+
+
+na concepcao de cenarios simples a api farseer faz uso dos dois metodos para representar as duas funcionalidades anteriormente mencionadas um metodo para carregar a informacao das posicoes dos objectos loadcontent e um metodo para desenhar os objectos dinamicos em diferentes posicoes ao longo do tempo draw gametime gametime os dois metodos podem ser vistos no diagrama de classes da aplicacao representados na figura quatro trinta e tres
+cinco
+pontos de expansao e aspectos a melhorar
+este capitulo pretende dar uma breve nocao do pontos passiveis de expansao ou melhoramento a considerar no futuro
+o conjunto de tres aplicacoes diagnose your heart e o resultado final de um projecto de dissertacao com o qual se pretendia demonstrar uma prova de conceito prove of concept poc que incidisse na concepcao de sistemas de informacao que pudessem sensibilizar os utilizadores para os cuidados a ter com a saude do seu coracao
+as funcionalidades das aplicacoes funcionam em pleno pelo que a sua utilizacao num futuro proximo seria plausivel num ambito academico ou mesmo hospitalar o conceito em si poderia fazer todo o sentido
+com a possibilidade de integrar o sistema diagnose your heart portal na nuvem cloud um dos requisitos poderia ser que cada hospital passaria a ter os seus utilizadores pacientes e que apenas um utilizador administrador desse hospital poderia aceder a aplicacao para consultar os logins e ver os utilizadores existentes
+tal requisito implicaria a utilizacao do conceito de multi tenancy na arquitectura da aplicacao da plataforma windows azure a multi tenacidade traria a aplicacao web a possibilidade de ter utilizadores para diferentes hospitais conferindo a ilusao que cada hospital teria a sua aplicacao bem personalizada e com utilizadores unicos na pratica ficaria a sensacao que pelo menos existiria uma base de dados por hospital a gestao de utilizadores seria completamente transparente para os hospitais a titulo de exemplo a unidade de cardiologia do hospital de sao teotonio em viseu nao conseguiria ver os utilizadores pacientes da unidade de cardiologia do hospital de sao joao no porto e vice versa
+contudo a multi tenacidade depreende se com a capacidade de utilizar uma mesma base de dados que providencie o cenario descrito
+com a multi tenacidade levanta se a questao de como os utilizadores podem efectuar logins nas aplicacoes com o conceito de windows identity foundation wif da microsoft torna se possivel que a autenticacao na aplicacao seja delegada a uma third party vinte e cinco
+assumindo que o utilizador administrador do hospital quer aceder a aplicacao para ver quem acedeu aos sistemas nessa situacao no lugar de possuir uma conta de administrador na propria aplicacao o utilizador poderia utilizar a sua conta do hospital que fara parte de uma active directory ad
+ao tentar aceder a aplicacao o access control service acs do windows azure appfabric iria encaminhar o utilizador administrador para se autenticar na ad local do hospital da qual faz parte o acs do windows azure confia nos utilizadores que vem autenticados daquele hospital uma vez autenticado localmente os federation services actualmente usando a active directory federation services dois adfsv dois permitem que o utilizador aceda a aplicacao o conceito aqui utilizado denomina se de claims based authentication esta seria a forma de autenticar um utilizador que faz parte de uma instituicao hospitalar com ad
+para utilizadores vulgares como e o caso dos pacientes nao existe uma ad para se conseguirem autenticar nas aplicacoes diagnose your heart poderiam utilizar external identity providers um external identity provider e uma entidade externa third party na qual o acs tambem confia e para a qual relega a autenticacao uma conta do google yahoo windows live id ou facebook sao external identity providers em quem o acs pode confiar no lugar de ter uma conta internamente nos sistemas diagnose your heart um paciente poderia facilmente aceder a aplicacao utilizado a sua conta de e mail diario vinte e seis
+estes seriam alguns dos aspectos a expandir na aplicacao diagnose your heart portal se os requisitos mudassem
+as aplicacoes moveis embora completamente funcionais apresentam a partida uma limitacao apenas utilizadores com um equipamento smartphone com windows phone sete poderiam fazer uso das aplicacoes moveis
+uma versao web das mesmas aplicacoes moveis poderia a partida aumentar o numero de utilizadores visto que passaria a ser multiplataforma grosso modo a utilizacao das aplicacoes moveis nao ficaria confinada a plataforma windows phone sete
+uma solucao para essa questao poderia incidir no uso de jquery mobile para a concepcao das aplicacoes moveis numa versao web e sem custos vinte e sete
+
+seis
+conclusao
+a realizacao deste projecto e dissertacao demostrou se bastante positiva proporcionando a oportunidade de explorar novas tecnologias e abordagens em prol da investigacao e ciencia
+a aplicacao das tecnologias a uma area que extrapola a informatica e os sistemas de informacao exigiu uma pesquisa delicada a incidir num dominio novo a saude para a cardiologia
+este projecto foi enriquecedor tanto a nivel pessoal como profissional pelo contacto com pessoas de diferentes areas multidisciplinares fica uma bagagem de conhecimento que me acompanhara ao longo da vida e que sera transmitida e partilhada com terceiros
+durante a elaboracao desta dissertacao muito foi o conhecimento adquirido sobre a area da saude ao compreender que as patologias cardiovasculares e a aterosclerose como sua principal causadora estao no centro de um dos maiores problemas de saude publica que causam a morte ou incapacidade revelou se importante efectuar uma investigacao e procurar apresentar solucoes colocando as tecnologias de informacao ao servico desse intento
+tentou dar se um pequeno contributo a area da medicina e cardiologia a forma como a tecnologia pode instruir de uma forma ludica as pessoas transmitindo lhes o conhecimento necessario para nao negligenciarem tao recorrentemente os riscos que propiciam as patologias cardiovasculares sao sem duvida o principal motivo da incidencia desta dissertacao nessa area
+o produto final da dissertacao constituido por tres aplicacoes com propositos especificos integram o resultado da solucao que se pretende colocar ao servico da area da saude para ajudar na prevencao de patologias cardiovasculares
+ao investigar para uma area que tanta motivacao e agrado me proporciona consegui paralelamente incrementar e fortalecer os meus conhecimentos na area dos sistemas e tecnologias de informacao
+os resultados visiveis dessa evolucao traduzem se na escrita continua de um blog pessoal sobre topicos que envolvem a utilizacao de tecnologias especificas no desenvolvimento de aplicacoes
+a concepcao de raiz de um sistema de informacao da minha autoria destinado ao contexto empresarial foi outro dos feitos atingidos a pedido da microsoft suica e na consultora da qual faco parte foi desenvolvido no ceio do microsoft center of excellence coe uma aplicacao que procurasse conceber um sistema de informacao que levasse para a plataforma windows azure o conceito de digital asset management
+a minha integracao no azure user group suisse traz motivos para acreditar numa evolucao continua a um nivel tecnico que procure trazer sempre valor acrescentado aos processos decorrentes de outras areas transversais as tecnologias de informacao
+deste modo pode afirmar se que os objectivos foram dentro do possivel e do disponivel plenamente atingidos esperando poder vir a dar novos contributos a area da saude sempre que solicitado
+no final desta caminhada de alguns meses consigo exprimir satisfacao pelos resultados obtidos com muito esforco e empenho agora traduzidos nesta dissertacao
+
+referencias bibliograficas
+um portal da saude o que sao doencas cronicas online disponivel http www portaldasaude pt portal conteudos enciclopedia da saude doencas doencas cronicas doencascronicas htm
+dois portal da saude doencas cardiovasculares online disponivel http www portaldasaude pt portal conteudos enciclopedia da saude doencas doencas do aparelho circulatorio doencascardiovasculares htm
+tres manual merck para a familia aterosclerose online disponivel http www manualmerck net id cinquenta e dois
+quatro manual merck para a familia alteracoes do colesterol e outras gorduras online disponivel http www manualmerck net id cento e sessenta e cinco cn mil e duzentos e noventa e nove
+cinco manual merck para a familia hipertensao arterial online disponivel http www manualmerck net id cinquenta e um cn seiscentos e sessenta e dois
+seis faculdade de farmacia da universidade do porto toxicidade cronica cardiovascular online disponivel http www ff up pt toxicologia monografias ano dois mil e seis dois mil e sete nicotina toxcard html
+sete hcor hospital do coracao cardiologia invasiva online disponivel http www hcor com br imagens arquivos cardiologia invasiva pdf
+oito sociedade portuguesa de aterosclerose compreender a aterosclerose para prevenir por dr pedro marques silva online disponivel http www fpcardiologia pt docs n sete pdf
+nove journal of the american heart association article molecular imaging in atherosclerosis thrombosis and vascular inflammation online disponivel http atvb ahajournals org cgi reprint
+dez isaude particulas nano metricas levam medicamentos a orgaos e tecidos afectados online disponivel http www isaude net pt br noticia geral particulas nanometricas levam medicamentos a orgaos e tecidos afetados
+onze msdn using a shared access signature rest api online disponivel http msdn microsoft com en us library windowsazure ee aspx
+doze msdn making a service available across domain boundaries online disponivel http msdn microsoft com en us library cc v vs noventa e cinco aspx
+treze json the fat free alternative to xml online disponivel http www json org fatfree html
+catorze communicating with net silverlight xml vs json online disponivel http paulomarcos expressedition blogspot com dois mil e onze communicating with net silverlight xml html
+quinze dofactory bridge pattern online disponivel http www dofactory com patterns patternbridge aspx
+dezasseis net and the bridge pattern online disponivel http paulomarcos expressedition blogspot com dois mil e onze net and bridge pattern html
+dezassete msdn managing users by using membership online disponivel http msdn microsoft com en us library twwhz aspx
+dezoito msdn ado net entity framework online disponivel http msdn microsoft com en us library bb aspx
+dezanove msdn linq online disponivel http msdn microsoft com en us netframework aa
+vinte msdn windows communication foundation online disponivel http msdn microsoft com en us library ms v vs noventa aspx
+vinte e um msdn developer s guide to microsoft prism online disponivel http msdn microsoft com en us library gg aspx
+vinte e dois msdn hosting and consuming wcf services online disponivel http msdn microsoft com en us library bb aspx
+vinte e tres msdn the silverlight and xna frameworks for windows phone online disponivel http msdn microsoft com en us library ff v vs noventa e dois aspx
+vinte e quatro farseer farseer games online disponivel http www farseergames com
+vinte e cinco msdn windows identity foundation simplifies user access for developers online disponivel http msdn microsoft com en us security aa
+vinte e seis blogs msdn access control service online disponivel http blogs msdn com b alikl archive dois mil e dez nove vinte e oito azure appfabric access control service acs v dois zero high level architecture web application scenario aspx
+vinte e sete jquery jquery mobile framework online disponivel http jquerymobile com
+
+
+
+
+
+
+
+
+
+
+anexo a diagnose your heart portal descricao dos casos de uso
+id do caso de uso
+uc zero zero um dyhp
+actores
+utilizador normal ou utilizador administrador
+nome do caso de uso
+autenticacao e autorizacao inclusao
+aplicacao
+diagnose your heart portal
+descricao breve
+ao aceder ao sitio web da aplicacao diagnose your heart portal atraves da introducao do endereco no browser o utilizador entrara na homepage da aplicacao onde podera proceder a autenticacao para usufruir de um serie de funcionalidades
+pre condicoes
+o utilizador acedeu a aplicacao web via browser introduzindo o endereco
+pos condicoes
+o utilizador autenticado podera aceder a novas funcionalidades presentes no portal da aplicacao
+trigger iniciador
+homepage login
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador acede ao sitio web do portal introduzindo o endereco no seu browser http diagnoseyourheartportal cloudapp net
+a pagina de acolho ou homepage da aplicacao e exibida figura trinta e seis na homepage o utilizador encontrara
+um menu inacessivel enquanto nao efectuar a autenticacao
+um espaco para introduzir as suas credenciais de acesso nome de utilizador e palavra passe figura trinta e sete
+uma serie de slide shows informativos sobre as doencas cardiovasculares
+uma tabela de noticias com feeds informativas do mundo da medicina e cardiologia provenientes da fonte http www medicalnewstoday com e
+um pequeno espaco onde alguns atalhos permitem enviar um e mail para o projecto diagnose your heart ou segui lo atraves das redes sociais facebook e twitter
+
+dois
+o utilizador introduz as suas credenciais de acesso
+nome de utilizador e
+palavra passe
+e prossegue clicando no botao login
+o utilizador e valido e e encaminhado para uma pagina que tenha tentado aceder previamente antes da autenticacao ou recebera uma mensagem de boas vindas mostrando o sucesso da autenticacao caso o tenha tentado fazer pela primeira vez e directamente figura trinta e oito
+as opcoes do menu para o utilizador normal tornam se imediatamente acessiveis
+home
+diagnostico
+o historicos
+o alterar dados e
+o galeria de videos
+cardiologia
+o informacao
+o patologias
+o prevencao e
+o tratamentos
+nanotecnologia
+o informacao e
+o nanocardiologia
+cenario excepcional
+
+um
+o utilizador introduz as suas credenciais de acesso de forma errada
+nome de utilizador e
+palavra passe
+e prossegue clicando no botao login
+a pagina de acolho ou homepage da aplicacao mantem se inalterada e o menu inacessivel
+
+
+figura trinta e seis homepage
+
+figura trinta e sete login e autenticacao
+
+figura trinta e oito login com sucesso
+id do caso de uso
+uc zero zero dois dyhp
+actores
+utilizador normal
+nome do caso de uso
+escolher opcao do menu utilizador normal
+aplicacao
+diagnose your heart portal
+descricao breve
+uma vez autenticado o utilizador podera aceder a uma das opcoes subopcoes do menu
+home pagina de acolho
+diagnostico
+o historicos area destinada a visualizacao de autodiagnosticos preenchidos ultimos dados estatisticos e relatorios de diagnostico em funcao dos valores introduzidos
+o alterar dados area destinada ao utilizador corrente que permite a alteracao dos seus dados pessoais e
+o galeria de videos area destinada a galeria de documentarios de video sobre medicina e cardiologia ou nanotecnologia aplicada ao contexto da saude
+cardiologia
+o informacao informacao geral teorica relativa a area da medicina e cardiologia
+o patologias informacao geral teorica relativa a doencas cardiovasculares motivos e consequencias
+o prevencao informacao geral teorica relativa a prevencao de doencas cardiovasculares e
+o tratamentos informacao geral teorica relativa aos tratamentos tradicionais actuais para as doencas cardiovasculares
+nanotecnologia
+o informacao informacao geral teorica relativa a area da nanotecnologia e seu potencial e
+o nanocardiologia informacao geral teorica relativa a area da nanotecnologia e sua aplicacao futura no ambito do possivel tratamento de patologias cardiovasculares
+pre condicoes
+o utilizador autenticou se na homepage da aplicacao
+pos condicoes
+o utilizador autenticado e sem direitos de administrador acedeu a uma das opcoes do menu podendo usufruir das funcionalidades subjacentes
+trigger iniciador
+menu de opcoes escolha de uma opcao
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador sem direitos de administrador passa o rato sobre um menu dinamico e escolhe uma das opcoes dos menus submenus
+home
+diagnostico
+o historicos
+o alterar dados
+o galeria de videos
+cardiologia
+o informacao
+o patologias
+o prevencao
+o tratamentos
+nanotecnologia
+o informacao
+o nanocardiologia
+uma nova pagina surge em funcao da opcao de menu escolhida a figura trinta e nove reflecte uma das muitas possibilidades de escolha do menu para um utilizador normal
+inclusao do uc zero zero um dyhp autenticacao e autorizacao
+
+figura trinta e nove opcoes do menu
+id do caso de uso
+uc zero zero tres dyhp
+actores
+utilizador normal ou utilizador administrador
+nome do caso de uso
+diagnostico historicos
+aplicacao
+diagnose your heart portal
+descricao breve
+na pagina dos historicos de diagnostico o utilizador podera encontrar uma das partes mais interessantes da aplicacao web no que as funcionalidades diz respeito esta pagina permite a visualizacao da informacao referente a cada diagnostico ver relatorios e estatisticas comparativas dos ultimos diagnosticos registados
+pre condicoes
+o utilizador autenticado escolheu uma opcao do menu opcao historico do menu diagnostico
+pos condicoes
+o utilizador teve a oportunidade de ver os dados relativos aos seus autodiagnosticos relatorios e a variacao dos valores dos parametros presentes nos diagnosticos ao longo do tempo
+trigger iniciador
+menu de opcoes diagnostico historico
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador podera consultar o seu historial de diagnosticos de forma simples e intuitiva explorando as varias opcoes da tabela e grafico
+
+na tabela o utilizador encontrara para cada linha a seguinte informacao
+peso
+altura
+tensao maxima
+tensao minima
+glicemia
+tabagismo se e fumador
+alcoolismo se consumidor de alcool e
+drogas se e consumidor de drogas
+para cada uma das linhas sera possivel expandir informacao para uma subseccao que contem quatro tabuladores
+informacao do utilizador este e o tabulador onde os dados do utilizador actual sao exibidos
+o nome
+o data de nascimento
+o sexo
+o raca e
+o tipo de utilizador normal ou administrador
+analises clinicas neste tabulador podera encontrar se uma subtabela com os dados referentes a analises clinicas para a linha do diagnostico corrente se a informacao de autodiagnostico foi preenchida a seguinte informacao sera exibida
+o hdl
+o ldl
+o vldl
+o colesterol total
+o trigliceridos e
+o glicose
+electrocardiogramas neste tabulador podera encontrar se uma subtabela com os dados referentes ao electrocardiograma para a linha do diagnostico corrente se a informacao de autodiagnostico foi preenchida a seguinte informacao sera exibida
+o amplitude media
+o duracao media
+o descricao morfologica e
+o ritmo cardiaco
+relatorio geral por fim neste tabulador podera encontrar se um relatorio com uma avaliacao de diagnostico em funcao dos valores do utilizador
+o geral
+peso
+altura
+i m c indice de
+massa corporal
+
+a tabela com informacoes dos varios diagnosticos figura quarenta por linha mostra nos detalhes de cada linha varios tabuladores onde consta
+a informacao do utilizador figura quarenta e dois
+dados das analises clinicas para o autodiagnostico seleccionado figura quarenta e tres
+dados de electrocardiogramas para o autodiagnostico seleccionado figura quarenta e quatro e
+um relatorio geral para o autodiagnostico do utilizador figura quarenta e cinco
+a variacao dos ultimos cinco diagnosticos do utilizador podera ser consultada num grafico dinamico com informacao baseada em graficos de barras e linhas figura quarenta e um
+
+
+tensao sistolica
+tensao diastolica e
+glicemia
+o analises clinicas
+colesterol hdl
+colesterol ldl
+colesterol total
+trigliceridos e
+glicose
+o electrocardiogramas
+ritmo cardiaco
+e mostrado o nome do parametro e g i m c o valor respectivo e g vinte e um cinco o intervalo de valores considerados ideais e g dezoito cinco val vinte e quatro nove um comentario qualitativo em relacao ao valor do utilizador comparativamente com o intervalo de valores ideais e g normal e por fim um simbolo que complementa o comentario qualitativo
+
+na parte inferior da pagina o utilizador podera consultar num grafico dinamico com barras e linhas a variacao dos ultimos cinco autodiagnosticos com base no valor dos parametros de diagnostico
+peso kg
+altura cm
+glicemia mmol l
+colesterol hdl mg dl
+colesterol ldl mg dl
+total de colesterol mg dl
+trigliceridos mg dl
+tensao arterial maxima mmhg e
+tensao arterial minima mmhg
+
+
+
+
+
+figura quarenta linhas de autodiagnosticos
+
+figura quarenta e um variacao e historico de diagnosticos
+
+figura quarenta e dois informacao do utilizador
+
+figura quarenta e tres informacao de analises sanguineas
+
+figura quarenta e quatro informacao de electrocardiogramas
+
+
+figura quarenta e cinco relatorio de diagnostico
+id do caso de uso
+uc zero zero quatro dyhp
+actores
+utilizador normal ou utilizador administrador
+nome do caso de uso
+diagnostico alterar dados
+aplicacao
+diagnose your heart portal
+descricao breve
+na pagina de alterar dados do menu diagnostico o utilizador podera editar os seus dados pessoais
+pre condicoes
+o utilizador autenticado escolheu uma opcao do menu opcao alterar dados do menu diagnostico
+pos condicoes
+o utilizador teve a oportunidade de visualizar e eventualmente alterar os seus dados pessoais
+trigger iniciador
+menu de opcoes diagnostico alterar dados
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador podera consultar a sua informacao pessoal e alterar dados tais como
+nome de utilizador ver
+palavra passe e confirma palavra passe ver e editar
+fotografia do utilizador ver
+nome completo ver e editar
+data de nascimento ver e editar
+sexo ver e editar
+raca ver e editar
+tipo de utilizador ver
+a pagina para edicao dos dados de utilizador surge com uma serie de controlos que facilitam a interaccao do utilizador com a aplicacao figura quarenta e seis
+text boxes caixas de texto
+combo boxes para seleccao de opcoes ou com reconhecimento de escrita inteligente autopreenchimento mediante sugestoes
+date picker para escolha de datas
+
+dois
+o utilizador apos ter efectuado a eventual alteracao de alguns dados clica no botao guardar com o proposito de submeter as alteracoes
+os dados sao guardados em base de dados e o utilizador e redireccionado para a homepage
+validacoes em funcao do modelo de dados data model sao feitas para cada campo obrigatoriedade de preenchimento numero limite de caracteres caso das caixas de texto formato da data e confirmacao de palavra passe password antes de ser aceite a submissao mensagens de erro serao mostradas de forma a conduzir o utilizador a resolucao do problema
+
+figura quarenta e seis alteracao de dados de utilizador
+id do caso de uso
+uc zero zero cinco dyhp
+actores
+utilizador normal ou utilizador administrador
+nome do caso de uso
+diagnostico galeria de videos
+aplicacao
+diagnose your heart portal
+descricao breve
+na pagina da galeria de videos do menu diagnostico o utilizador tera a sua disposicao videos de documentarios relacionados com a area da saude e com a aplicacao da nanotecnologia ao contexto das doencas cardiovasculares
+pre condicoes
+o utilizador autenticado escolheu uma opcao do menu opcao galeria de videos do menu diagnostico
+pos condicoes
+o utilizador teve a oportunidade de aceder a galeria de videos de documentarios sobre a area da saude e nanotecnologia
+trigger iniciador
+menu de opcoes diagnostico galeria de videos
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+na galeria de videos o utilizador pode consultar o titulo dos documentarios disponiveis por questoes de organizacao e afixado o total de resultados para os videos encontrados e sao disponibilizados seis documentarios por pagina para poder navegar existe pagging caso o utilizador pretenda aceder a mais videos de documentarios e g clicar na pagina um mostrara os seis primeiros videos na pagina dois os seis videos seguintes e assim sucessivamente
+a pagina mostra o numero total de videos de documentarios encontrados bem como um menu de navegacao para as paginas seguintes em cada pagina surgira um numero limite de seis documentarios figura quarenta e sete
+
+figura quarenta e sete galeria de videos de documentarios
+id do caso de uso
+uc zero zero seis dyhp
+actores
+utilizador normal ou utilizador administrador
+nome do caso de uso
+visualizar video extensao
+aplicacao
+diagnose your heart portal
+descricao breve
+na pagina da galeria de videos do menu diagnostico o utilizador tera a sua disposicao videos de documentarios relacionados com a area da saude e com a aplicacao da nanotecnologia ao contexto das doencas cardiovasculares caso pretenda o utilizador podera clicar num desses videos e visualiza lo atraves de uma interface simples e atraente
+pre condicoes
+o utilizador autenticado escolheu uma opcao do menu opcao galeria de videos do menu diagnostico
+pos condicoes
+o utilizador teve a oportunidade de visualizar videos de documentarios sobre a area da saude e nanotecnologia que constam na galeria
+trigger iniciador
+menu de opcoes diagnostico galeria de videos clique num video documentario
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador escolhe um dos videos documentarios clicando sobre ele
+uma janela pop up surgira com um leitor de video player que comecara a carregar o video e a exibir o mesmo mal se encontre disponivel figura quarenta e oito
+o resto da aplicacao web ficara em segundo plano
+extensao do uc zero zero cinco dyhp diagnostico galeria de videos
+
+dois
+o utilizador podera escolher as opcoes avancadas do leitor de video player o que permitira acesso a outras funcionalidades
+avancar no video
+recuar no video
+avancar em capitulos do video caso existam
+recuar em capitulos do video caso existam
+pausar iniciar
+parar
+alterar o volume e
+passar a modo de ecra inteiro fullscreen
+assumindo que o utilizador clica nas opcoes avancadas do leitor de video full controls e de seguida no botao referente ao ecra inteiro toggle fullscreen playback
+em modo de ecra completo o utilizador passa a ver o video utilizando todo o ecra disponivel display como se de um leitor remoto se tratasse
+no leitor de video os controlos serao automaticamente escondidos se utilizador nao interagir com eles durante um certo periodo de tempo o que permite uma melhor visualizacao do documentario
+
+tres
+o utilizador podera em qualquer altura interromper a visualizacao do video clicando na tecla de atalho esc escape ou clicando no simbolo de fechar da janela pop up
+a janela pop up sera fechada e o utilizador regressa a galeria de videos na aplicacao principal que volta para primeiro plano
+
+figura quarenta e oito visualizacao de um video de documentario
+id do caso de uso
+uc zero zero sete dyhp
+actores
+utilizador normal ou utilizador administrador
+nome do caso de uso
+consultar informacao teorica
+aplicacao
+diagnose your heart portal
+descricao breve
+a consulta de informacao teorica e mais orientada ao conhecimento tecnico e podera ser feita para as subopcoes dos menus cardiologia e nanotecnologia nestes menus a informacao teorica e da maior relevancia e pretende dar nocoes suficientemente solidas sobre as areas da medicina e cardiologia bem como da nanotecnologia o conteudo estatico esta organizado em funcao da tematica conferida nos menus e nas suas respectivas opcoes
+pre condicoes
+o utilizador autenticado escolheu uma das opcoes do menu cardiologia ou nanotecnologia
+pos condicoes
+o utilizador teve a oportunidade de consultar informacao teorica mais tecnica acerca da area da medicina cardiologia e nanotecnologia
+trigger iniciador
+menu de opcoes cardiologia nanotecnologia qualquer uma das opcoes
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador consulta a informacao especifica de uma determinada area escolhendo uma das opcoes dos menus
+cardiologia
+o informacao
+o patologias
+o prevencao
+o tratamentos
+nanotecnologia
+o informacao
+o nanocardiologia
+diferentes janelas com conteudo estatico serao exibidas ao utilizador apresentando informacao de literatura relacionadas com a area da cardiologia ou nanotecnologia a figura quarenta e nove mostra um exemplo
+
+
+figura quarenta e nove informacao teorica
+id do caso de uso
+uc zero zero oito dyhp
+actores
+utilizador administrador
+nome do caso de uso
+escolher opcao do menu utilizador administrador extensao
+aplicacao
+diagnose your heart portal
+descricao breve
+uma vez autenticado o utilizador administrador podera aceder de uma forma exclusiva a uma das opcoes subopcoes do menu
+avancadas
+o novo utilizador area destinada ao utilizador administrador que permite a criacao de novos utilizadores para as aplicacoes
+o editar utilizadores area destinada ao utilizador administrador que permite a edicao de dados referentes a utilizadores existentes nas aplicacoes
+o visualizar utilizadores area destinada ao utilizador administrador que permite ter uma visao geral dos utilizadores das aplicacoes e
+o logins utilizadores area destinada ao utilizador administrador que permite ter uma visao geral dos logins de cada utilizador independentemente da aplicacao utilizada
+pre condicoes
+o utilizador autenticou se na homepage da aplicacao e tem direitos de administrador
+pos condicoes
+o utilizador autenticado e com direitos de administrador acedeu a uma das opcoes do menu avancadas podendo usufruir das funcionalidades subjacentes
+trigger iniciador
+menu de opcoes avancadas escolha de uma opcao
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador com direitos de administrador passa o rato sobre um menu dinamico e escolhe uma das opcoes dos menus submenus
+home
+diagnostico
+o historicos
+o alterar dados
+o galeria de videos
+cardiologia
+o informacao
+o patologias
+o prevencao
+o tratamentos
+nanotecnologia
+o informacao
+o nanocardiologia
+avancadas exclusivo para o utilizador administrador
+o novo utilizador
+o editar utilizadores
+o visualizar utilizadores
+o logins utilizadores
+uma nova pagina surge em funcao da opcao de menu escolhida menu avancadas para utilizador administrador
+extensao do uc zero zero dois dyhp escolher opcao do menu utilizador normal
+
+id do caso de uso
+uc zero zero nove dyhp
+actores
+utilizador administrador
+nome do caso de uso
+avancadas novo utilizador
+aplicacao
+diagnose your heart portal
+descricao breve
+uma vez autenticado o utilizador administrador podera criar um novo utilizador para as aplicacoes
+diagnose your heart portal aplicacao web e
+diagnose your heart registo de diagnosticos aplicacao movel
+pre condicoes
+o utilizador autenticou se na homepage da aplicacao tem direitos de administrador e pretende criar um novo utilizador para usar as aplicacoes diagnose your heart
+pos condicoes
+um novo utilizador capaz de se autenticar e utilizar as aplicacoes diagnose your heart foi criado
+trigger iniciador
+menu de opcoes avancadas novo
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador com direitos de administrador podera criar um novo utilizador especificando a seguinte informacao
+nome de utilizador
+palavra passe e confirma palavra passe
+fotografia do utilizador requer upload
+nome completo
+data de nascimento
+sexo
+raca e
+tipo de utilizador
+a pagina para criacao de um novo utilizador surge com uma serie de controlos que facilitam a interaccao do utilizador com a aplicacao figura cinquenta
+text boxes caixas de texto
+combo boxes para seleccao de opcoes ou com reconhecimento de escrita inteligente autopreenchimento mediante sugestoes
+date picker para escolha de datas
+
+dois
+o utilizador administrador apos ter introduzido todos os dados para um novo utilizador de forma correcta clica no botao guardar com o proposito de submeter a informacao
+os dados sao guardados em base de dados a fotografia do novo utilizador e guardada num contentor de ficheiros de imagem na nuvem e o utilizador administrador e redireccionado para a homepage
+validacoes em funcao do modelo de dados data model sao feitas para cada campo obrigatoriedade de preenchimento numero limite de caracteres caso das caixas de texto formato da data e confirmacao de palavra passe password antes de ser aceite a submissao mensagens de erro serao mostradas de forma a conduzir o utilizador a resolucao do problema
+
+figura cinquenta criacao de um novo utilizador
+id do caso de uso
+uc zero zero zero dyhp
+actores
+utilizador administrador
+nome do caso de uso
+carregar foto do utilizador
+aplicacao
+diagnose your heart portal
+descricao breve
+durante a criacao do novo utilizador o utilizador administrador podera especificar uma foto para o novo utilizador
+pre condicoes
+o utilizador autenticou se na homepage da aplicacao tem direitos de administrador e encontra se em pleno processo de criacao de um novo utilizador para usar as aplicacoes diagnose your heart
+pos condicoes
+uma foto para o novo utilizador capaz de se autenticar e utilizar as aplicacoes diagnose your heart foi escolhida
+trigger iniciador
+fotografia do utilizador escolher carregar
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+durante a introducao da informacao do novo utilizador o utilizador administrador pretende especificar uma foto para o novo utilizador e clica no botao escolher do controlo para upload da fotografia do novo utilizador
+uma janela para browsing ira abrir se para a seleccao do ficheiro de imagem
+
+dois
+o utilizador administrador escolhe o ficheiro de imagem e clica no botao abrir
+o ficheiro de imagem fica pronto para upload ficando o botao carregar active
+
+tres
+o utilizador clica no botao carregar para confirmar o upload do ficheiro de imagem para a fotografia do novo utilizador
+o ficheiro de imagem foi carregado e guardado num contentor de ficheiros de imagem na nuvem o botao escolher e carregar tornam se inactivos
+cenario alternativo
+
+um
+com a janela de browsing aberta o utilizador administrador decide abdicar de escolher um ficheiro de imagem e clica no botao cancelar
+a janela de browsing fecha se e o utilizador regressa a pagina de criacao de um novo utilizador
+
+id do caso de uso
+uc zero zero um dyhp
+actores
+utilizador administrador
+nome do caso de uso
+avancadas editar utilizadores
+aplicacao
+diagnose your heart portal
+descricao breve
+uma vez autenticado o utilizador administrador podera editar ou eliminar utilizadores existentes nas aplicacoes diagnose your heart
+pre condicoes
+o utilizador autenticou se na homepage da aplicacao tem direitos de administrador e pretende editar ou eliminar um utilizador existente das aplicacoes diagnose your heart
+pos condicoes
+um utilizador existente capaz de se autenticar e utilizar as aplicacoes diagnose your heart tera sido modificado ou removido
+trigger iniciador
+menu de opcoes avancadas editar
+cenario principal editar
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador com direitos de administrador podera consultar a informacao de outros utilizadores numa tabela e alterar dados clicando no botao edit na linha do utilizador pretendido
+a linha passa a estar disponivel para edicao figura cinquenta e um
+
+dois
+o utilizador com direitos de administrador podera visualizar ou alterar dados tais como
+nome nome completo ver e editar
+data de nascimento ver e editar
+sexo ver e editar
+raca ver e editar
+tipo de utilizador ver
+e clicar no botao update para submeter as alteracoes
+os dados sao actualizados em base de dados e a linha deixa de estar em modo de edicao
+cenario alternativo editar
+
+um
+durante a edicao o utilizador com direitos de administrador decide que nao pretende submeter as alteracoes e clica no botao cancel
+os dados nao sao actualizados em base de dados e a linha deixa de estar em modo de edicao
+cenario principal eliminar
+
+um
+o utilizador com direitos de administrador podera consultar a informacao de outros utilizadores numa tabela e eliminar determinado utilizador clicando no botao delete na linha do utilizador pretendido
+uma caixa com uma mensagem de texto de confirmacao de eliminacao are you sure you want to delete this record e exibida
+
+dois
+o utilizador com direitos de administrador clica no botao ok da caixa de confirmacao de eliminacao para proceder a eliminacao do utilizador
+
+os dados sao actualizados em base de dados e a linha do utilizador apagado e removida
+cenario alternativo eliminar
+
+um
+o utilizador com direitos de administrador clica no botao cancelar da caixa de confirmacao de eliminacao para abortar a eliminacao do utilizador
+
+os dados nao sao actualizados em base de dados e a linha do utilizador mantem se inalterada
+
+figura cinquenta e um edicao de utilizadores
+id do caso de uso
+uc zero zero dois dyhp
+actores
+utilizador administrador
+nome do caso de uso
+avancadas visualizar utilizadores
+aplicacao
+diagnose your heart portal
+descricao breve
+uma vez autenticado o utilizador administrador podera visualizar todos os utilizadores existentes nas aplicacoes diagnose your heart
+pre condicoes
+o utilizador autenticou se na homepage da aplicacao tem direitos de administrador e pretende visualizar os utilizadores existentes das aplicacoes diagnose your heart
+pos condicoes
+o utilizador administrador tera visualizado todos os utilizadores das aplicacoes diagnose your heart
+trigger iniciador
+menu de opcoes avancadas visualizar
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador com direitos de administrador podera consultar a informacao de outros utilizadores atraves de uma tabela de visualizacao com os seguintes dados
+utilizador nome de utilizador
+fotografia
+nome nome completo
+data de nascimento
+sexo
+raca e
+tipo tipo de utilizador
+a tabela apenas de leitura com informacoes dos utilizadores e mostrada figura cinquenta e dois
+
+figura cinquenta e dois visualizacao de utilizadores
+id do caso de uso
+uc zero zero tres dyhp
+actores
+utilizador administrador
+nome do caso de uso
+avancadas logins utilizadores
+aplicacao
+diagnose your heart portal
+descricao breve
+uma vez autenticado o utilizador administrador podera visualizar todos os utilizadores existentes nas aplicacoes diagnose your heart e respectivos logins feitos por cada um o login apresenta informacao sobre o momento em que ocorreu e em qual das aplicacoes
+diagnose your heart portal aplicacao web e
+diagnose your heart registo de diagnosticos aplicacao movel
+pre condicoes
+o utilizador autenticou se na homepage da aplicacao tem direitos de administrador e pretende visualizar os utilizadores das aplicacoes diagnose your heart e respectivos logins efectuados pelos utilizadores
+pos condicoes
+o utilizador administrador tera visualizado todos os utilizadores das aplicacoes diagnose your heart e os respectivos logins o utilizador conseguira determinar se o login foi feito atraves do diagnose your heart portal aplicacao web forma de acesso web ou se feito atraves do diagnose your heart registo de diagnosticos aplicacao movel forma de acesso smartphone
+trigger iniciador
+menu de opcoes avancadas logins
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador com direitos de administrador podera consultar a informacao de outros utilizadores atraves de uma tabela de visualizacao com os seguintes dados
+utilizador nome de utilizador e
+nome nome completo
+para cada uma das linhas sera possivel expandir informacao para uma subseccao que contem dois tabuladores
+logins neste tabulador podera encontrar se uma subtabela com os dados referentes aos logins do utilizador em causa
+o data hora e
+o forma de acesso web ou smartphone
+informacao do utilizador este e o tabulador onde os dados do utilizador actual sao exibidos
+o nome
+o data de nascimento
+o sexo
+o raca e
+o tipo de utilizador normal ou administrador
+a tabela apenas de leitura com informacoes dos utilizadores figura cinquenta e tres por linha mostra nos detalhes de cada linha varios tabuladores onde consta
+os dados dos logins para um determinado utilizador onde se pode encontrar o momento com a data hora e a forma de acesso web se a aplicacao acedida foi a diagnose your heart portal ou smartphone se a aplicacao acedida foi a diagnose your heart registo de diagnosticos e
+a informacao do utilizador
+
+figura cinquenta e tres visualizacao de logins
+
+anexo b diagnose your heart registo de diagnostico descricao dos casos de uso
+id do caso de uso
+uc zero zero um dyhrd
+actores
+utilizador normal
+nome do caso de uso
+contactar numero de urgencia medica automaticamente
+aplicacao
+diagnose your heart registo de diagnostico
+descricao breve
+ao iniciar a aplicacao diagnose your heart registo de diagnostico no ecra de acesso e autenticacao o utilizador pode optar por escolher a opcao que permite contactar directamente e de forma automatica o numero de urgencia medica nacional inem codu atraves do cento e doze
+pre condicoes
+o utilizador acedeu a aplicacao
+o utilizador escolheu a opcao configurar
+pos condicoes
+o utilizador podera confirmar a chamada para o service de urgencia medica nacional ou cancelar
+trigger iniciador
+menu de opcoes configurar ligar o numero de urgencia medica
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador acede a aplicacao instalada no seu dispositivo movel
+um ecra de boas vindas com o logotipo da aplicacao figura cinquenta e quatro e exibido durante alguns segundos antes de ser mostrada a pagina de acolho com o menu de quatro opcoes figura cinquenta e cinco
+diagnostico inactiva antes da autenticacao permite aceder ao ecra de opcoes de preenchimento de autodiagnostico
+configurar permite aceder ao ecra de autenticacao onde se encontra um botao para contactar directamente o numero de urgencia medica nacional
+filtrar inactive antes da autenticacao permite aceder ao ecra onde as opcoes de preenchimento de autodiagnostico podem ser escolhidas filtradas
+memoria permite aceder ao ecra que mostra a memoria total do dispositivo movel e a quantidade consumida pela aplicacao diagnose your heart registo de diagnostico
+
+dois
+o utilizador escolhe tactilmente a opcao configurar
+um novo ecra surge com os elementos que possibilitam a autenticacao e com um botao que permite escolher contactar directamente o numero de urgencia medica nacional figura cinquenta e seis
+
+tres
+o utilizador escolhe tactilmente a opcao ligar o numero de urgencia medica
+uma pequena mensagem figura cinquenta e sete surge para o utilizador confirmar call ou cancelar don t call o numero de urgencia medica nacional inem codu atraves do cento e doze
+
+figura cinquenta e quatro ecra de boas vindas
+
+figura cinquenta e cinco opcoes antes da autenticacao
+
+figura cinquenta e seis ecra de autenticacao e botao do numero de urgencia
+
+figura cinquenta e sete contactar numero de urgencia medica
+id do caso de uso
+uc zero zero dois dyhrd
+actores
+utilizador normal
+nome do caso de uso
+acesso e autenticacao inclusao
+aplicacao
+diagnose your heart registo de diagnostico
+descricao breve
+ao iniciar a aplicacao diagnose your heart registo de diagnostico no ecra de acesso e autenticacao o utilizador pode introduzir as suas credenciais de modo a desbloquear as principais opcoes da aplicacao
+pre condicoes
+o utilizador acedeu a aplicacao
+o utilizador escolheu a opcao configurar
+pos condicoes
+o utilizador autenticado podera aceder a novas opcoes incluindo a que permite sincronizar as opcoes de diagnostico e enviar eventuais autodiagnosticos ja preenchidos
+trigger iniciador
+menu de opcoes configurar submeter
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador escolhe tactilmente a opcao configurar
+um novo ecra surge com os elementos que possibilitam a autenticacao e o botao de cancelamento cancelar ou de autenticacao submeter figura cinquenta e oito
+
+dois
+o utilizador introduz tactilmente atraves to teclado virtual a suas credenciais de acesso
+nome de utilizador e
+palavra passe
+clicando de seguida no botao submeter
+surge um novo ecra com as opcoes de diagnostico ainda vazias figura cinquenta e nove o menu de quatro opcoes surge agora com as opcoes diagnostico e filtrar activas
+cenario alternativo
+
+um
+o utilizador introduz tactilmente atraves to teclado virtual a suas credenciais de acesso
+nome de utilizador e
+palavra passe
+mas cancela a autenticacao clicando no botao cancelar
+o utilizador nao autenticado regressa ao ecra inicial da aplicacao sem desbloquear activar as novas opcoes
+cenario excepcional
+
+um
+o utilizador introduz tactilmente atraves to teclado virtual a suas credenciais de acesso
+nome de utilizador e
+palavra passe
+clicando de seguida no botao submeter contudo as credenciais estao erradas
+surge um novo ecra com as opcoes de diagnostico ainda vazias o menu de quatro opcoes surge agora com as opcoes diagnostico e filtrar activas nota o utilizador nao podera utilizar funcionalidades
+
+
+
+
+figura cinquenta e oito acesso e autenticacao
+
+figura cinquenta e nove acesso autorizado
+id do caso de uso
+uc zero zero tres dyhrd
+actores
+utilizador normal
+nome do caso de uso
+sincronizacao das opcoes de diagnostico e envio de respostas inclusao
+aplicacao
+diagnose your heart registo de diagnostico
+descricao breve
+uma vez autenticado o utilizador pode escolher a opcao para sincronizar os questionarios de autodiagnostico e eventualmente enviar diagnosticos ja preenchidos
+pre condicoes
+o utilizador acedeu a aplicacao e esta devidamente autenticado
+pos condicoes
+o utilizador autenticado tem disponiveis as tres opcoes de autodiagnostico
+geral informacao geral
+analises analises sanguineas e
+ecg electrocardiograma
+se existirem autodiagnosticos preenchidos sera feito o envio dessa informacao
+trigger iniciador
+menu de opcoes diagnostico
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+no ecra com as opcoes de diagnostico ainda vazias o utilizador escolhe tactilmente a opcao diagnostico para a sincronizacao e obtencao das diferentes opcoes de autodiagnostico e enviar eventuais diagnosticos ja preenchidos
+surge um novo ecra com as opcoes de diagnostico preenchidas figura sessenta
+geral informacao geral
+analises analises sanguineas e
+ecg electrocardiograma
+o utilizador podera seguidamente escolher uma das opcoes de diagnostico para preencher as perguntas especificas relativas a cada opcao de autodiagnostico
+inclusao do uc zero zero dois dyhrd acesso e autenticacao
+cenario excepcional
+
+um
+no ecra com as opcoes de diagnostico ainda vazias o utilizador escolhe tactilmente a opcao diagnostico para a sincronizacao e obtencao das diferentes opcoes de autodiagnostico e enviar eventuais diagnosticos ja preenchidos
+como as credenciais inseridas anteriormente se encontram erradas a sincronizacao nao ocorre e o ecra com as opcoes de diagnostico mantem se vazio uma mensagem de erro e mostrada o utilizador podera voltar a tentar a autenticacao para poder prosseguir com sucesso ver uc zero zero dois dyhrd acesso e autenticacao
+
+figura sessenta questionarios de autodiagnostico
+id do caso de uso
+uc zero zero quatro dyhrd
+actores
+utilizador normal
+nome do caso de uso
+escolha da opcao de diagnostico
+aplicacao
+diagnose your heart registo de diagnostico
+descricao breve
+uma vez feita a sincronizacao dos questionarios de autodiagnostico o utilizador podera escolher qual das opcoes de autodiagnostico deseja preencher
+geral informacao geral
+analises analises sanguineas e
+ecg electrocardiograma
+pre condicoes
+o utilizador autenticado efectuou a sincronizacao ou seja obteve os questionarios de autodiagnostico e enviou eventuais respostas de questionarios preenchidos
+pos condicoes
+o utilizador podera preencher as questoes especificas que dizem respeito a um determinado questionario de autodiagnostico
+trigger iniciador
+menu de questionarios para autodiagnostico escolha de uma opcao
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+no ecra com as opcoes de diagnostico disponiveis o utilizador escolhe tactilmente um dos questionarios de autodiagnostico
+um novo ecra surge com o questionario de autodiagnostico escolhido e com as questoes especificas referentes ao mesmo a figura sessenta e um e a figura sessenta e dois sao exemplos dos dois tipo de questoes para os questionarios
+inclusao do uc zero zero tres dyhrd sincronizacao das opcoes de diagnostico e envio de respostas
+
+
+figura sessenta e um questao de resposta aberta
+
+figura sessenta e dois questao de escolha multipla
+id do caso de uso
+uc zero zero cinco dyhrd
+actores
+utilizador normal
+nome do caso de uso
+preenchimento da informacao para autodiagnostico extensao
+aplicacao
+diagnose your heart registo de diagnostico
+descricao breve
+uma vez escolhida uma das opcoes de autodiagnostico
+geral informacao geral
+analises analises sanguineas ou
+ecg electrocardiograma
+o utilizador podera comecar a preencher as questoes especificas referentes a cada questionario
+pre condicoes
+o utilizador autenticado escolheu uma das opcoes disponiveis para o preenchimento de um questionario de autodiagnostico
+pos condicoes
+o questionario de autodiagnostico da opcao escolhida podera estar guardado em rascunho com as respostas preenchidas na totalidade ou parcialmente mas susceptiveis de serem ainda alteradas ou guardado e pronto para submissao sem permitir alteracoes
+trigger iniciador
+menu de questionarios para autodiagnostico escolha de uma opcao
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+no ecra do questionario de autodiagnostico o utilizador comeca a preencher tactilmente quer atraves da escolha de opcoes escolha multipla quer atraves da insercao de valores atraves do teclado virtual resposta aberta as respostas referentes as questoes do questionario
+
+para navegar no questionario o utilizador deve deslizar tactilmente o dedo para a esquerda pergunta seguinte ou para a direita pergunta anterior
+
+o numero de perguntas e o proprio conteudo das perguntas variam em funcao do questionario de autodiagnostico
+geral informacao geral
+indicacao do peso kg
+indicacao da altura m e cm
+indicacao da pressao sistolica maxima mmhg
+indicacao da pressao diastolica minima mmhg
+indicacao do valor de glicemia mmol l
+se o utilizador e fumador sim ou nao
+se o utilizador consome alcool sim ou nao e
+se o utilizador consome drogas sim ou nao
+analises analises sanguineas
+se o utilizador possui informacao adicional de analises clinicas
+indicacao do valor das lipoproteinas de alta densidade hdl mg dl
+indicacao do valor das lipoproteinas de baixa densidade ldl mg dl
+indicacao do valor das lipoproteinas de muito baixa densidade vldl mg dl
+indicacao do valor do colesterol total mg dl
+indicacao do valor dos trigliceridos mg dl e
+indicacao do valor da glicose mg dl
+ecg electrocardiograma
+se o utilizador possui informacao adicional de um electrocardiograma e
+indicacao do valor do ritmo cardiaco bpm
+um novo ecra surge com o questionario de autodiagnostico escolhido e com as questoes especificas referentes ao mesmo
+as respostas serao de escolha multipla sim ou nao ou de resposta aberta no caso da introducao de valores
+extensao do uc zero zero quatro dyhrd escolha da opcao de diagnostico
+
+dois
+apos preencher o questionario de autodiagnostico o utilizador escolhe tactilmente a opcao submeter para guardar o questionario para submissao
+o utilizador volta ao ecra de seleccao com as opcoes de diagnostico disponiveis ver uc zero zero quatro dyhrd escolha da opcao de diagnostico o diagnostico submetido apesar de ainda nao ter sido enviado sincronizado ja nao e passivel de ser alterado figura sessenta
+cenario alternativo
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+apos preencher o questionario de autodiagnostico o utilizador escolhe tactilmente a opcao guardar para guardar o questionario em rascunho
+o utilizador volta ao ecra de seleccao com as opcoes de diagnostico disponiveis ver uc zero zero quatro dyhrd escolha da opcao de diagnostico o diagnostico guardado nao foi ainda enviado sincronizado e e ainda passivel de ser alterado
+
+
+anexo c diagnose your heart simulador descricao dos casos de uso
+id do caso de uso
+uc zero zero um dyhs
+actores
+utilizador normal
+nome do caso de uso
+seleccionar opcao
+aplicacao
+diagnose your heart simulador
+descricao breve
+ao iniciar a aplicacao diagnose your heart simulador o utilizador sera confrontado com a possibilidade de escolher uma das opcoes do menu cada uma das opcoes tenta simular um cenario interactivo em duas dimensoes sao tres os cenarios possiveis para uma arteria do organismo humano e que sao passiveis de escolha no menu da aplicacao
+um uma arteria saudavel
+dois uma arteria com aterosclerose
+tres uma arteria com placas ateroscleroticas onde ocorre a formacao de um trombo embolo oclusao
+pre condicoes
+o utilizador acedeu a aplicacao
+pos condicoes
+o utilizador estara num dos possiveis cenarios de interaccao em duas dimensoes que simula uma arteria do organismo
+trigger iniciador
+menu de opcoes escolha de uma opcao
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador acede a aplicacao instalada no seu dispositivo movel
+um ecra de boas vindas com o logotipo da aplicacao figura sessenta e tres e exibido durante alguns segundos antes de ser mostrado o menu com tres opcoes figura sessenta e quatro
+opcao um arteria saudavel
+opcao dois formacao de ateromas e
+opcao tres obstrucao por embolo
+
+dois
+o utilizador escolhe tactilmente a opcao desejada
+um novo ecra surge com o cenario escolhido
+cenario alternativo
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+o utilizador decide abandonar a aplicacao escolhendo a opcao sair
+a aplicacao fecha se e o utilizador regressa ao sistema operativo do seu dispositivo movel
+
+figura sessenta e tres ecra de boas vindas
+
+figura sessenta e quatro menu de cenarios
+
+id do caso de uso
+uc zero zero dois dyhs
+actores
+utilizador normal
+nome do caso de uso
+interaccao tactil
+aplicacao
+diagnose your heart simulador
+descricao breve
+apos aceder a uma das opcoes do menu que levara a um cenario especifico o utilizador podera interagir tactilmente com os objectos do cenario
+globulos vermelhos eritrocitos e ou
+trombo embolo formado
+pre condicoes
+o utilizador acedeu a aplicacao
+o utilizador escolheu uma das opcoes do menu para cenarios
+pos condicoes
+o utilizador estara num dos possiveis cenarios de interaccao em duas dimensoes a movimentar tactilmente os objectos globulos vermelhos e o trombo formado no interior de uma arteria do organismo simulada
+trigger iniciador
+ecra do cenario interaccao tactil
+cenario principal opcao um arteria saudavel
+
+passo
+accao do utilizador
+resposta do sistema
+
+um a
+o utilizador pode interagir tactilmente com os objectos da aplicacao
+globulos vermelhos eritrocitos
+no interior de uma arteria saudavel
+um cenario demonstrando uma arteria saudavel com quatro globulos vermelhos eritrocitos em diferentes posicoes da arteria resultantes da interaccao do utilizador figura sessenta e quatro
+inclusao do uc zero zero tres dyhs carregar actualizar dinamicamente objectos e do uc zero zero tres dyhs desenhar dinamicamente objectos
+cenario principal opcao dois formacao de ateromas
+
+passo
+accao do utilizador
+resposta do sistema
+
+um b
+o utilizador pode interagir tactilmente com os objectos da aplicacao
+globulos vermelhos eritrocitos
+no interior de uma arteria com placas ateroscleroticas servindo de obstaculos
+um cenario demonstrando uma arteria com placas ateroscleroticas e com quatro globulos vermelhos eritrocitos em diferentes posicoes da arteria resultantes da interaccao do utilizador figura sessenta e cinco feita com maior dificuldade em virtude dos obstaculos na parede arterial
+inclusao do uc zero zero tres dyhs carregar actualizar dinamicamente objectos e do uc zero zero tres dyhs desenhar dinamicamente objectos
+cenario principal opcao tres obstrucao por embolo
+
+passo
+accao do utilizador
+resposta do sistema
+
+um c
+o utilizador pode interagir tactilmente com os objectos da aplicacao
+globulos vermelhos eritrocitos e
+trombo embolo formado
+no interior de uma arteria com placas ateroscleroticas servindo de obstaculos
+um cenario demonstrando uma arteria com placas ateroscleroticas e um trombo a ocluir juntamente com quatro globulos vermelhos eritrocitos em diferentes posicoes da arteria resultantes da interaccao do utilizador figura sessenta e seis
+inclusao do uc zero zero tres dyhs carregar actualizar dinamicamente objectos e do uc zero zero tres dyhs desenhar dinamicamente objectos
+
+dois c
+o utilizador movimenta tactilmente os globulos vermelhos eritrocitos em direccao ao trombo que opila a arteria
+o trombo cede partindo se em alguns pedacos que serao espalhados pela arteria apos o choque dos globulos vermelhos eritrocitos figura sessenta e sete
+inclusao do uc zero zero tres dyhs carregar actualizar dinamicamente objectos e do uc zero zero tres dyhs desenhar dinamicamente objectos
+
+figura sessenta e cinco arteria saudavel
+
+figura sessenta e seis arteria com aterosclerose
+
+figura sessenta e sete arteria com oclusao
+
+figura sessenta e oito fragmentacao do trombo
+id do caso de uso
+uc zero zero tres dyhs
+actores
+sistema
+nome do caso de uso
+carregar actualizar dinamicamente objectos inclusao
+aplicacao
+diagnose your heart simulador
+descricao breve
+com a interaccao tactil do utilizador o sistema deve garantir que os objectos serao dinamicamente movimentados no cenario isto e passam a ter uma nova posicao no cenario de duas dimensoes de acordo com novas coordenadas no eixo das abcissas xx e das ordenadas yy neste ponto e feita a actualizacao do valor das coordenadas
+pre condicoes
+o utilizador acedeu a aplicacao
+o utilizador escolheu uma das opcoes do menu para cenarios
+o utilizador interage de forma tactil com os objectos do cenario globulos vermelhos e o trombo formado
+pos condicoes
+o sistema actualizou internamente a posicao dos objectos os objectos passam a ter uma nova posicao no cenario de duas dimensoes em funcao de novas coordenadas no eixo das abcissas xx e das ordenadas yy apos determinar as novas posicoes os objectos estarao prontos para ser desenhados na interaccao seguinte
+trigger iniciador
+ecra do cenario interaccao tactil
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+n a
+actualizacao interna dos valores das coordenadas no eixo das abcissas xx e das ordenadas yy para os objectos do cenario de duas dimensoes
+
+id do caso de uso
+uc zero zero tres dy quatro s
+actores
+sistema
+nome do caso de uso
+desenhar dinamicamente objectos inclusao
+aplicacao
+diagnose your heart simulador
+descricao breve
+com a interaccao tactil do utilizador o sistema deve garantir que os objectos serao dinamicamente movimentados no cenario isto e passam a ter uma nova posicao no cenario de duas dimensoes de acordo com novas coordenadas no eixo das abcissas xx e das ordenadas yy neste ponto sao desenhados os objectos em funcao dos novos valores calculados para as coordenadas
+pre condicoes
+o utilizador acedeu a aplicacao
+o utilizador escolheu uma das opcoes do menu para cenarios
+o utilizador interage de forma tactil com os objectos do cenario globulos vermelhos e o trombo formado
+pos condicoes
+o sistema desenhou os objectos em novas posicoes os objectos passam a ter uma nova posicao no cenario de duas dimensoes em funcao de novas coordenadas no eixo das abcissas xx e das ordenadas yy surge o conceito de movimento dos objectos
+trigger iniciador
+ecra do cenario interaccao tactil
+cenario principal
+
+passo
+accao do utilizador
+resposta do sistema
+
+um
+n a
+desenho dos objectos no cenario de duas dimensoes de acordo com os valores das coordenadas no eixo das abcissas xx e das ordenadas yy calculadas anteriormente ver uc zero zero tres dyhs carregar actualizar dinamicamente objectos
+
+ja alguns
+virgula
+deste modo
+se nao ha tabelas nao e preciso isto
+apresenta
+virgula
+esta palavra esta a mais
+de esta a mais
+estava a espera de encontrar aqui uma referencia
+que possa
+justificar o texto
+apresentado
+acho que esta palavra esta um pouco exagerada ou seja penso que seria mais realista colocares contribuir para resolucao
+da utilizacao de novas tecnologias
+recentemente
+a figura deveria estar nesta pagina alem disso na figura tens figura um e aqui tens figura dois um
+mas onde esta a figura
+ao
+isto nao soa muito bem quanto a questao de investigacao pretende se
+passa
+dois m a mais
+nao percebi triangulacao de metodos queres dizer observacoes documentos
+tirar o com
+ainda nao vi nenhuma referencia isto foi tirado tudo da tua cabeca
+tirar o e e colocar virgula
+nao sera pode
+sera paises
+comumente
+no indice de figuras tens figura tres dois e nao figura dois deve ser figura tres dois
+uma referencia aqui nao ficaria nada mal
+em particular ja conseguem minimizar os efeitos
+tirar um dos ataques
+motivadores
+hereditaria
+podem
+que nao
+um
+web
+nao soa muito bem estar aqui numa aplicacao web poderias atras dizer aplicacao web
+nao bate certo as referencias nao sera tres um
+enfase
+eu colocaria isto tudo num paragrafo pois assim parecem frases soltas
+com as
+mapeamento de todas as tabelas
+neste sub capitulo descreves varias ferramentas mas nada e referenciado
+a numeracao nao esta correcta
+poderia ficar ligado a frase anterior
+pelo que me lembro do que li ate agora nunca explicas te o que e o json
+poderias juntar mais os paragrafos pois assim notam se frases um pouco soltas
+tens abaixo muito espaco vazio
+nao sera para os
+uma
+
+nao soa muito bem colocar consumo
+a penso que esta a mais
+poderias dar uma razao para isso
+parabens esta muito bem justificado
+concepcao
+onde esta
+certamente que fara todo o sentido
+da para perceber mas esta um pouco confuso
+as vezes tens as referencias depois do ponto final agora esta antes
+por exemplo considerando um utilizador administrador do hospital que pretende aceder
+demonstrou se
+e
+aqui poderias dizer novamente quais sao e dizer somente uma frase respeitante a cada uma delas
+na ordenacao da bibliografia segues alguma ordem alfabetica por data

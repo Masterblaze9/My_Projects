@@ -1,0 +1,979 @@
+ser feliz e reconhecer que vale a pena
+viver apesar de todos os desafios
+incompreensoes e periodos de crise
+ser feliz e deixar de ser vitima dos
+problemas e se tornar um autor da
+propria historia
+
+augusto cury lixito
+
+agradecimentos
+
+em primeiro lugar quero expressar os meus sinceros agradecimentos ao dr francisco morgado pela sua disponibilidade e ajuda no desenvolvimento desta tese que sem duvida foi crucial para a conclusao deste projeto
+
+ao meu colega eng carlos rodrigues que me ajudou em inumeras situacoes e desafios de indole tecnica na fase de desenvolvimento e sempre aliado com a sua palavra amiga em momentos mais dificeis
+
+tambem remeto agradecimentos especiais ao eng bruno luis que me ajudou a idealizar e estruturar inumeras funcionalidades inerentes a aplicacao movel sempre com a sua boa disposicao e entusiasmo na discussao das ideias
+
+dirijo de igual modo agradecimentos ao eng filipe manuel goncalves que sempre incentivou a analise critica e aportando sugestoes construtivas revelando se fundamental para a evolucao deste projeto
+
+remeto agradecimentos ao meu irmao fernando manuel quem em inumeras ocasioes me ajudou na revisao de alguns textos e outros aspetos importantes
+
+quero agradecer a minha familia pelos dias que estive menos disponivel e por toda a compreensao prestada que foi sem duvida crucial para a entrega atempada deste projeto
+
+finalmente um muito obrigado a todos os que de alguma maneira contribuiram direta ou indiretamente neste projeto tornando o possivel
+
+resumo
+
+a atual conjuntura economica tem moldado a forma como as pessoas se deslocam motivando a maior parte da populacao a usar os transportes publicos por forma a aumentar o conforto e reduzir custos contudo existem percursos onde e necessario deslocar se em mais do que um meio de transporte e onde e crucial melhorar a gestao do tempo de forma que o utente nao chegue atrasado ao respectivo local de destino
+
+noutros paises nao e recente a adocao de planificadores intermodais de itinerarios que agregam informacao dos varios meios publicos e privados de transporte assim como a disponibilizacao de ferramentas para apoio ao utente para incentivar facilitar e agilizar a planificacao de viagens recorrendo a esta modalidade de transporte
+
+com este trabalho pretende se estudar a exequibilidade de adocao deste tipo de plataformas em portugal para tal foi realizado um inquerito por questionario tendo como finalidade balizar quais as funcionalidades que os utilizadores esperariam numa aplicacao de apoio a planificacao de viagens usando transportes publicos tambem foi feita a analise a nivel tecnico da possibilidade de integracao das diversas ferramentas identificadas com um planeador intermodal de itinerarios a fim de construir um prototipo de aplicacao movel de auxilio ao utente para a pesquisa e planeamento de viagens
+
+abstract
+
+the actual economical situation caused the change in the way that many people move on the cities due to this fact a big majority of the travelers began to use public means of transport booth because these means are comfortable enough to make a day by day journey and because they are much more cheaper however there are routes where you need to use different means of public transport on those cases improve the time management is crucial for the user or he might arrive late on his destination
+
+in another countries the adoption of intermodal route planners that gather different types of information booth form public and private means of transport and also give tools to the user for him to plan the journey with the less effort possible
+
+the aim of this work is to analyse if this kind of platform could be introduced in portugal so a survey was made in order to find what functionalities the user would hope to find in a application that could help him to plan a journey using public means of transport at technical level a analisys was made in order to integrate the different tools that a intermodal route planner could or should have to help the user on the planification of a journey using public means of transport
+
+indice
+
+um introducao dez
+um um enquadramento dez
+um dois motivacao e objectivos dez
+um tres organizacao da dissertacao doze
+dois estado da arte catorze
+dois um planificacao da viagem catorze
+dois dois aplicacoes de navegacao pedestre vinte e cinco
+tres abordagem e processo de investigacao vinte e oito
+tres um questoes de investigacao vinte e oito
+tres dois instrumento de investigacao vinte e oito
+tres tres recolha de dados trinta
+tres quatro analise dos resultados obtidos trinta
+quatro desenvolvimento trinta e oito
+quatro um ferramentas utilizadas trinta e oito
+quatro um um gtfs general transit feed specification trinta e oito
+quatro um dois open trip planner quarenta e um
+quatro um tres geocoding quarenta e dois
+quatro um quatro gson quarenta e tres
+quatro um cinco restful json quarenta e cinco
+quatro um seis sistema operativo android cinquenta
+quatro um sete java android sdk cinquenta e tres
+quatro dois arquitectura do sistema cinquenta e quatro
+quatro tres diagrama de classes cinquenta e sete
+quatro quatro configuracao open trip planner sessenta e um
+quatro cinco muvonschedule sessenta e tres
+cinco conclusoes sessenta e oito
+cinco um pontos a explorar sessenta e nove
+cinco dois trabalho futuro sessenta e nove
+seis bibliografia setenta
+
+indice de tabelas
+
+tabela um funcionalidades passiveis de inclusao no muvonschedule trinta e seis
+tabela dois ficheiros que constituem o formato gtfs quarenta
+tabela tres funcao das classes de suporte ao geocoding cinquenta e oito
+tabela quatro classes que permitem acesso a informacao pesquisada no servidor otp cinquenta e nove
+tabela cinco classes que implementam funcionalidades do prototipo sessenta e um
+
+indice de figuras
+
+figura um pagina inicial da empresa cp quinze
+figura dois resultado de uma pesquisa entre duas localidades dezasseis
+figura tres formulario de pesquisa de itinerarios do calculador de itinerarios transpor dezassete
+figura quatro resultado de uma pesquisa utilizando a ferramenta transpor dezoito
+figura cinco pagina inicial da ferramenta transporlis dezanove
+figura seis resultado apos pesquisa de trajetos usando a ferramenta transporlis vinte
+figura sete pagina principal da ferramenta itinerarium vinte e um
+figura oito resultado de pesquisa na ferramenta itinerarium vinte e dois
+figura nove pagina inicial do google maps transit vinte e tres
+figura dez resultado de uma pesquisa de trajetos usando o google maps transit vinte e tres
+figura onze pesquisa de trajetos entre a cidade do porto e viseu vinte e cinco
+figura doze nokia ovi maps com suporte a navegacao pedestre vinte e um vinte e seis
+figura treze aspecto da aplicacao pdxtrian quatro vinte e sete
+figura catorze faixa etaria dos participantes trinta e um
+figura quinze sexo dos inquiridos trinta e um
+figura dezasseis escolaridade dos intervenientes trinta e um
+figura dezassete utentes que possuem smartphone trinta e dois
+figura dezoito numero de utilizadores dispostos a comprar um smartphone brevemente trinta e dois
+figura dezanove razao pela qual o inquirido nao tem smartphone trinta e tres
+figura vinte sistema operativo preferido trinta e tres
+figura vinte e um sistema operativo instalado no smartphone trinta e tres
+figura vinte e dois frequencia utilizacao de marketplace para descarregar aplicacoes para smartphones trinta e quatro
+figura vinte e tres tipo de aplicacoes mais descarregadas pelos inquiridos trinta e quatro
+figura vinte e quatro preco medio que um utilizador pagaria por aplicacao para smartphone trinta e cinco
+figura vinte e cinco media de distancia que um utilizador esta disposto andar a pe trinta e cinco
+figura vinte e seis implementacao classe dataobject quarenta e quatro
+figura vinte e sete string json contida dentro de um ficheiro quarenta e quatro
+figura vinte e oito implementacao da classe gsonexample quarenta e cinco
+figura vinte e nove representacao de um objecto json e um array quarenta e sete
+figura trinta tamanho da resposta em bytes para diferentes quantidades de registos dezanove quarenta e nove
+figura trinta e um tempo de processamento em milissegundos dezanove quarenta e nove
+figura trinta e dois arquitectura android catorze cinquenta e um
+figura trinta e tres arquitectura base do muvonschedule cinquenta e quatro
+figura trinta e quatro conceito model view controller cinquenta e seis
+figura trinta e cinco diagrama de classes para o processo de geocoding cinquenta e sete
+figura trinta e seis diagrama de classes para mapeamento de resultados pesquisa otp cinquenta e oito
+figura trinta e sete diagrama representativo das classes que implementam funcionalidades sessenta
+figura trinta e oito aspecto de uma pesquisa de trajetos entre pontos utilizando a interface web otp sessenta e dois
+figura trinta e nove aspecto da tabela muv object sessenta e tres
+figura quarenta tipo de informacao armazenada na tabela muv object values sessenta e quatro
+figura quarenta e um ecra inicial aplicacao muvonschedule sessenta e cinco
+figura quarenta e dois exemplo processo de geocoding sessenta e cinco
+figura quarenta e tres filtros disponiveis no ecra de pesquisa sessenta e seis
+figura quarenta e quatro filtros referentes aos tipos de transporte sessenta e seis
+figura quarenta e cinco listagem de itinerarios resultantes da pesquisa sessenta e sete
+figura quarenta e seis comparacao entre muvonsch e google maps sessenta e sete
+figura quarenta e sete ficheiro de configuracoes graph config xml setenta e dois
+figura quarenta e oito resposta json do servidor otp para pesquisa realizada pela aplicacao muvonschedule setenta e tres
+
+acronimos
+
+api
+crud
+gtfs
+html
+http
+json
+otp
+j dois ee
+rest
+soap
+uri
+wsdl
+xml
+application programming interface
+create read update delete
+general transit feed specification
+hypertext markup language
+hypertext transfer protocol
+javascript object notation
+open trip planner
+java dois enterprise edition
+representational state transfer
+simple object access protocol
+uniform resource identifier
+web service description language
+extensible markup language
+
+um introducao
+
+neste capitulo sera feita uma introducao ao trabalho realizado comecar se a com o enquadramento da tese passando por explicar as motivacoes e objectivos que incentivaram a evolucao do trabalho culminado na explicacao da estrutura desta dissertacao
+um um enquadramento
+
+gracas aos avancos diarios que temos assistido no ambito tecnologico atualmente e possivel encontrar a um preco razoavel equipamentos moveis com capacidades interessantes como por exemplo processamento navegacao e geolocalizacao com margens de erro minimas isto aliado a crescente conectividade com a rede de dados permite pensar mais alem e idealizar projetos que aproveitem essas potencialidades para informar e facilitar a viagem dos utilizadores portugueses que escolhem diariamente os meios publicos de transporte para se deslocarem
+
+o projeto enquadra se na prototipagem e desenvolvimento de uma plataforma que permita a utilizadores dos transportes publicos e privados de portugal planificar uma viagem de forma rapida e eficaz de porta a porta fazendo uso de uma aplicacao movel integrada com um planeador intermodal de itinerarios que possibilite aos utentes o seu uso em qualquer lugar dando lhe informacoes uteis sobre os meios de transporte disponiveis entre dois pontos geograficamente distantes
+
+um dois motivacao e objectivos
+
+atualmente existem sistemas de calculo de itinerarios como o google maps onze que possibilitam a pesquisa de trajetos entre uma localizacao origem e destino mostrando informacao de algumas carreiras de autocarros e metro nas principais cidades portuguesas lisboa porto e viseu contudo estas solucoes foram desenhadas e pensadas para serem utilizados atraves de um computador pessoal obrigando o utente a uma planificacao previa antes de seguir viagem
+
+por outro lado existem solucoes proprietarias como por exemplo garmin asus nuvifone cinco que permitem navegacao pedestre uma especie de gps para transeuntes e possuem integracao com alguns dos principais meios de transporte europeus mas nao permitem a filtragem de trajetos tendo como base criterios mais finos como por exemplo se o meio de transporte faz servico nocturno assim como outras necessidades do utilizador
+assim verifica se que existe uma lacuna na integracao da informacao referente aos horarios e rotas das diferentes empresas transportadoras nacionais de forma a estar disponivel e consultavel por parte dos utentes deste tipo de servico atraves de outras plataformas como dispositivos moveis facilitando efectivamente a escolha e visualizacao do trajeto mais adequado a seguir
+o objectivo do trabalho consiste em configurar um servidor de planeamento intermodal de itinerarios e planificar construir um prototipo de aplicacao movel open source que permita a pesquisa de trajetos entre dois pontos geograficos respeitando as restricoes previamente definidas pelo utilizador como por exemplo qual a rota mais rapida a rota com menor distancia percorrida a pe quais as rotas que disponibilizam servico nocturno etc e envolvendo um ou mais meios de transporte permitindo ao utilizador a planificacao da sua viagem em qualquer lugar de forma rapida e eficiente
+
+por consequencia pretende se tambem alargar e melhorar a partilha e consulta de informacoes sobre os horarios de funcionamento dos meios de transporte entre as cidades portuguesas facilitando e promovendo a utilizacao de meios publicos de transporte
+
+de forma a dar resposta ao objectivo proposto inicialmente foram estabelecidos os seguintes passos
+analise de solucoes aplicacoes existentes no mercado relacionadas com a pesquisa e calculo de trajetos envolvendo apresentacao de horarios entre dois pontos geograficos usando meios publicos de transporte
+realizacao de um inquerito a utilizadores regulares de meios de transporte publicos para auferir qual o grau de penetracao dos smartphones neste nicho de mercado assim como perceber quais seriam as funcionalidades mais interessantes numa aplicacao orientada para o calculo de trajetos
+desenvolver um prototipo de aplicacao movel que possibilite a integracao das informacoes sobre horarios e carreiras disponiveis numa area geografica por forma a permitir o calculo de um ou varios trajetos que vao ao encontro das necessidades do utilizador
+um tres organizacao da dissertacao
+
+o presente documento encontra se estruturado em cinco capitulos
+
+no capitulo um e a introducao e enquadra o tema mostrando o contexto onde o trabalho realizado se insere sao mostradas as motivacoes que impulsionaram a realizacao do projeto e quais os objectivos a ser atingidos incluindo tambem a organizacao da tese
+
+no capitulo dois e abordado o estado da arte analisando quais os produtos que atualmente existem no contexto onde se enquadra a tese e onde o projeto pode ser efectivamente uma mais valia
+
+no capitulo tres sao identificadas as questoes de investigacao e indicada qual a metodologia seguida para a criacao da tese isto e a criacao de um inquerito por questionario e como foi levado a cabo o levantamento e analise dos dados recolhidos
+
+no capitulo quatro trata sobre o desenvolvimento propriamente dito especificando quais foram as ferramentas usadas e inclusive porque foram escolhidas e falado sobre a arquitectura do sistema como esta constituido o prototipo a nivel de classes como foi instanciado o servidor do planificador intermodal de itinerarios e finalmente sao apresentadas imagens dos ecras do prototipo
+
+por ultimo no capitulo cinco sao apresentadas as conclusoes qual o trabalho futuro a desenvolver e a bibliografia
+
+dois estado da arte
+
+antes de apresentar o trabalho realizado e importante fazer uma introducao sobre o que existe na area em que este se enquadra e os conceitos envolvidos para a realizacao do projeto apresentado
+
+dois um planificacao da viagem
+
+atualmente em portugal os utilizadores de transportes publicos sentem dificuldade em planificar e escolher de forma rapida e eficiente um ou varios trajetos entre cidades envolvendo um ou mais operadores de transporte esta problematica afeta utilizadores esporadicos de trabalho e de lazer nacionais e estrangeiros
+de este modo os operadores na tentativa de prestar um melhor servico aos seus clientes investem no desenvolvimento de calculadores de itinerarios proprios que sao disponibilizados gratuitamente aos utentes contudo estas aplicacoes como por exemplo o itinerarium http www itinerarium net geralmente sao vocacionadas para o ambiente web e apresentam algumas limitacoes como por exemplo a nao inclusao de informacao de outros operadores sao pouco eficientes ou sao dificeis de utilizar e por conseguinte nao geram uma mais valia real para a propria empresa e aos utentes
+
+apesar de nao ser um calculador de itinerarios no sentido restrito da palavra o site da cp www cp pt que vemos na figura um e um bom exemplo em portugal de informacao util para o planeamento de viagens onde e possivel pesquisar horarios precos avisos e outras informacoes importantes no ambito dos servicos prestados por esta empresa
+
+figura um pagina inicial da empresa cp
+
+como e possivel ver na figura dois e permitido ao utilizador escolher a estacao de partida chegada e a hora pretendida para planificar a sua viagem no resultado da pesquisa e retornada uma tabela com diversas possibilidades de horas de partida tipos de comboio servico e preco neste caso foi efetuada uma pesquisa entre a localidade de estarreja e coimbra sendo apresentada uma lista detalhada com os diversos comboios disponiveis e os respetivos transbordos e preco dos bilhetes de embarque ainda no caso dos comboios sejam do tipo alfa pendular ou intercidades e possivel comprar via eletronica o bilhete de viagem
+
+figura dois resultado de uma pesquisa entre duas localidades
+
+o transpor www transpor pt e o unico calculador de itinerarios a nivel nacional foi desenvolvido pelo instituto de mobilidade e transportes terrestres imtt no ambito do projeto sigtii e apoiado pelo fundo europeu de desenvolvimento regional feder como podemos observar na figura tres permite apenas o planeamento de viagens entre localidades e nao de porta a porta nao inclui operadores intermunicipais tais como a carris ou os stcp inclui apenas uma alternativa de viagem nao sao mostradas paragens intermedias e a utilizacao e dificil
+
+figura tres formulario de pesquisa de itinerarios do calculador de itinerarios transpor
+
+como podemos visualizar na figura quatro e realizada uma pesquisa entre vila nova de gaia e o centro da cidade do porto onde so e retornado um unico resultado onde sao envolvidos basicamente os servicos disponibilizados pela cp e nao sao mostradas as opcoes disponiveis por parte dos stcp ou metro do porto
+a prova da falta de popularidade da ferramenta e o numero de utilizadores ser demasiado baixo para ser medido pela empresa de metricas da internet alexa www alexa com
+
+figura quatro resultado de uma pesquisa utilizando a ferramenta transpor
+
+ao nivel das areas metropolitanas de lisboa e porto aml e amp os utilizadores tem ao seu dispor ferramentas mais completas e uteis em lisboa o transporlis http www transporlis sapo pt um sistema de informacao multimodal da aml resultou da parceria entre os diversos operadores e camaras municipais e a sua pagina inicial e mostrada atraves da figura cinco
+
+figura cinco pagina inicial da ferramenta transporlis
+
+aqui e ja possivel aos utilizadores planear uma viagem de porta a porta entre moradas da aml como podemos ver na figura seis a informacao fornecida em cada pesquisa e mais util estando disponivel o numero de transbordos a quantidade de co dois o preco o tempo e a distancia percorrida os resultados obtidos incluem a integracao dos diversos meios de transporte disponiveis na aml como por exemplo a carris cp fertargus metropolitano de lisboa rodoviaria de lisboa scotturb transportes sul do tejo transtejo e vimeca carece de integracao com outras redes de transporte publico existentes fora de lisboa
+a informacao fornecida e util para utilizadores esporadicos de transportes publicos mais insuficiente para um utilizador frequente e apenas fornecida o calculo de uma viagem e para procurar a horas diferentes e necessario refazer a pesquisa tornando o processo moroso
+
+figura seis resultado apos pesquisa de trajetos usando a ferramenta transporlis
+
+na amp area metropolitana do porto a solucao encontrada foi o itinerarium http www itinerarium net e que podemos ver atraves da figura sete
+
+figura sete pagina principal da ferramenta itinerarium
+
+esta ferramenta agrega num unico local a informacao da stcp cp porto e metro do porto os operadores privados foram deixados de fora deste processo a informacao e mais clara no itinerarium apesar da utilizacao em particular a seleccao dos locais de partida e chegada ser complicada
+podemos verificar na figura oito o aspeto dos resultados resultantes de uma pesquisa de trajetos atraves do itinerarium onde e possivel obter informacao sobre o numero de zonas a percorrer preco dos bilhetes tempo aproximado de espera custo total da viagem etc mais uma vez e apenas fornecida uma opcao e e necessario reiniciar a pesquisa caso seja necessario alterar qualquer parametro tres a semelhanca do transporlis verificamos que carece de integracao com outros meios de transporte publico fora da cidade do porto
+
+figura oito resultado de pesquisa na ferramenta itinerarium
+
+o google maps transit e um planificador de itinerarios que ajuda os utilizadores a chegar ao seu destino proporcionando informacoes faceis de seguir fazendo uso dos meios publicos de transporte disponiveis atraves da figura nove e possivel ver a pagina inicial de pesquisa de trajetos envolvendo transportes publicos
+
+figura nove pagina inicial do google maps transit
+
+como o transporte publico e normalmente o mais utilizado servico de transporte em qualquer cidade estado pelo publico em geral o google transit se mostra muito util pois da informacoes detalhadas sobre transito informacoes sobre as estacoes horarios duracao da viagem estimado e ate mesmo informacoes sobre as tarifas vinte e sete como podemos ver na figura dez
+
+figura dez resultado de uma pesquisa de trajetos usando o google maps transit
+este servico implementa diversas funcionalidades como por exemplo
+obtencao de direccoes podemos pesquisar um trajeto a pe de carro bicicleta ou transportes publicos entre duas localizacoes origem e destino adaptar o caminho sugerido com ou sem portagens e fazer sinalizacao do mesmo highlight permite ainda escolhar qual o transporte publico a considerar e o caminho com menor distancia a percorrer a pe
+partilha e armazenamento de mapas e possivel guardar partilhar e tornar publico um mapa com uma direccao origem e destino ja previamente sinalizada highlight
+
+quando usada a funcionalidade obtencao de direccoes na vertente meios de transporte existe integracao de informacao com alguns transportes publicos por exemplo no caso da cidade do porto encontramos informacao do metro do porto mas nao sobre os autocarros stcp verificou se que so em algumas das principais cidades existe informacao sobre transportes publicos e os trajetos apresentados apresentam informacao do custo em tempo dinheiro distancia nesta funcionalidade nao esta disponivel por exemplo filtros que permitam escolher os trajetos pelas seguintes condicoes
+
+rota mais rapida
+uso de veiculo para deficientes motores
+tempo previsto de chegada
+permitir utilizacao de bicicleta
+
+por outro lado verificamos atraves da figura onze que se realizarmos uma pesquisa de trajetos entre duas cidades como por exemplo av dos aliados porto ate repeses viseu nao encontramos cobertura possivel utilizando transportes publicos
+
+figura onze pesquisa de trajetos entre a cidade do porto e viseu
+
+foi constatado que os calculadores de itinerarios atualmente existentes estao direccionados a prestacao de servicos num unico sentido dos operadores para os utilizadores normalmente e esperado que os utentes utilizem o portal na perspetiva de planificar as suas viagens sendo estas no geral domesticas dos portais analisados naqueles existentes em portugal e mesmo quando olhando apenas para os utilizadores internos a informacao fornecida fica muito aquem da que e necessaria
+
+dois dois aplicacoes de navegacao pedestre
+
+a analise recaiu sobre a aplicacao garmin navigation cityxplorer disponivel no equipamento garmin asus nuvifone para o sistema operativo android cinco esta aplicacao permite a navegacao pedestre de um utilizador indicando o ponto de origem e destino a semelhanca do que ja existe nos gps para automoveis convencionais tambem possui integracao com alguns meios publicos de transporte nas principais cidades europeias a vantagem deste sistema e a navegacao off line isto e nao e necessaria a utilizacao da rede de dados para a obtencao de mapas nem para a indicacao do caminho no mapa apesar de ser uma otima solucao o numero de cidades portuguesas abrangidas pela solucao e limitada e so pode ser utilizado em equipamentos moveis da marca garmin
+
+a plataforma ovi da nokia vinte e um recentemente lancou uma versao ovi maps que permite a navegacao gps e navegacao pedestre de forma gratuita disponivel para equipamentos nokia dotados de gps como vemos na figura doze
+esta solucao permite ao utilizador pedestre navegar entre dois pontos escolhendo o caminho mais curto seja utilizando pontes parques atalhos pedestres etc ainda permite a personalizacao da linguagem da aplicacao e definicao de parametros como sinais sonoros ou vibracao que indicam ao utilizador onde deve virar ou simplesmente corrigir a sua rota
+os mapas a semelhanca de outras solucoes apresentadas sao de navegacao off line podendo ser adquiridos de forma gratuita no site da nokia http maps nokia com contudo carece de uma verdadeira integracao com meios de transporte publicos como por exemplo mostrar horarios de autocarros e comboios mais proximos a um determinado local etc
+
+figura doze nokia ovi maps com suporte a navegacao pedestre vinte e um
+
+outra aplicacao que permite navegacao pedestre tem como nome pdxtrian quatro e uma aplicacao gratuita para o sistema operativo android e esta disponivel para os utilizadores dos transportes publicos da cidade de portland trimet permite consultar um mapa das paragens de autocarro e metro e outros meios de transporte disponiveis na zona tambem exibe uma listagem dos meios de transporte que estao a chegar a uma paragem como podemos observar na figura treze e utiliza o gps do dispositivo movel para indicar quais as paragens que estao proximas de um determinado local
+
+figura treze aspecto da aplicacao pdxtrian quatro
+
+tres abordagem e processo de investigacao
+
+este capitulo aborda os aspectos referentes ao estudo desenvolvido mostrando as fases que o compoem descrevendo o processo seguido e qual a sua finalidade mostrando a forma como foram recolhidos os dados e posteriormente analisados
+tres um questoes de investigacao
+
+para que o projeto se revele assertivo torna se crucial identificar quais as funcionalidades que vao ao encontro das necessidades dos utentes dos meios publicos de transporte e que facilitam o calculo de trajetos e a consulta de horarios fazendo uso de uma aplicacao para dispositivo movel
+
+e importante identificar qual a adesao dos utilizadores dos meios de transporte a utilizacao de smartphones no auxilio a planificacao das suas deslocacoes e qual o impacto do aparecimento de novas marketplaces com aplicacoes direccionadas para este tipo de publico tambem e importante validar quais as funcionalidades mais apreciadas pelos utentes para que a aplicacao va ao encontro das suas necessidades
+tres dois instrumento de investigacao
+
+o metodo de investigacao utilizado foi o inquerito atraves de um questionario on line e dirigido a estudantes do ensino publico universitario e outros utilizadores que usam diariamente os meios colectivos de transporte da sua respectiva cidade
+na concepcao do questionario procurou se que fosse objectivo e de instrucao limitada estruturado em varios grupos para facilitar ao inquirido a sua resposta
+no primeiro grupo recolhe informacao sobre faixa etaria e outros dados estatisticos de caracter pessoal atraves das seguintes questoes
+qual a sua faixa etaria
+qual o sexo
+quais as suas habilitacoes literarias
+possui um smartphone
+no que respeita ao segundo grupo este visa avaliar informacoes sobre o smartphone e a sua utilizacao do por parte do inquirido fazendo uso das seguintes questoes
+qual o sistema operativo instalado no dispositivo
+quantas vezes utilizou um marketplace de aplicacoes moveis
+que tipo de aplicacoes fez download
+qual o maximo que pagaria por uma aplicacao movel
+assumindo que estaciona o seu veiculo particular qual a distancia que esta disposto a andar a pe
+no ultimo grupo sao apresentadas varias funcionalidades passiveis de serem incluidas numa aplicacao movel para o calculo de trajetos sendo questionada qual o seu grau de importancia usando a escala de likert um um discordo totalmente dois discordo parcialmente tres indiferente quatro concordo parcialmente cinco concordo totalmente
+as funcionalidades apresentadas foram as seguintes
+com base na minha localizacao indicar os meios de transporte disponiveis mostrando quanto tempo falta para a partida da respectiva carreira
+permitir a pesquisa e filtragem de trajetos possiveis entre dois pontos pelo seu custo seja em dinheiro ou tempo
+indicar os trajetos com menor distancia percorrida a pe
+filtrar os transportes que permitem deslocacao com bicicleta
+mostrar percursos optimizados para pessoas de mobilidade reduzida
+indicar os meios de transporte com menos transbordos entre o ponto origem e destino
+receber notificacoes sobre possiveis atrasos
+receber notificacao minutos antes da chegada do meio de transporte
+baseado na minha localizacao calcular os percursos possiveis para voltar a casa
+mostrar nos percursos os pontos de interesse de uma cidade usando transportes publicos
+mostrar os trajetos com servico nocturno
+alarme que indica ao utilizador que chegou ao destino
+finalmente o interveniente e encorajado a partilhar as suas sugestoes de outras novas funcionalidades que possam enriquecer a aplicacao
+
+tres tres recolha de dados
+
+o inquerito por questionario foi difundido atraves de um formulario on line por correio electronico pelas diversas universidades e institutos politecnicos do pais decorreu entre o dia nove de dezembro de dois mil e dez ate dia quinze de janeiro de dois mil e onze
+no email enviado aos inquiridos foi colocada hiperligacao que da acesso ao questionario on line fazendo se acompanhar com uma breve descricao da finalidade do inquerito e deixando claro que toda a informacao recolhida e anonima e e salvaguardada a identidade das pessoas inquiridas
+
+tres quatro analise dos resultados obtidos
+
+iniciamos a analise registando o numero de respostas obtidas que contabilizam um total de cento e catorze sendo todas estas obtidas recorrendo a internet como meio de comunicacao
+os resultados recolhidos foram alvo de uma analise estatistica descritiva possibilitando a sumarizacao dos dados em varios graficos de facil leitura e compreensao
+analisando o grafico correspondente a figura catorze onde e ilustrada a faixa etaria alvo do estudo verifica se que a media de idades dos inquiridos utilizadores dos transportes publicos oscila entre os dezoito e os quarenta e nove anos mostrando uma adesao significativa a este tipo de servico as pessoas entre os vinte e cinco aos trinta e quatro que corresponde a faixa etaria dos jovens adultos portugueses
+
+figura catorze faixa etaria dos participantes
+
+de seguida podemos apreciar atraves da figura quinze a percentagem de elementos dos sexos masculino e feminino que participaram no questionario
+
+figura quinze sexo dos inquiridos
+
+no ambito das habilitacoes literarias podemos verificar que os utilizadores na sua maioria possuem pelo menos o doze o ano como se apresenta na figura dezasseis
+
+figura dezasseis escolaridade dos intervenientes
+
+observe se de seguida a figura dezassete que regista que mais de metade das pessoas envolvidas no inquerito nao possuem smartphone apesar disso existe um numero significativo de pessoas que tem na sua posse este tipo de equipamento
+
+figura dezassete utentes que possuem smartphone
+
+ao responder a pergunta referenciada na figura dezassete caso a resposta seja negativa a pessoa alvo do inquerito e convidada a responder as perguntas mostradas na figura dezoito e figura dezanove que tem como o intuito perceber se o inquirido pretende em breve adquirir um smartphone e qual a razao de ainda nao ter um equipamento destes
+
+como se ve na figura dezoito a maioria dos inquiridos que atualmente nao possui um smartphone apresentando quarenta e quatro pessoas que nao pretendem comprar este tipo de equipamento contudo aproximadamente quinze dessas pessoas demonstram intencao de adquirir um
+
+figura dezoito numero de utilizadores dispostos a comprar um smartphone brevemente
+
+ja na figura dezanove verificamos quais as razoes dos inquiridos mais ceticos nas vantagens e potencialidades dos smartphones podemos destacar que vinte e cinco pessoas afirmam que nao precisam deste tipo de dispositivos e que dezoito pessoas acham que sao muito caros
+
+figura dezanove razao pela qual o inquirido nao tem smartphone
+
+voltando a analise das respostas dos inquiridos que possuem smartphone podemos apreciar atraves da figura vinte que o sistema operativo preferido e claramente o android nao ficando muito atras o ios da apple que atualmente equipa os iphones
+
+figura vinte sistema operativo preferido
+
+analisando a figura vinte e um podemos observar que equipamentos adquiridos pelos intervenientes possuem na sua maioria o sistema operativo android e windows mobile e importante salientar que existe uma percentagem significativa de equipamentos com o sistema operativo symbian e ios no grupo estudado
+
+figura vinte e um sistema operativo instalado no smartphone
+
+no que diz respeito a utilizacao de uma appstore para fazer download de aplicacoes podemos concluir analisando o grafico presente na figura vinte e dois que a maioria dos utilizadores optaria por efectuar entre dois a cinco downloads mensais
+
+figura vinte e dois frequencia utilizacao de marketplace para descarregar aplicacoes para smartphones
+
+indagando sobre o tipo de aplicacoes que os utilizadores preferem na figura vinte e tres verificamos que existe um claro destaque das aplicacoes direccionadas para o lazer neste caso os jogos e a navegacao on line com sessenta e nove e sessenta e sete respectivamente e de salientar que a soma das percentagens pode exceder os cem pelo simples facto que um inquirido pode escolher mais de um tipo de aplicacao favorita no questionario
+
+figura vinte e tres tipo de aplicacoes mais descarregadas pelos inquiridos
+
+o preco medio a pagar por aplicacao movel esta representado na figura vinte e quatro e indica que dezanove dos inquiridos estao dispostos a pagar em media entre um a dois por aplicacao descarregada num marketplace
+
+figura vinte e quatro preco medio que um utilizador pagaria por aplicacao para smartphone
+
+entre os utilizadores que teoricamente estacionariam o seu veiculo pessoal e deslocar se iam usando transportes segundo a figura vinte e cinco na sua maioria estariam dispostos a andar a pe em media entre duzentos e cinquenta mts e quinhentos mts ate a respectiva paragem
+
+figura vinte e cinco media de distancia que um utilizador esta disposto andar a pe
+
+como referimos anteriormente o ultimo grupo de perguntas pretendem auferir quais das funcionalidades podem ser incluidas no software para dispositivo movel desenvolvido para o calculo de trajetos
+
+o numero de respostas dos inquiridos foram condensadas como se mostra na
+tabela um
+
+tabela um funcionalidades passiveis de inclusao no muvonschedule
+funcionalidade
+discordo totalmente
+discordo parcialmente
+indiferente
+concordo parcialmente
+concordo totalmente
+com base na minha localizacao indicar os meios de transporte disponiveis mostrando quanto tempo falta para a partida da respectiva carreira
+zero
+zero
+quatro
+doze
+trinta e nove
+permitir a pesquisa e filtragem de trajetos possiveis entre dois pontos pelo seu custo seja em dinheiro ou tempo
+um
+zero
+seis
+vinte e quatro
+vinte e quatro
+indicar os trajetos com menor distancia percorrida a pe
+um
+um
+sete
+vinte e dois
+vinte e quatro
+filtrar os transportes que permitem deslocacao com bicicleta
+dois
+oito
+vinte
+dezassete
+oito
+mostrar percursos optimizados para pessoas de mobilidade reduzida
+zero
+dois
+treze
+quinze
+vinte e cinco
+indicar os meios de transporte com menos transbordos entre o ponto origem e destino
+um
+zero
+nove
+vinte e cinco
+vinte
+receber notificacoes sobre possiveis atrasos
+zero
+zero
+seis
+dezanove
+trinta
+receber notificacao minutos antes da chegada do meio de transporte
+um
+tres
+dez
+dezasseis
+vinte e cinco
+baseado na minha localizacao calcular os percursos possiveis para voltar a casa
+zero
+um
+treze
+vinte
+vinte e um
+mostrar nos percursos os pontos de interesse de uma cidade usando transportes publicos
+zero
+tres
+nove
+vinte e tres
+vinte
+mostrar os trajetos com servico nocturno
+tres
+zero
+dez
+vinte e um
+vinte e um
+alarme que indica ao utilizador que chegou ao destino
+dois
+seis
+doze
+dezasseis
+dezanove
+
+verificamos que as funcionalidades mais apreciadas pelos inquiridos sao as que estao assinaladas com a cor verde e as funcionalidades nice to have estao assinaladas com cor azul
+
+quatro desenvolvimento
+
+neste capitulo sao apresentadas as ferramentas tecnicas e abordagens utilizadas para resolver a problematica imposta e atingir os objectivos inicialmente propostos e explicada a arquitectura na qual a aplicacao esta assente e qual a finalidade de cada um dos componentes que a integram
+
+quatro um ferramentas utilizadas
+
+para desenvolvimento do prototipo de sistema recorremos a utilizacao de diversas tecnologias servicos api s e librarias que permitiram a interligacao entre subsistemas e garantem o seu funcionamento respeitando as restricoes impostas pelo tipo de cenario onde a aplicacao movel se vai encontrar inserida
+
+quatro um um gtfs general transit feed specification
+
+este formato foi inicialmente designado por google transit feed specification e criado pela empresa google com a finalidade de partilhar de forma aberta e disponivel as informacoes referentes a meios publicos de transporte como por exemplo horarios rotas etc entre a empresa prestadora do servico e os seus utilizadores doze
+
+com nascimento deste formato foi criado um standard comum para a partilha de informacoes referentes aos transportes publicos e uma historia interessante como acontece com muitos outros desenvolvimentos e inovacoes na area da mobilidade e transito e que tem inicio na cidade de portland oregon eua
+
+apos uma viagem internacional no verao de dois mil e cinco bibiana mchugh responsavel pelos sistemas de informacao da trimet portland empresa de transportes publicos da cidade de portland estava frustrada pois nao conseguia planear a sua viagem entre dois pontos usando transportes publicos atraves de um programa de planeamento de itinerarios como por exemplo o mapquest
+
+quando voltou aos eua mchugh entrou em contacto com algumas empresas como a mapquest yahoo e google perguntando se tencionavam disponibilizar informacao referente a transportes publicos nos seus mapas das empresas referidas apenas a google respondeu o engenheiro de software chris harrelson ja estaria a usar vinte por cento do seu tempo ao servico do google para integrar este tipo de informacao no google maps que mais tarde ser tornaria no google transit trip planner
+
+desde entao a trimet e a google trabalharam em conjunto de forma a transformar os dados de transito da trimet num formato perceptivel pelo google maps surgindo deste modo o gtfs
+
+a trimet foi a primeira operadora de transportes a ser integrada no google maps posteriormente mais cinco cidades americanas seguiram lhe as pegadas eugene or honolulu hi pittsburgh pa seattle wa e tampa fl
+atualmente a google tem acordos com mais de cem operadoras de transporte publico nos eua e mais de quatrocentos em todo o mundo
+
+contudo inicialmente existiram muitos operadores relutantes em fornecer os dados relativos as suas rotas e servicos disponibilizados mostrando pouca abertura pois pensavam que o google usaria esta informacao de forma a ter dividendos com a mesma vinte e seis
+muitas aplicacoes como o open trip planner sera abordado mais a frente sao compativeis com o formato gtfs a forma mais simples de tornar publicas estas informacoes e hospedar o ficheiro no formato gtfs num servidor web e publicar um anuncio atraves gtfs data exchange website que o torna disponivel para uso
+entrando mais em detalhe o gtfs possui informacao sobre as rotas horarios paragens etc de forma versionada e distribuida em tabelas no formato csv comma separated values sendo estas posteriormente encapsuladas dentro de um ficheiro com extensao zip dezassete
+
+a especificacao define os seguintes ficheiros como vemos a seguir na tabela dois
+
+tabela dois ficheiros que constituem o formato gtfs
+ficheiro
+preenchimento obrigatorio
+observacoes
+agency txt
+sim
+contem informacoes sobre empresa de transporte
+stops txt
+sim
+contem informacoes relacionadas com os pontos de paragem
+routes txt
+sim
+contem informacoes sobre as rotas disponibilizadas pela empresa
+trips txt
+sim
+contem informacao das viagens e suas respectivas rotas uma viagem e uma sequencia de duas ou mais paragem que ocorre num intervalo de tempo
+stop times txt
+sim
+este ficheiro possui informacao relativa aos tempos de chegada e partida de cada uma das paragens para cada viagem
+calendar txt
+sim
+especifica em que dias o servico esta disponivel
+calendar dates txt
+opcional
+permite definir as excepcoes aos dias disponiveis de servico definidos no ficheiro calendar txt
+fare attributes txt
+opcional
+especifica as tarifas a aplicar para as rotas disponiveis
+fare rules txt
+opcional
+permite especificar como as tarifas definidas no ficheiro fare attributes sao aplicadas a um itinerario
+shapes txt
+opcional
+define as coordenadas geograficas para representar as rotas de transito da empresa
+frequencies txt
+opcional
+destina se para representar horarios que nao tem uma lista fixa de horarios na paragem
+transfers txt
+opcional
+permite definir regras para fazer conexoes nos pontos de transferencia entre linhas
+
+entre algumas das vantagens de usar o formato gtfs temos
+aumentar o numero de passageiros nos meios de transporte publico
+ajudar a novos passageiros a encontrar facilmente informacoes sobre horarios
+reducao de custos nas empresas de transportes mais pequenas para servir os seus clientes complementando suas ferramentas
+tornar acessiveis as mudancas de informacoes acerca das linhas ou horarios
+ajudar a melhorar o servico com o feedback dos utilizadores
+vale a pena salientar que as aplicacoes transittrips google maps bing maps tranzit utilizam este formato
+
+quatro um dois open trip planner
+
+open trip planner e um planeador intermodal de itinerarios open source que permite o planeamento de trajetos em uma ou mais viagens entre dois pontos origem e destino
+o seu nucleo foi desenvolvido em java dois enterprise edition j dois ee por ser uma plataforma neutral madura e conhecida pela maior parte dos engenheiros de software vinte e dois implementa varios algoritmos optimizados para o calculo de rotas como por exemplo o algoritmo de dijkstra dois e a tres tambem implementa tecnicas como o metodo de hierarquias de contraccao contraction hierarchies para melhorar a performance do algoritmo de dijkstra o metodo de hierarquias de contraccao e outra abordagem hierarquica para o calculo do caminho mais curto a ideia principal e organizar todos os nos de acordo com a sua importancia e de seguida iterativamente contrai los nesta ordem adicionando atalhos para preservar as distancias mais curtas as consultas sao efectuadas ao grafo recorrendo ao algoritmo dijkstra bidireccional que procura evitar os nos menos significativos usando os atalhos adicionados na etapa de pre processamento vinte e quatro
+
+o otp disponibiliza as indicacoes para chegar a um local destino num mapa iterativo que mostra passo a passo o percurso a recorrer os servicos que o utilizador deve usar e onde pode fazer as transferencias entre meios de transporte
+adapta se a utilizadores com necessidades especiais permitindo a filtragem e pesquisa de estacoes meios de transporte ou autocarros que possibilitem o transporte de pessoas deficientes acomodando se as suas necessidades tambem permite o calculo de itinerarios em varios modos de transito como por exemplo caminhada e ciclismo para que os seus utilizadores consigam planear uma viagem inteira de porta a porta combinando varios meios de transporte
+ao contrario de outros servicos geridos por terceiros com o otp podemos ter um controlo total sobre os dados do calculador de itinerarios sendo muito facil mante lo atualizado face as mudancas de horarios rotas etc
+
+quando instalamos uma instancia do servidor otp encontramos o seu projeto estruturado da seguinte forma quinze
+
+opentripplanner routing implementa os principais algoritmos de reencaminhamento e disponibiliza estruturas de dados e bibliotecas
+opentripplanner api webapp aplicacao web que disponibiliza a rest api que da acesso ao motor de planeamento de viagens
+opentripplanner webapp aplicacao web que disponibiliza uma interface de utilizador para aceder ao motor de planeamento de viagens
+opentripplanner graph buider ferramenta atraves de linha de comandos para configurar e construir o grafo de planeamento de viagens
+opentripplanner gui visualizador de grafo para desenvolvimento e resolucao de problemas
+opentripplanner integration testes de integracao
+opentripplanner api extended aplicacao web que pode opcionalmente ser instanciada para mostrar o mapa de sistema requere do geoserver
+opentripplanner utils codifica polylines provavelmente para shapefiles
+opentripplanner geocoder aplicacao web que fornece uma rest api usada pelo otp para geocodificar lugares
+
+quatro um tres geocoding
+
+o geocoding e o processo que permite converter um endereco do tipo campus politecnico de repeses tres mil e quinhentos e quatro quinhentos e dez viseu para as respectivas coordenadas geograficas latitude quarenta ponto oito quatro dois seis nove oito um e longitude sete ponto sete cinco oito nove oito tres dois esta traducao e importante pois possibilita integrar os diversos sistemas e construir os pedidos de informacoes que sao trocados entre a aplicacao movel e o planificador intermodal de itinerarios assunto que iremos abordar em pormenor mais adiante
+
+no ambito deste projeto foi usado o google maps api geocoder que e um servico web que disponibiliza um conjunto de rotinas que respondem a pedidos de geocoding usando pedidos http num formato preestabelecido
+alem disso o servico permite executar a operacao inversa isto e converter coordenadas geograficas para endereco este processo e denominado geocodificacao reversa treze
+
+tambem foram analisadas outros servicos web de geocoding como por exemplo o yahoo placefinder anteriormente denominado yahoo maps web services evoluiu de forma a suportar e retornar os dados resultantes de um pedido de geocoding no formato json e que suporta geocodificacao a nivel mundial de enderecos pontos de interesse aeroportos e nomes de lugares trinta
+contudo apesar de permitir um numero elevado de pedidos de geocodificacao ate cinquenta mil pedidos dia por aplicacao face aos dois mil e quinhentos pedidos dia por ip do google geocoder api quando ambos comparados a sua precisao nem sempre e brilhante em algumas regioes do globo vinte e oito e importante salientar que apesar de nao fazermos uso da api yahoo no desenvolvimento do prototipo e uma ferramenta a considerar em futuros desenvolvimentos para aumentar e optimizar a tarefa de geocoding no muvonschedule
+
+quatro um quatro gson
+
+o gson e uma biblioteca java usada para converter objetos java na sua representacao json este processo e denominado de serializacao tambem e possivel converter uma string no formato json para java sendo este o processo de deserializacao
+gson pode trabalhar com objetos arbitrarios java ja existentes dos quais podemos nao possuir o seu codigo fonte
+esta biblioteca nasceu como projeto interno da empresa google e ainda e utilizada atualmente em outros projetos da referida empresa atualmente este software e de uso livre pois esta disponivel ao abrigo de uma licenca apache dezasseis
+
+para explicar sucintamente o funcionamento do gson vamos usar a classe dataobject que se encontra na figura vinte e seis e que possui uma variavel tipo inteira uma string e uma lista de strings
+
+figura vinte e seis implementacao classe dataobject
+
+posteriormente e criado um ficheiro fx json com uma string no formato json que se encontra ilustrado usando a figura vinte e sete
+
+figura vinte e sete string json contida dentro de um ficheiro
+
+finalmente e criada a classe gsonexample que podemos observar na figura vinte e oito e basicamente abre o ficheiro no formato json e converte todos os dados nele contidos para um objecto java do tipo dataobject assim deste modo e possivel aceder aos dados usando os metodos getdata um getdata dois e getlist
+
+figura vinte e oito implementacao da classe gsonexample
+
+quatro um cinco restful json
+
+rest significa transferencia de estado representacional ou representational state transfer e define um conjunto de principios de arquitectura e desenho de servicos web tendo como foco os recursos do sistema incluindo como os estados dos recursos sao enderecados e transferidos sobre http por um grande numero de clientes que podem estar escritos em diferentes linguas
+basicamente na arquitectura rest os dados e as funcionalidades sao considerados recursos uri uniform resource identifier utilizados como representacao para aceder a qualquer recurso seis
+apesar do rest ainda nao ser um standard funciona sob varios principios como cliente e servidor totalmente identificados separados e sem estado vinte e tres cada mensagem http contem toda a informacao necessaria para fazer o pedido isto significa que nem o cliente nem o servidor precisam de escrever qualquer estado da comunicacao entre mensagens na pratica muitas aplicacoes baseadas em http utilizam cookies e outros mecanismos para manter o estado da sessao como por exemplo a reescrita de urls praticas que nao sao permitidas pelos principios rest
+
+o rest faz uso de operacoes bem definidas aplicadas a esses recursos tirando partido dos verbos bem conhecidos http como get post put ou delete que podem ser mapeados diretamente para operacoes crud create remove update e delete
+a sintaxe universal e usada para identificar recursos expondo a sua estrutura como uri s levando cada accao a ser identificada pela sua propria uri os principios rest dizem que deve ser possivel obter dados usando xml json ou ambos por forma a ter mais poder e flexibilidade dez
+
+a implementacao de um servico restful oferece um conjunto de vantagens como por exemplo a escalabilidade entre componentes uma abordagem stateless sem estado baixo overhead sobrecarga apresentacao dos dados num formato facilmente perceptivel pelas pessoas multiplas interfaces facil construcao independencia da linguagem de programacao e sistema operativo e permite encorajar ao uso de xml json ou ambos vinte
+
+um web service soap um tem standards bem definidos que lhe permite ser suportados por diferentes tipos de ferramentas e sistemas mas seu uso significa que o programador tem que se preocupar com a criacao da especificacao wsdl que encapsule a string dentro de uma mensagem soap
+por outro lado um servico rest e simples de desenvolver facil de usar e introduz menos atraso entre o cliente e o prestador do servico e depende inteiramente do protocolo http o principal problema e a falta de toolkits conjunto de ferramentas aplicacoes necessarias para desenvolver uma tarefa de desenvolvimento
+testes realizados dezoito comprovam que os servicos restful sao mais adequados para o desenvolvimento de aplicacoes para dispositivos moveis eles sao mais rapidos proporcionam respostas mais pequenas induzem menos sobrecarga e as respostas sao mais rapidas quando comprado com um webservice soap convencional dezanove
+
+embora o xml seja um bom formato de intercambio de informacao quando o ficheiro toma maiores dimensoes apresenta uma sobrecarga significativa devido a descricao e identificacao dos dados neles contidos as aplicacoes moveis muitas vezes sao executadas em dispositivos com conectividade tres g e wireless e na maioria das vezes com plafond e largura de banda limitados deste modo torna se imperativo encontrar um formato adequado que nao comprometa o desempenho e melhore a eficiencia das aplicacoes moveis
+
+por outro lado temos o json javascript object notation que e um formato leve e livre de intercambio de dados oito e facil de interpretar e gerar e facilmente lido pelos humanos por ter natureza autodescritiva dezanove um objecto json e delimitado por chavetas e podem conter varios campos separados por virgula
+
+cada campo tem um identificador de texto seguido por dois pontos e depois pelo seu valor um array e delimitado por parentesis retos na figura vinte e nove podemos ver um objecto json
+
+figura vinte e nove representacao de um objecto json e um array
+
+em json um valor entre aspas pode simplesmente ser uma string numero boleano array ou ate outro objecto json
+json tambem aceita valores nulos a cadeia de caracteres json e uma sequencia de zero ou mais caracteres unicode dentro de aspas e aceita caracteres de escape como a maioria das linguagens de programacao json nao permite numeros hexadecimais ou octais mas os numeros decimais sao declarados como qualquer outra linguagem de programacao
+json oferece varias vantagens na sua implementacao como o ser leve ser facil de gerar e interpretar pelos seres humanos e facilidade de integracao com paginas web uma vez que usa sintaxe javascript existem inumeras api s que suportam e retornam resultados neste formato como por exemplo a yahoo api
+
+como qualquer tecnologia o json tem alguns inconvenientes pode nao ser tao legivel como o xml ou html o que implica perceber a sintaxe claramente a escolha entre xml e json depende do trabalho que esta a ser feito em situacoes onde temos necessidade de retornar dados a partir de resposta de um webservice e interpretar los o json e xml ambos servem perfeitamente
+se houver necessidade de atualizar partes especificas de um documento json pode nao ser a melhor opcao pois torna se mais dificil a sua alteracao neste caso sera mais eficaz utilizar o formato xml e utilizar a linguagem xpath de forma a conseguir alterar facilmente as partes desejadas do documento
+
+como referido anteriormente as aplicacoes moveis devem ser supostamente leves e rapidas e um dos pontos a tomar em consideracao e o tempo de processamento dos dados de resposta retornados no formato json e xml um processamento rapido significa que o processador do dispositivo vai estar menos tempo alocado a interpretar os dados e por consequencia vai consumir menos bateria e mostrar rapidamente os resultados
+
+analisando em detalhe a figura trinta onde o eixo vertical representa o tamanho do tempo de resposta em bytes e o eixo horizontal representa o numero de registos interpretados verificamos que o formato xml introduze mais overhead quatro que o json nao importando a quantidade de registos a ser retornados assim sendo o uso do json em vez do xml como formato de troca de dados reduz consideravelmente nao so largura de banda necessaria para a troca mas reduz tambem e por uma grande margem o tempo de processamento necessario para analisar o de dados utilizando um dispositivo movel
+
+figura trinta tamanho da resposta em bytes para diferentes quantidades de registos dezanove
+
+na figura trinta e um o eixo horizontal representa a contagem dos registos analisados para cada teste ja o eixo vertical representa o tempo gasto por cada pedido um tempo de interpretacao pequeno significa que o processo e rapido consome menos energia e retorna os resultados ao utilizador rapidamente as colunas de cor branca representam o tempo de interpretacao gasto pelo xml e as de cor preta e o tempo de interpretacao do json assim e possivel concluir que se usamos um interpretador padrao para json e xml a partir do sdk do android json e interpretado muito mais depressa que o xml
+
+figura trinta e um tempo de processamento em milissegundos dezanove
+
+quatro um seis sistema operativo android
+
+em novembro de dois mil e sete a empresa google tornou publica a primeira plataforma open source para desenvolvimento de aplicacoes para dispositivos moveis baseada na plataforma java e tendo como base o sistema operativo linux sendo denominada android esta plataforma e mantida pela open handset alliance grupo constituido por mais de trinta empresas cujo intuito e inovar e acelerar o desenvolvimento de aplicacoes e servicos permitindo aos consumidores uma experiencia mais rica menos dispendiosa em termos financeiros para o mercado movel vinte e cinco podemos afirmar que a plataforma android e um conjunto de software para uso em dispositivos moveis que inclui um sistema operativo midleware camada intermedia e aplicacoes dois constituindo a primeira plataforma de desenvolvimento movel aberta e livre
+apos a primeira release da plataforma em poucos meses mais de um milhao de pessoas tinham descarregado o sdk do site da google nos eua a operadora t mobile anunciou o primeiro smartphone android o g um em outubro de dois mil e oito e estima se que antes do final desse ano se tenham vendido centenas de milhares de estes equipamentos vinte e cinco
+
+o sistema operativo android definiu um novo padrao para o desenvolvimento de aplicacoes orientadas para dispositivos moveis e reuniu todas as condicoes para a criacao do android market espaco destinado a disponibilizacao de aplicacoes livres ou pagas por parte dos utilizadores
+
+entao porque ate agora nao tem sido rentavel criar aplicacoes moveis para smartphones quais sao os problemas que o android da resposta
+
+capacidade de execucao de multiplas aplicacoes em simultaneo o utilizador pode realizar multiplas tarefas com o equipamento em simultaneo desde ouvir musica receber e enviar notificacoes ou ate gravar dados gps
+permite a escolha do hardware a usar como o android e uma plataforma aberta os fabricantes tem a liberdade de incluir o hardware que quiserem
+instalacao de roms personalizadas como android e um sistema open source tem uma grande comunidade de colaboradores que constroi e disponibiliza roms personalizadas para equipamentos android isto permite a sua personalizacao grafica e do funcionamento das seus programas
+integracao com redes sociais os smartphones tem conectividade constante permitindo aceder aos nossos emails aceder ao flickr para colocar as nossas fotos acabadas de criar com o nosso equipamento criar comentarios na nossa conta de facebook ou ate enviar uma mensagem atraves do twitter sao algumas das possibilidades que nos oferece o android de forma nativa
+android market place o android tem um mercado de aplicacoes disponiveis para os seus utilizadores comprarem software ou simplesmente descarregarem software open source das mais variadas areas jogos financas desporto lazer etc
+
+o sistema operativo android esta subdividido em quatro camadas principais como podemos observar na figura trinta e dois o kernel bibliotecas libraries estrutura aplicacional applications framework e as aplicacoes
+
+figura trinta e dois arquitectura android catorze
+
+a camada kernel e proveniente do linux as bibliotecas que vem com o android fornecem a muitas das capacidades graficas multimedia e armazenamento
+embutido na camada libraries temos o android runtime que contem a maquina virtual dalvik que alimenta e gere as aplicacoes
+a camada applications framework e a api que todas as aplicacoes devem usar para aceder ao nivel mais baixo da arquitectura android
+
+quatro um seis um kernel
+
+o linux foi escolhido como kernel do android uma vez que provou estabilidade e funcionalidade em sistemas desktop alem disso na maioria dos casos nao e necessario reescrever novos drivers para hardware movel o kernel fornece coisas como memoria virtual rede e gestao de energia ao examinar o kernel fornecido com o codigo fonte android poucas sao as mudancas significativas face principais funcionalidades do kernel tradicional sete
+
+quatro um seis dois sistema de bibliotecas
+
+as bibliotecas do sistema android sao escritas em c c sao estas que fornecem as principais funcionalidades e sao chamadas atraves de interfaces java
+estas incluem um gestor de superficie surface manager para composicao de janelas e graficos tres d e dois d codecs como mpeg quatro e mp tres bases de dados sql lite e o motor de um navegador web webkit
+a dalvik virtual machine e de particular interesse nesta camada e um interpretador bytecode altamente optimizado para correr numa plataforma movel sete
+quatro um seis tres applications framework
+
+esta camada e a camada acima sao totalmente escritas em java aqui o android fornece um subconjunto substancial dos cinco pacotes java standard edition incluindo coleccoes i o
+tambem fornece todas as android api s especificas que as aplicacoes devem usar incluindo coisas como a partilha de dados acesso a funcionalidades do telefone e recepcao de notificacoes
+um ponto importante a ressaltar sobre o android os e que todas as aplicacoes utilizam a mesma framework isto permite uniformizar o codigo e reduzir os problemas relacionados com a atualizacao de camadas inferiores catorze
+
+quatro um seis quatro camada aplicacional
+
+todas as aplicacoes android sao escritas em java e interpretadas pela dalvik virtual machine a maior parte das funcionalidades principais do telefone e das aplicacoes de gestao de contactos residem nesta camada
+contem software escrito pela equipa android mas tambem software de terceiros que pode ser instalado no dispositivo isto permite que os desenvolvedores consigam manipular algumas caracteristicas do software original e torna lo parametrizavel
+
+quatro um sete java android sdk
+
+nas aplicacoes android como a maioria das aplicacoes para dispositivos moveis sao desenvolvidas num computador onde os recursos sao mais abundantes e posteriormente e feito download para o dispositivo movel para testar e usar por tanto as aplicacoes podem ser testadas e depuradas de erros num dispositivo android ou simplesmente utilizando um emulador
+assim sendo torna se mandatorio identificar e instalar todas as ferramentas necessarias para iniciar o desenvolvimento do nosso prototipo de aplicacao movel
+o android sdk software development kit suporta diferentes ide s integrated development environment que possibilitam a escrita e depuracao de codigo java que posteriormente sera corrido no dispositivo movel sem importar qual o sistema operativo que e usado na maquina destinada ao desenvolvimento
+
+basicamente sao necessarias as seguintes ferramentas
+
+ide eclipse editor que permite o desenvolvimento de codigo java
+jdk java development kit conjunto de utilitarios que possibilitam construir pecas de software passiveis de correr na plataforma java e constituido pelo compilador e bibliotecas
+android sdk fornece as ferramentas e bibliotecas necessarias para iniciar o desenvolvimento de aplicacoes que podem correr em dispositivos android como por exemplo emulador documentacao bibliotecas exemplos e depurador entre outros nove
+adt android developer tool extende as capacidades do ide neste caso o eclipse para permitir criar rapidamente novos projetos android criar aplicacoes ui adicionar componentes tendo como base o android framework api depurar as nossas aplicacoes usando ferramentas do sdk e criar pacotes apk para distribuir a nossa aplicacao vinte e nove
+quatro dois arquitectura do sistema
+
+a arquitectura onde esta assente o prototipo muvonschedule foi concebido de forma a dar resposta aos desafios propostos inicialmente e pode ser ilustrada atraves da figura trinta e tres
+
+figura trinta e tres arquitectura base do muvonschedule
+
+o sistema esta constituido por uma aplicacao servidor que neste caso e o open trip planner o nosso planeador intermodal de viagens instalado num container java tomcat que responde a pedidos enviados efectuados a partir da aplicacao cliente que esta instalada no dispositivo do utilizador
+
+descrevendo sucintamente o funcionamento do sistema basicamente o utilizador instala e inicializa no seu dispositivo movel a aplicacao muvonschedule onde indica o ponto de partida e chegada envolvidos na viagem que quer planificar e percorrer com essa informacao a aplicacao realiza o geocoding desses pontos utilizando a google maps api geocoder convertendo moradas fornecidas em coordenadas latitude e longitude posteriormente com ajuda da aplicacao o utilizador escolhe os meios de transporte e outros filtros disponiveis e que se encontram previamente configurados e armazenados na base de dados local do dispositivo sql lite e quando o utilizador escolhe a opcao procurar e construido um pedido http que e enviado ao servidor open trip planner e respondido atraves da sua restful webservice api que retorna o resultado da pesquisa no formato json que vai permitir a aplicacao mostrar ao utilizador os trajetos encontrados
+
+a aplicacao cliente esta estruturada seguindo o padrao model view controller exemplificado na figura trinta e quatro permitindo que exista uma diferenciacao clara entre os componentes que constituem a aplicacao e permite a camada de controlo controller manipular facilmente os inputs colocados pelo utilizador enquanto a camada de apresentacao view mostra a informacao no ecra e a camada model e responsavel por guardar os dados
+
+figura trinta e quatro conceito model view controller
+
+explicando a funcao de cada uma das camadas temos
+
+model representa a camada de persistencia dos dados e onde a camada view e controller reflectem as alteracoes vinte e cinco
+view e responsavel pela renderizacao e amostragem dos dados da aplicacao ao utilizador a framework ui android percorre os componentes armazenados na view tree e pede a cada componente que se desenhe a si proprio e peca aos seus filhos para fazer o mesmo vinte e cinco
+controller esta parte da aplicacao responde a accoes externas como por exemplo toques no ecra ou carregar em algum botao da tela etc e implementada como numa fila de eventos cada accao externa e representada por um unico evento na fila a framework remove cada um destes eventos da fila a medida que sao tratados assim uma vez que o evento e tratado pelo respectivo componente em uso este pode tomar a accao correta para mudar o estado interno da aplicacao vinte e cinco
+
+quatro tres diagrama de classes
+
+na construcao do prototipo foram concebidos tres grupos de diagramas de classes um para suportar a informacao proveniente do processo de geocodificacao outro para suportar a informacao resultante das pesquisas efectuadas ao open trip planner e o ultimo possui as classes que implementam as funcionalidades disponiveis na aplicacao mobile
+
+previamente antes de efectuar efectivamente a pesquisa dos trajetos disponiveis no open trip planner e como foi referido anteriormente e necessario obter as coordenadas geodesicas latitude e logitude dos locais de partida e chegada assim sendo e necessaria uma estrutura que suporte os dados resultantes dos pedidos efectuados a google maps api geocoder e que vem no formato json utilizando a biblioteca gson e possivel a deserializacao dos dados para as respetivas classes java que mostramos na figura trinta e cinco
+
+figura trinta e cinco diagrama de classes para o processo de geocoding
+
+fazendo uso da tabela tres explicamos resumidamente qual a funcionalidade das classes referidas na figura anterior
+
+tabela tres funcao das classes de suporte ao geocoding
+classe
+funcao
+geocode
+contem uma lista de resultados e retorna o estado do processo geocoding
+results
+lista de address components que contem nome longo e curto do endereco fornecido
+um formatted address que contem o endereco completo formatado e contem um objeto geometry
+geometry
+contem objetos bound e coordinates que representam os limites e as coordenadas do ponto tem um location type que representa o tipo de localizacao do ponto e um viewport
+bounds
+armazena as coordenadas dos limites do endereco pesquisado
+coordinates
+armazena as coordenadas do endereco pesquisado
+viewport
+indica os pontos lat e lon da janela de visualizacao
+
+posteriormente apos a respectiva submissao do pedido de itinerarios atraves da api restful do servidor otp sao utilizadas as classes assinaladas na figura trinta e seis
+
+figura trinta e seis diagrama de classes para mapeamento de resultados pesquisa otp
+
+para compreender a utilidade e funcionalidade de cada uma destas classes foi condensada na tabela quatro
+
+tabela quatro classes que permitem acesso a informacao pesquisada no servidor otp
+classe
+funcao
+trip
+contem um objeto plan
+plan
+armazena informacao sobre a data da pesquisa ponto origem destino objetos location e itineraries
+itineraries
+armazena uma lista de itinerary
+itinerary
+armazena informacao geral sobre um itinerario
+da acesso a duracao do itinerario hora inicio hora fim tempo a caminhar a pe tempo de espera distancia a percorrer a pe declive positivo declive negativo numero de transferencias tambem possui um objecto do tipo fare e legs
+fare
+armazena um objecto do tipo fareinside
+fareinside
+armazena um objeto do tipo entry
+entry
+armazena uma key e um objeto do tipo value normalmente usado para especificar o tipo de tarifa aplicar e preco da viagem
+value
+guarda o preco da viagem e moeda
+geometry
+disponibiliza o tipo de geometria e as suas coordenadas
+legs
+armazena uma lista de leg
+leg
+objeto que armazena informacao sobre os meios de transporte e as paragens que deve aceder
+contem informacao sobre a transportadora prestadora do servico numero da carreira e tipo de transporte ainda informa sobre a hora de partida hora de chegada distancia a percorrer e duracao
+leggeometry
+contem o tamanho do leg e os seus pontos
+steps
+armazena uma lista de walksteps
+walksteps
+informacao para os percursos que sao efectuados a pe indica distancia nome da rua latitude longitude e elevacao do terreno
+location
+contem o nome identificador da paragem latitude e longitude da localizacao
+locationleg
+contem o nome identificador da paragem latitude longitude da localizacao e uma lista de objectos do tipo geometry
+stopid
+indica o numero da paragem e a transportadora
+
+finalmente vamos abordar o diagrama de classes referente as classes que suportam o funcionamento do prototipo e que estao assinaladas na figura trinta e sete
+
+figura trinta e sete diagrama representativo das classes que implementam funcionalidades
+
+analisando a figura anteriormente referida verificamos que as classes activitygroup tabactivity activity listactivity e sqliteopenhelper sao classes disponibilizadas pelo android sdk e o desenvolvimento e realizado extendendo estas classes para implementar as funcionalidades
+
+indicamos na tabela cinco as respectivas classes e o seu contributo na aplicacao
+
+tabela cinco classes que implementam funcionalidades do prototipo
+classe
+funcao
+muvonschedule
+implementa ecra principal da aplicacao cria a tabactivity que alberga as restantes tabs searchtab favoritetab pointinteresttab e settingstab
+searchtab
+implementa o formulario de pesquisa de trajetos da aplicacao
+favoritetab
+implementa o formulario que mostra os locais favoritos
+pointinteresttab
+implementa o formulario que mostra os pontos de interesse
+databasehelper
+implementa metodos que permitem a persistencia na bd local de configuracoes e informacao na aplicacao
+basicroute
+mostra os diversos trajetos resultantes da procura no servidor otp
+detailroute
+mostra detalhes do trajeto escolhido pelo utilizador
+wsoperations
+permite invocar pedidos ao servidor otp e verificar o estado da conexao com o servidor
+wsgeocoding
+implementa metodos que criam pedidos para o servidor de geocoding e efectuam a conversao de morada para coordenadas e viceversa
+miscellaneous
+possui metodos que realizam tarefas atomicas necessarias na aplicacao como por exemplo converter milissegundos em horas etc
+tabgroupactivity tabgroup dois activity
+sao metodos que permitem a iteracao entre janelas isto e passar de uma janela para outra
+
+quatro quatro configuracao open trip planner
+
+para o prototipo funcionar foi necessario configurar uma instancia do servidor open trip planner inicialmente foi desenvolvida uma configuracao no formato gtfs de uma rota ficticia de uma conhecida empresa de camionagem de aveiro usando as ferramentas disponiveis em doze a fim de criar o respectivo grafo com as rotas no servidor otp
+
+o procedimento consistiu em instalar o otp fazendo checkout dos repositorios da empresa que desenvolveu o software e importante salientar que o otp pode utilizar varias fontes de dados como shapefiles street data provenientes da openstreetmap ou simplesmente ficheiros gtfs optamos por utilizar este ultimo por ser um standard muito usado para partilha de informacao de transportes publicos
+foi configurado o ficheiro grap config xml que podemos visualizar atraves da figura quarenta e sete apresentada em anexo onde sao definidas as fontes de dados que vao ser usadas e a bounding box que vamos usar isto e os limites da localizacao geografica onde o servidor vai actuar no nosso caso usamos o ficheiro gtfs moveaveiro zip previamente gerado e validado no formato gtfs depois posicionando nos na pasta opentripplanner graph builder target onde esta a instalacao otp procedemos a gerar o grafo que vai permitir efectuar consultas usando o servidor usando o seguinte comando
+java xmx um zero dois quatro m jar graph builder jar home demo otp opentripplanner graph builder samples graph config xml
+
+posteriormente posicionamo nos na diretoria raiz da instalacao recompilamos e geramos os respectivos ficheiros opentripplanner api webapp war e opentripplanner webapp war usando o comando
+
+mvn e package dskiptests
+
+os ficheiros anteriormente gerados devem ser instalados no servidor tomcat que ira instanciar o otp o ficheiro opentripplanner webapp war quando instanciado permite ao utilizador fazer pesquisas de trajetos atraves de uma tela que pode ser parametrizavel como vemos na figura trinta e oito
+
+figura trinta e oito aspecto de uma pesquisa de trajetos entre pontos utilizando a interface web otp
+por outro lado o ficheiro opentripplanner api webapp war implementa a interface restful do otp que permite que sejam efectuadas consultas fazendo uso da aplicacao muvonschedule por exemplo um utilizador faz uma pesquisa de itinerarios entre dois pontos utilizando a aplicacao muvonschedule e e construido um pedido e enviado via http ao servidor api restful com o seguinte aspecto
+
+poucos milissegundos depois o servidor retorna uma resposta no formato json que descreve os passos que o utilizador devera seguir para chegar ao seu destino o aspeto da resposta devolvida pelo servidor pode ser visualizada nos anexos deste documento especificamente na figura quarenta e oito
+quatro cinco muvonschedule
+
+muvonschedule e o nome dado ao prototipo que sera instalado em equipamentos android e que vai permitir efetuar pesquisas de percursos entre dois pontos utilizando a informacao existente no servidor open trip planner
+possui um pequeno modelo de dados que armazena em base de dados local do dispositivo informacoes sobre a aplicacao como por exemplo os filtros a disponibilizar na pesquisa como por exemplo o caminho mais curto caminho mais rapido etc
+possui uma tabela de muv object que armazena o tipo de objecto que queremos persistir como exemplifica a figura trinta e nove
+
+figura trinta e nove aspecto da tabela muv object
+tambem existe uma tabela muv object values que armazena os valores respectivos para esse objecto como vemos na figura quarenta
+
+figura quarenta tipo de informacao armazenada na tabela muv object values
+
+a aplicacao esta dividida em quatro partes procura favoritos pontos de interesse e definicoes
+a primeira parte esta orientada para fazer pesquisas de itinerarios envolvendo um ponto origem e destino mostrando uma lista dos resultados onde o utilizador tera a liberdade de escolher qual o trajeto mais adequado para si consoante a escolha feita serao mostradas as indicacoes dos passos a seguir para chegar ao destino ainda encontra se em desenvolvimento a funcionalidade que permite escolher um trajeto e mostra lo no mapa fazendo highlight do caminho a percorrer como tambem adicionar o mesmo aos favoritos ja no separador dos favoritos sera mostrada uma lista dos trajetos assinalados como favoritos em pesquisas anteriores por outro lado o separador relacionado com pontos de interesse serao apresentados os pontos de interesse referentes a zona envolvente relacionada com a pesquisa efetuada o ultimo separador e das definicoes onde sera possivel configurar definicoes como endereco do servidor open trip planner raio de procura de pontos de interesse entre outras definicoes
+
+como podemos observar na figura quarenta e um o utilizador ao iniciar a aplicacao acede diretamente ao tabulador de pesquisa que permite indicar o local origem destino e parametrizar outros parametros inerentes a procura que quer efectuar como por exemplo se deseja obter o caminho mais curto ou qual o tipo de transporte
+
+figura quarenta e um ecra inicial aplicacao muvonschedule
+
+ao colocar uma possivel morada nas caixas origem ou destino automaticamente e pesquisado atraves do google geocode api as diversas moradas mostrando ao utilizador uma lista das mesmas para que se proceda a escolha da morada adequada como vemos na figura quarenta e dois
+
+figura quarenta e dois exemplo processo de geocoding
+ao termos definido as moradas de origem e destino procedemos a fazer a filtragem das carreiras cujo percurso e mais rapido ou possui menos transbordos entre outras opcoes como podemos verificar na figura quarenta e tres
+
+figura quarenta e tres filtros disponiveis no ecra de pesquisa
+
+tambem e possivel filtrar que tipo de meio de transporte que desejamos envolver na pesquisa de forma a considerar ou nao todas as opcoes disponiveis entre duas localizacoes ao seleccionar o botao tipos de transporte vemos a caixa de seleccao assinalada na figura quarenta e quatro
+
+figura quarenta e quatro filtros referentes aos tipos de transporte
+
+e de salientar que a pesquisa so e possivel indicando as moradas de origem e destino apos indicar os filtros e os meios de transporte desejados procedemos carregando no botao procurar onde sao listados tres percursos para a linha oito entre a avenida doutor lourenco peixinho e a avenida vinte e cinco de abril como podemos verificar na figura quarenta e cinco
+
+figura quarenta e cinco listagem de itinerarios resultantes da pesquisa
+
+por outro lado podemos observar na figura quarenta e seis que o prototipo implementa filtros que nao se encontram disponiveis por exemplo na ferramenta google maps mobile como por exemplo a filtragem por tipo de percurso seja ele o mais rapido menos transbordos ou ainda o tipo de meio de transporte
+
+figura quarenta e seis comparacao entre muvonsch e google maps
+cinco conclusoes
+
+apos a realizacao e apresentacao do trabalho desenvolvido e altura de realizar um balanco do trabalho realizado
+
+este projeto foi iniciado com a finalidade de implementar um prototipo que permita o calculo de itinerarios fazendo uso de uma plataforma de pesquisa e partilha de informacoes sobre meios massivos de transporte este objectivo foi atingido com sucesso permitindo que outras pessoas explorem e aprofundem as diversas funcionalidades que um sistema deste tipo pode oferecer aos utentes de meios publicos e privados de transporte
+
+foram encontrados inumeras dificuldades no desenvolvimento do trabalho a nivel de integracao das diversas ferramentas e o planeador intermodal de itinerarios contudo foi uma experiencia enriquecedora visto que permitiu explorar novos metodos de criacao de codigo como o model view controller e experimentar o desenvolvimento usando a plataforma android assim como estar ciente dos desafios diarios que milhares de utilizadores tem de enfrentar no momento de empreender uma viagem e sobre tudo compreender e satisfazer as suas necessidades
+
+em paralelo com este trabalho foi desenvolvido um artigo dezanove que foi apresentado na conferencia centeris dois mil e onze em vilamoura e permitiu avaliar e corroborar que o json e efectivamente o melhor formato para partilha de informacao utilizando smartphones por apresentar tempos de resposta mais baixos e largura de banda mais reduzida na troca de informacao face ao formato xml este contributo ira ajudar a muitos outros programadores que queiram desenvolver aplicacoes para dispositivos moveis
+
+a utilizacao do padrao model view controller permitiu construir a base do prototipo de forma modular permitindo que qualquer pessoa possa programar e intrusar se com o trabalho ate agora desenvolvido e rapidamente desenvolver novas funcionalidades
+cinco um pontos a explorar
+
+um dos aspectos que pode ser melhorado e a apresentacao e usabilidade da aplicacao movel deveriam ser feitos testes de stress para perceber quais as limitacoes do prototipo e em que pontos podemos melhorar o desempenho
+um ponto importante seria parametrizar e desenvolver a aplicacao web disponivel por defeito no otp de forma a permitir aos utilizadores efectuar pesquisas de trajetos via web
+um ponto que catalisaria o crescimento da plataforma e facilitaria a insercao de informacao na plataforma seria a criacao de aplicacao mobile que permitisse aos motoristas registar as rotas fazendo uso do formato gtfs isto permitiria o registo de todas as rotas e trajetos de forma mais rapida e eficiente
+
+cinco dois trabalho futuro
+
+certamente que antes de este projeto entrar em producao existe muito trabalho a fazer um projeto desta magnitude precisa de mais recursos humanos e tempo para o desenvolvimento maturacao e refinamento das suas funcionalidades
+deve ser evoluido o modelo de dados por forma a permitir criar e acomodar novas funcionalidades avancadas como pesquisa de itinerarios offline partilha de itinerarios favoritos com outros utilizadores etc
+
+existem inumeras funcionalidades que podem ser adicionadas as quais passo a citar
+criacao de modulo de notificacoes e alarmes que permita mostrar ao utilizador informacoes importantes com relacao ao servico de transporte publico que pretende
+desenvolver modulo que permita a organizacao e gestao de viagens em grupo e excursoes
+desenvolver modulo de realidade aumentada que permita aos turistas identificar e saber mais sobre os monumentos referentes a uma cidade
+desenvolver interface que permita utilizar varias api s de geocoding
+suporte para i dezoito n internacionalizacao em diversas linguas
+pesquisa de trajetos com reconhecimento de voz para pessoas invisuais
+seis bibliografia
+
+um allamaraju s ed restful web services cookbook solutions for improving scalability and simplicity ed o reilly dois mil e dez
+dois alliance o h android dois mil e onze cited dois mil e onze september available from http www openhandsetalliance com android overview html
+tres ana rita r j tecoplanner bussiness plan dois mil e onze p um dois
+quatro appbrain pdxtrian dois mil e oito cited dois mil e onze september available from http www appbrain com app pdxtrian com pdxtrian alpha
+cinco asus g nuvifone a dez dois mil e onze cited dois mil e onze april available from http www garminasus com en gb phones nuvifone a dez
+seis carneiro l ed sistemas distribuidos com rmi corba e soa dois mil e oito
+sete coelho p l d f e open location based services application platform dois mil e dez
+oito crockford d ed javascript the good parts dois mil e oito o reilly
+nove developers a adt plugin for eclipse dois mil e onze cited dois mil e onze september available from http developer android com sdk eclipse adt html
+dez freitag p rest vs soap web services dois mil e cinco cited dois mil e onze september available from http www petefreitag com item quatrocentos e trinta e um cfm
+onze google plan a trip using public transportation dois mil e sete cited dois mil e onze october available from http www google com intl en landing transit mdy
+doze google general transit feed specification dois mil e dez cited dois mil e onze april available from http code google com transit spec transit feed specification html
+treze google google maps api web services dois mil e onze cited dois mil e onze june available from http code google com intl pt pt apis maps documentation geocoding
+catorze google what is android dois mil e onze cited dois mil e onze september available from http developer android com guide basics what is android html
+quinze gordon m opentripplanner code overview dois mil e onze cited july dois mil e onze available from http www locationaware usf edu wp content uploads dois zero um um zero tres opentripplaner code overview pdf
+dezasseis gson google gson dois mil e oito cited dois mil e onze january available from http code google com p google gson
+dezassete gtfs general transit feed specification dois mil e dez cited dois mil e onze april available from http code google com transit spec transit feed specification html
+dezoito hatem hamad m s e r a performance evaluation of restful web services for mobile devices dois mil e nove
+dezanove jose afonso c r e p t mobile application webservice performance analysis restful services with json and xml dois mil e onze
+vinte leonard richardson s r e d h h ed restful web services dois mil e oito o reilly
+vinte e um nokia ovi maps dois mil e onze cited dois mil e onze april available from http www ovi com services
+vinte e dois opentripplanner dois mil e onze cited dois mil e onze july available from http opentripplanner com learn
+vinte e tres pereira b webservices rest dois mil e nove cited dois mil e onze september available from http brunopereira org tag restful web services
+vinte e quatro protsenko m distance problems in networks theory and praxis dois mil e dez
+vinte e cinco rick rogers j l zigurd mednieks e blake meike ed android application development dois mil e nove o reilly
+vinte e seis roth m how google and portland s trimet set the standard for open transit data dois mil e dez cited dois mil e onze july available from http sf streetsblog org dois mil e dez uma hora e cinco how google and portlands trimet set the standard for open transit data
+vinte e sete sharma p google transit a great asset to google maps dois mil e nove cited dois mil e onze june available from http www techpluto com google transit benefits
+vinte e oito sturgeon p geocoding api s compared dois mil e onze cited dois mil e onze august available from http philsturgeon co uk blog dois zero um um zero dois geocoding apis compared
+vinte e nove wikipedia android software development dois mil e onze cited dois mil e onze september available from http en wikipedia org wiki android software development
+trinta yahoo yahoo placefinder guide dois mil e onze cited dois mil e onze september available from http developer yahoo com geo placefinder guide
+
+anexos
+
+figura quarenta e sete ficheiro de configuracoes graph config xml
+
+figura quarenta e oito resposta json do servidor otp para pesquisa realizada pela aplicacao muvonschedule
+
+um rensis likert criador da escala de resposta psicometrica usada comumente em questionarios usada habitualmente em pesquisas de opiniao
+likert scale dois mil e onze cited dois mil e onze september available from http en wikipedia org wiki likert scale
+dois o algoritmo de dijkstra permite calcular o caminho de menor custo entre nos utilizando um grafo com pesos dijkstra s algorithm dois mil e onze cited dois mil e onze september available from http www algolist com dijkstra s algorithm
+tres algoritmo a permite a procura de um caminho entre dois pontos desde um vertice inicial ate um vertice final a search algorithm dois mil e onze cited dois mil e onze september available from http en wikipedia org wiki a search algorithm
+quatro consumo em excesso de um determinado recurso seja ele processamento armazenamento ou memoria para realizar uma tarefa
+
+viii
+
+ix
+
+um introducao
+
+um introducao
+
+sessenta e quatro
+
+trinta e cinco
+
+dois estado da arte
+
+dois estado da arte
+
+tres abordagem e processo de investigacao
+
+tres abordagem e processo de investigacao
+
+quatro desenvolvimento
+
+quatro desenvolvimento
+
+sessenta e cinco
+
+cinco conclusoes
+
+cinco conclusoes
+
+seis bibliografia
+
+seis bibliografia
+
+setenta e dois
+
+setenta e tres

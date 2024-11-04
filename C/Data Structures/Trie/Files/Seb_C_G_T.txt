@@ -1,0 +1,1081 @@
+
+sebenta teorica
+
+
+introducao a computacao grafica
+
+
+
+elaborado por
+dr francisco morgado           estv  viseu
+
+
+ indice 
+
+um                              introducao a computacao grafica                                     cinco 
+dois                            raster scan display                                                 oito 
+tres                            mapa de bits  frame buffer                                          nove 
+quatro                          display controler                                                   dez 
+cinco                           random vector display                                               onze 
+seis                            scan conversion                                                     doze 
+sete                            razao de aspecto                                                    treze 
+oito                            a recta                                                             catorze 
+nove                            a circunferencia                                                    quinze 
+   nove ponto um                    representacao implicita                                         quinze 
+   nove ponto dois                  representacao polar                                             quinze 
+dez                             fundamentos graficos                                                dezassete  
+   dez ponto um                     viewing                                                         dezassete  
+   dez ponto dois                   window e clipping                                               dezoito  
+   dez ponto tres                   viewport                                                        dezoito  
+   dez ponto quatro                 panning                                                         dezanove  
+   dez ponto cinco                  sistema de coordenadas normalizadas                             dezanove  
+   dez ponto seis                   janela window                                                   dezanove  
+onze                            transformacoes bi tri dimensionais   dois d  tres d                 vinte e um 
+   onze ponto um                    introducao                                                      vinte e um 
+   onze ponto dois                  transformacoes geometricas                                      vinte e um 
+                                  transformacoes em dois d                                          vinte e dois 
+                                  coordenadas homogeneas e matrizes de transformacao                vinte e cinco 
+                                  composicao de transformacoes                                      vinte e nove 
+   onze ponto tres                  transformacao janela porta de visao   window to viewport        trinta e um 
+   onze ponto quatro                transformacoes em tres d                                        trinta e quatro 
+                                  composicao de transformacoes em tres d                            trinta e seis 
+doze                            representacao de funcoes dois d tres d                              trinta e oito 
+   doze ponto um                    curvas parametricas                                             trinta e oito 
+   doze ponto dois                  aproximacao de curvas                                           trinta e oito 
+   doze ponto tres                  representacao com espacamento constante                         trinta e nove 
+   doze ponto quatro                representacao adaptativa                                        quarenta 
+                                    criterios de refinamento                                        quarenta e um 
+   doze ponto cinco                 superficies parametricas                                        quarenta e um 
+   doze ponto seis                  objectos implicitos                                             quarenta e dois 
+treze                           rendering                                                           quarenta e quatro 
+   treze ponto um                   introducao                                                      quarenta e quatro 
+                                    o processo fisico                                               quarenta e quatro 
+                                    metodos image order x object order                              quarenta e cinco 
+                                    surface rendering x volume rendering                            quarenta e cinco 
+   treze ponto dois                 cor                                                             quarenta e seis 
+   treze ponto tres                 fontes de luz                                                   quarenta e sete 
+   treze ponto quatro               propriedades das superficies um modelo de iluminacao            quarenta e oito 
+   treze ponto cinco                tonalizacao                                                     cinquenta e quatro 
+   treze ponto seis                 transparencia                                                   cinquenta e seis 
+catorze                         uma abordagem matematica                                            cinquenta e oito 
+   catorze ponto um                 definicao de vectores linearmente independentes dependentes     cinquenta e oito 
+   catorze ponto dois               definicao de um conjunto de vectores que geram um espaco        cinquenta e nove 
+   catorze ponto tres               definicao de base e dimensao                                    cinquenta e nove 
+quinze                          transformacoes aplicacoes lineares uma abordagem matematica         sessenta e um 
+   quinze ponto um                  mudancas de base                                                sessenta e quatro 
+dezasseis                       geometria em tres d                                                 sessenta e seis 
+    dezasseis ponto um              ponto                                                           sessenta e seis 
+    dezasseis ponto dois            vector                                                          sessenta e seis 
+    dezasseis ponto tres            recta                                                           sessenta e seis 
+    dezasseis ponto quatro          plano                                                           sessenta e sete 
+dezassete                       exercicios a resolver                                               sessenta e oito 
+dezoito                         bibliografia                                                        setenta e um 
+
+
+
+
+
+um introducao a computacao grafica
+
+
+ha pelo menos quarenta anos os primeiros desenhos produzidos por computador virgula serviram para sistemas de defesa e controlo aereo no mit com um computador tx um pontofinal
+durante os ultimos vinte anos virgula certos meios cientificos utilizaram as capacidades graficas dos computadores para produzirem diagramas e graficos que incluiam em relatorios virgula artigos e teses pontofinal
+durante todo este periodo virgula o publico virgula mesmo o ligado a meios universitarios virgula ignorou literalmente as possibilidades graficas postas a disposicao pelos computadores pontofinal
+no entanto virgula e necessario frisar que os equipamentos eram demasiado caros e os resultados nao eram de maneira nenhuma espectaculares
+hoje em dia virgula a situacao mudou radicalmente pois virgula todos ou quase todos os microcomputadores possuem capacidades graficas superiores em qualidade e quantidade aos computadores daquela epoca pontofinal
+milhoes de telespectadores sao diariamente confrontados com genericos e logotipos obtidos em computador virgula alguns deles com um realismo e uma perfeicao que forcam a nossa admiracao e nos deixam pensativos
+nos utimos anos virgula assistimos a progressos espectaculares virgula tanto do ponto de vista material com a descida enorme nos precos dos equipamentos virgula como do ponto de vista da logica envolvida na criacao de algoritmos basicos primitivas do sistema grafico que passam de uma versao de software a uma versao de hardware o que torna ainda mais rapida a execucao daqueles algoritmos
+a computacao grafica encontra eco em quase todos os dominios virgula desde a criacao virgula passando pela concepcao e fabrico ate a informacao
+em arquitectura virgula por exemplo virgula podemos representar apartamentos ate aos minimos detalhes podendo de seguida visualiza los independentemente do ponto de vista que escolhermos
+em cartografia o computador pode produzir muito rapidamente mapas com diferentes tipos de elementos geograficos pontofinal
+numa carta metereologica virgula por exemplo virgula podemos utilizar simbolos como nuvens ou o sol para indicar qual o tempo que vamos ter em cada uma das regioes pontofinal
+note se que este tipo de aplicacao e usada por muitas emissoras de televisao
+no dominio dos transportes virgula mapas com os itinerarios de autocarros virgula caminhos de ferro ou avioes podem ser produzidos por computador e posteriormente serem utilizador no planeamento de novos percursos ou alteracoes dos existentes de uma maneira rapida
+actualmente virgula entre as aplicacoes mais importantes virgula salienta se a utilizacao da computacao grafica na concepcao e fabricacao industrial pontofinal
+e normal ouvir falar se em projecto assistido por computador cad virgula cae virgula cam estando particularmente desenvolvidos no dominio das industrias automovel e aeronautica virgula no projecto de circuitos integrados e virgula na analise de elementos finitos em mecanica
+em portugal virgula na industria textil ja se utiliza cad na concepcao e fabrico de moldes e encontra se em fase de estudo o controlo directo das maquinas por envio automatico dos dados calculados
+em dominios de ponta como seja a telematica virgula o computador tem papel decisivo na edicao grafica virgula onde o utilizador manipula desenhos virgula alterando os e ou arquivando os para posterior tratamento pontofinal
+estes desenhos podem servir para ilustrar livros e textos e que podem ser transmitidos a milhares de pessoas via circuitos de telecomunicacoes
+no dominio da medicina virgula existem ja muitas aplicacoes pontofinal
+podem detectar se certas doencas virgula gracas ao tratamento de imagens virgula e como exemplo cita se a tomografia axial computorizada t a c
+finalmente no dominio das artes virgula o computador e ja instrumento de alguns pintores e escultores cujas obras vao aparecendo em exposicoes cada vez com mais regularidade
+
+
+dois raster scan display
+
+
+os ecrans usados pela maioria dos microcomputadores virgula estao divididos em pequenos pontos a que chamamos pixels pode se entao considerar que um ecran e formado por uma matriz de pontos formando linhas e que sao referidas como as raster scan lines linha que representa o mivimento do raio de electroes ao longo do ecran e a dimensao da matriz de pontos que mede a resolucao grafica de um determinado sistema pontofinal
+a qualidade de um determinado desenho virgula isto e virgula o grau de detalhe que se consegue para a imagem e tanto maior quanto maior for a dimensao dessa matriz
+a maioria dos mionitores a cores possui cerca de trezentos linhas e cada linha cerca de seiscentos e quarenta pontos pixels virgula o indice de renovacao refresh rate e o numero de imagens completas virgula desenhadas no ecran virgula em cada segundo virgula o tempo gasto para produzir uma imagem completa frame time e inverso do refresh rate
+
+
+tres mapa de bits frame buffer
+
+cada ponto do ecran virgula corresponde a uma entrada particular numa matriz bidimensional que reside em memoria pontofinal
+esta zona de memoria designa se por frame buffer ou mapa de bits pontofinal
+o numero de linhas da matriz e igual ao numero de linhas de raster scan e o numero de colunas igual ao numero de pontos pixels em cada linha pontofinal
+assim virgula um ecran de seiscentos e quarenta x trezentos pontos requer cento e noventa e dois mil posicoes de memoria
+sempre que se pretenda visualizar um ponto no ecran virgula um determinado valor e colocado em memoria na correspondente linha e coluna da matriz
+mas com um bit so se consegue ter informacao sobre se o ponto do ecran deve ou nao ser iluminado
+suponha se um dado monitor a preto e branco virgula onde se pretendam duzentos e cinquenta e seis tonalidades de cinzento pontofinal
+qual a dimensao da matriz ou matrizes ponto de interrogacao
+
+para expressar o numero duzentos e cinquenta e seis utilizando apenas informacao binaria estado ligado ou desligado necessitamos de oito bits virgula o que corresponderia oito matrizes virgula sobrepostas virgula de seiscentos e quarenta x trezentos pontofinal
+assim virgula teriamos seiscentos e quarenta x trezentos x oito igual um milhao quinhentos e trinta e seis mil posicoes de memoria que correspondem aproximadamente a cento e oitenta e oito kbytes reservados so para esse fim
+um monitor a cores virgula de alta qualidade virgula possui vinte e quatro planos de mapas de bits virgula produzindo um total de dezasseis milhoes setecentos e setenta e sete mil duzentos e dezasseis cores virgula o que requer virgula para um computador com seiscentos e quarenta x trezentos pontos seiscentos e quarenta x trezentos x vinte e quatro oito x mil e vinte e quatro aproximadamente igual a quinhentos e sessenta kbytes de memoria
+
+
+quatro display controler
+
+
+a segunda componente da unidade de raster scan e o controlador pontofinal
+este dispositivo hardware le o conteudo do mapa de bits virgula para um mapa de video virgula onde entao converte a informacao binaria digital cadeia de valores de pontos consecutivos em sinais analogicos que sao enviados em serie para o ecran
+sempre que o controlador encontra um valor unitario virgula em cada um dos mapas de bits virgula um sinal de alta voltagem e enviado para o crt o qual liga o correspondente ponto ou pontos o controlador executa ciclos atraves dos mapas de bits virgula sequencialmente virgula satisfazendo desta maneira a renovacao da imagem o refresh
+de notar que o indice de renovacao refresh rate de um monitor de qualidade e de sessenta imagens em cada segundo pelo que o controlador tera de executar sessenta ciclos por segundo atraves dos mapas de bits
+
+
+cinco random vector display
+
+
+vimos ate agora como o sistema de raster scan usava o mapa de bits e projectava a imagem no ecran da esquerda para a direita e de cima para baixo pontofinal
+esta nao e a unica maneira de criar uma imagem usando um refresh crt na verdade virgula se desejarmos tracar apenas linhas virgula um sistema grafico para desenho de linhas e preferivel pontofinal
+a este sistema da se o nome de random vector display ou sistema caligrafico
+o principio por detras deste sistema e bastante simples pontofinal
+ha uma zona de memoria designada por ficheiro de ecran display file que contem comandos de desenho de linhas tal como desenhe a linha de a ate b ou um processador especial ou a cpu inserem correctamente estes comandos no ficheiro de ecran pontofinal
+um gerador especial de vectores hardware interpreta estes comandos e envia a voltagem correcta para o sistema de deflectores do crt virgula fazendo mover o raio de electroes desde o ponto inicial ate ao ponto final
+neste sistema virgula deixa de haver necessidade de percorrer todos os pontos do ecran virgula passando o raio de electroes so por pontos que devam ser iluminados e segundo a ordem pela qual estao definidos os comandos no ficheiro de ecran
+sistemas como este virgula usam normalmente um indice de renovacao de sessenta vezes por segundo
+
+
+seis scan conversion
+
+
+so muito raramente virgula uma imagem e descrita em termos de matrizes bi dimensionais de pixels as imagens sao normalmente definidas em termos de equacoes virgula por exemplo virgula x operador adicao y igual cinco ou por descricoes graficas como seja desenhe uma linha desde a ate b o scan conversion e um processo para converter esta representacao abstrata em imagens atraves do acesso aos mapas de bits
+sofisticados sistemas graficos possuem processadores proprios para esse fim bem como para outras funcoes de ecran como seja a actualizacao do mapa de bits
+os microcomputadores possuem virgula normalmente virgula sistemas graficos que usam a c p u e um conjunto de rotinas software que permitem fazer o scan conversion mas de uma forma muito mais lenta e consequentemente criam dificuldades em problemas que requeiram processamento em tempo real real time
+
+
+sete razao de aspecto
+
+
+se usarmos os procedimentos de desenho de segmentos de recta para desenhar um segmento de recta horizontal com comprimento de oito pixels e um segmento de recta vertical com o mesmo comprimento verificamos que o segmento de recta horizontal e maior que o vertical virgula pois a distancia entre dois pontos na horizontal e maior do que a distancia entre dois pontos consecutivos na vertical
+a razao entre o comprimento na horizontal e o comprimento na vertical e denominada razao de aspecto e e uma consequencia da forma dos pixels serem recxtangulares e nao quadrados
+assim virgula uma qualquer recta com declive m no ecran passa a ter um declive m linha ou uma circunferencia no ecran aparece como uma elipse
+para que este efeito nao aconteca torna se necessario multiplicar os valores y pela razao de aspecto pontofinal
+note se que esta razao varia de sistema para sistema e so se verifica para este dispositivo de saida o crt
+por exemplo se desenharmos na horizontal oito pixels e o comprimento for quatro mm virgula se desenhar na vertical oito pixels e o comprimento for tres mm entao a razao de aspecto e quatro tres
+
+nota alta resolucao ou media resolucao podem ter razoes de aspecto diferentes
+
+
+oito a recta
+
+
+em computacao grafica virgula nao faz muito sentido falar se em recta virgula pois o universo para a sua representacao e limitado pontofinal
+as imagens que pretendemos ver representadas sao constituidas por segmentos de recta onde se definem um ponto inicial e um ponto terminal
+um segmento de recta pode entao ser desenhado ligando pixels adjacentes o mais proximo possivel uns dos outros ponto e virgula e portanto necessario determinar quais os pontos que devem ser ligados para obtermos uma representacao o mais aproximada possivel de um segmento de recta pontofinal
+e evidente que a maior ou menor qualidade obtida nao depende exclusivamente do algoritmo escolhido mas da resolucao de ecran que nos e facultada pelo sistema e pelo equipamento de que dispomos
+existem varios algoritmos para desenho de segmentos de recta pontofinal
+consultar bibliografia
+
+as equacoes de rectas estao dinidas em aspas angulares esqerda geometria em tres d aspas angulares direita
+
+
+nove a circunferencia
+
+
+as circunferencias sao curvas muito utilizadas na representacao elementar de graficos pontofinal
+esta seccao descreve alguns algoritmos para representacao de circunferencias
+
+
+
+nove ponto um representacao implicita
+
+
+uma circunferencia e especificada pelas coordenadas do seu centro xo virgula yy e o seu raio r pontofinal
+a equacao mais usual da circunferencia e
+
+
+nove ponto dois representacao polar
+
+
+um metodo para eliminar os problema dos pontos nao igualmente espacados prende se com a representacao polar da circunferencia de centro xo virgula yo e raio r
+
+
+a utilizacao directa deste sistema de equacoes envolve repetidos calculos envolvendo as funcoes seno e coseno virgula consumindo uma significante fatia de tempo pontofinal
+podemos aumentar significativamente a velocidade computacional por uso de um metodo incremental de calculo de pontos da circunferencia a partir das coordenadas do ponto calculado anteriormente pontofinal
+esta tecnica requere somente o calculo inicial de um seno e de um coseno pontofinal
+usando a mesma simplificacao que se usou para a representacao cartesiana da circunferencia virgula isto e virgula considerando que xo virgula yo igual zero virgula zero
+
+
+dois pontos consecutivos x um virgula y um e x dois virgula y dois de uma circunferencia estao relacionados por
+d ponto de interrogacao e um incremento fixo
+
+desenvolvendo o cos ponto de interrogacao operador adicao d ponto de interrogacao e o sin ponto de interrogacao operador adicao d ponto de interrogacao temos
+
+substituindo x um e y um vem
+
+sendo d ponto de interrogacao o incremento fixo virgula o espacamento entre dois pontos consecutivos e sempre constante virgula mas e desejavel que alem de constante o incremento seja unitario virgula isto e r asterisco d ponto de interrogacao igual um virgula pelo que d ponto de interrogacao igual um r
+
+
+algoritmo
+
+   d ponto de interrogacao menor que um r
+   cdt menor que cos d ponto de interrogacao
+   sdt menor que sin d ponto de interrogacao
+   x menor que zero ponto e virgula y menor que zero ponto e virgula
+   enquanto x menor que igual y
+   desenha ponto x operador adicao x zero virgula y operador adicao y zero
+   xant menor que x
+   x menor que x asterisco cdt y asterisco sdt
+   y menor que y asterisco cdt operador adicao xant asterisco sdt
+fim do algoritmo
+
+
+dez fundamentos graficos
+
+
+no capitulo anterior descreveram se alguns algoritmos graficos para linhas e circunferencias que para gerarem a imagem usavam o sistema de coordenadas do proprio ecran as coordenadas x virgula y eram valores inteiros virgula nao negativos e limitados superiormente
+para a maioria das aplicacoes este sistema de coordenadas e demasiado restritivo pontofinal
+como exemplo virgula assuma se que um projectista de mapas virgula usando um sistema cad virgula desejava reproduzir o mapa de portugal pontofinal
+o melhor sistema de coordenadas para o efeito seria ter a origem no centro do mapa ou sobre a capital com as abcissas entre menos duzentos e duzentos km e as ordenadas entre menos trezentos e cinquenta e trezentos e cinquenta km ponto e virgula seria ainda conveniente para o projectista virgula que o sistema lhe permitisse virgula enquanto reproduzia o distrito de coimbra virgula que a gama de valores para as coordenadas se adapta se a menos setecentos e cinquenta e setecentos e cinquenta hm segundo o eixo dos xx e menos quatrocentos e quatrocentos hm segundo yy
+um sistema grafico como o apresentado virgula concede ao utilizador o controlo do sistema de coordenadas que podera ser distinto para a mesma aplicacao conforme se queira tratar o global ou tratar de um pequeno pormenor
+
+
+dez ponto um viewing
+
+
+no mundo real virgula objectos diferentes possuem as suas proprias unidades de medida pontofinal
+um relogio usa valores de um a vinte e quatro para as horas e de um a sessenta para os minutos e segundos pontofinal
+o desejavel e poder escolher o sistema de coordenadas que descreva o objecto utilizando as unidades do proprio objecto e depois transformar essa pseudo imagem num outro sistema virgula isto e virgula para um dado local do ecran
+
+
+dez ponto dois window e clipping
+
+
+um sistema de coordenadas universal e um sistema de coordenadas virgula definido pelo utilizador virgula escolhido para uma aplicacao especifica
+este sistema de coordenadas virgula que e independente do ecran e portanto virgula do sistema virgula pode ter grandes ou pequenos intervalos de variacao virgula valores positivos e ou negativos virgula fraccoes virgula tudo o que ajude a descrever uma imagem da maneira mais natural que for possivel pontofinal
+alem disso virgula por vezes virgula uma imagem complectamente descrita em termos de coordenadas universais virgula depois de reproduzida no ecran e de dificil manipulacao excessivos pormenores o utilizador pode pretender ver somente uma parte de imagem global ampliacao reducao esta capacidade de representar parte da imagem virgula delimitada por uma zona rectangular window janela e denominada de windowing
+diferentes partes do objecto virgula seleccionadas por uma janela virgula podem ser visualizadas virgula em simultaneo virgula em zonas distintas do ecran pontofinal
+ajustando o tamanho das janelas podemos ter efeitos de ampliacao zooming virgula reducao ou mesmo distorcao do objecto seleccionado
+quando seleccionamos determinada janela virgula todos os pormenores exteriores a ela nao devem ser representadas no ecran pontofinal
+o processo de eliminar por corte a imagem exterior a janela toma o nome de clipping
+
+
+dez ponto tres viewport
+
+
+como ja anteriormante se disse virgula por vezes desejamos representar diferentes imagens em diferentes zonas do ecran pontofinal
+a zona rectangular do ecran onde se projecta a imagem seleccionada por uma dada janela e chamada de viewport
+
+
+dez ponto quatro panning
+
+
+movendo uma janela sobre uma imagem descrita em coordenadas universais virgula da se ao utilizador a possibilidade de percorrer toda a imagem como se este estivesse a ver um mapa com uma lupa e a desloca se sobre o mapa pontofinal
+ao movimento da janela sobre a imagem da se o nome de pannig
+
+
+dez ponto cinco sistema de coordenadas normalizadas
+
+
+e possivel descrever o viewport em termos de coordenadas de um determinado ecran com uma dada resolucao pontofinal
+esta solucao conduz a dependencia do procedimento de transformacao de coordenadas em funcao das coordenadas do dispositivo de saida pontofinal
+a melhor solucao e usar um dispositivo de saida ficticio com um sistema de coordenadas normalizadas para o qual o procedimento de transformacao e descrito pontofinal
+posteriormente a imagem descrita pelo sistema de coordenadas normalizadas e transformada para o sistema de coordenadas do dispositivo de saida
+esta solucao permite que o programador escreva os programas sem ter em conta qual ou quais os dispositivos que posteriormente nos vao permitir a visualizacao das imagens criadas por esses procedimentos
+a transformacao das coordenadas normalizadas para coordenadas do dispositivo virgula pode ser executador por procedimentos software device drivers ou pelo proprio hardware
+
+
+dez ponto seis janela window
+
+
+o universo do utilizador e um espaco a dois ou tres dimensoes pontofinal
+teoricamente este estende se ate ao infinito virgula mas na pratica e limitado pela ordem de grandeza do maior numero real aceite pelo sistema de um determinado computador pontofinal
+considera se normalmente uma porcao rectangular desse universo e examina se o que ele contem pontofinal
+esta pequena zona rectangular designa se por janela
+
+
+onze transformacoes bi tri dimensionais dois d tres d
+
+
+onze ponto um introducao
+
+
+um sistema grafico que permita ao utilizador definir objectos deve incluir a capacidade de transformar o objecto segundo determinadas regras de transformacao pontofinal
+por exemplo virgula deve ser capaz de ampliar o objecto de modo a tornar claro alguns detalhes ou reduzi lo de modo a permitir a sua completa visualizacao virgula desloca lo de um lado para o outro virgula roda lo virgula etc
+neste capitulo abordaremos a transformacoes primarias translaccoes virgula rotacoes e variacao de escala scaling virgula as transformacoes secundarias reflexao e shearing e a combinacao de transformacoes onde falaremos de coordenadas homogeneas
+
+translacao
+
+e uma transformacao geometrica que consiste em deslocar sem rodar virgula o sistema de eixos a que o objecto se refere de um ponto para outro
+
+
+onze ponto dois transformacoes geometricas
+
+
+transformacoes geometricas tg sao a base de inumeras aplicacoes graficas virgula podendo estar desde em simples programa para representar layouts de circuitos eletronicos ponto e virgula em programas de planejamento de cidades virgula onde pode se usar movimentos de translacao para colocar os simbolos que definem edificios e arvores em seus devidos lugares virgula rotacoes para orientar corretamente esses simbolos virgula e alteracao de escala para adequar o tamanho desses simbolos ponto e virgula ou mesmo em sistemas de software sofisticados que permitem a construcao de cenas realistas
+transformacoes em dois d
+estudaremos as transformacoes geometricas em duas dimensoes pontofinal
+pode se efetuar a translacao de pontos no plano x virgula y adicionando se quantidades inteiras as suas coordenadas pontofinal
+assim virgula cada ponto p x virgula y pode ser movido por dx unidades em relacao ao eixo x virgula e por dy unidades em relacao ao eixo y pontofinal
+logo virgula o ponto p plica x plica virgula y plica virgula pode ser escrito como
+x plica igual x operador adicao dx e y plica igual y operador adicao dy um
+e se definimos os vetores colunas
+entao a expressao pode ser expressa como p plica igual p operador adicao t tres
+figura um translacao de uma casa
+podemos transladar um objeto virgula fazendo o a todos os seus pontos o que nao e muito eficiente para transladar uma linha podemos faze lo apenas para seus pontos limites e sobre estes pontos redesenhar a linha pontofinal
+isso tambem e verdade para alteracoes de escala e rotacao pontofinal
+na figura um e mostrado o efeito de uma translacao de um objeto por tres virgula quatro
+figura dois mudanca de escala de uma casa pontofinal
+como a escala e nao uniforme virgula a sua proporcao e alterada
+pode se efetuar mudancas de escala ou apenas escala de um ponto pelo eixo x sx virgula ou pelo eixo y sy virgula atraves das multiplicacoes
+x plica igual sx ponto x virgula y plica igual sy ponto y quatro
+ou em forma matricial
+na figura dois a casa sofre uma escala de um meio em x e de um quarto em y
+observe que a escala e feita em relacao a origem pontofinal
+assim a casa fica menor e mais proxima da origem pontofinal
+tambem as proporcoes da casa sao alteradas virgula isto e virgula uma escala em que sx e diferente de sy pontofinal
+porem ao utilizar se escalas uniformes sx igual sy as proporcoes nao sao afetadas pontofinal
+a rotacao de pontos atraves de um angulo q tambem e feita a partir da origem pontofinal
+a rotacao e definida matematicamente por x plica igual x ponto cos q y ponto sin q virgula y plica igual x ponto sin q operador adicao y ponto cos q
+
+e matricialmente
+
+a figura tres mostra a rotacao da casa por quarenta e cinco graus da mesma forma que para a escala virgula a rotacao tambem e feita em relacao a origem
+obs escala e rotacao a partir de qualquer ponto serao tratadas posteriormente pontofinal
+os angulos positivos sao definidos quando a rotacao e feita no sentido contrario aos do ponteiro do relogio virgula e angulos negativos quando a rotacao e feita no sentido dos ponteiros do relogio pontofinal
+lembremos que
+figura quatro derivando a equacao de rotacao
+
+observando a figura quatro vemos que a rotacao por transforma p x virgula y em p plica x plica virgula y plica como a rotacao e em relacao a origem virgula as distancias de p e p plica a origem virgula r na figura virgula sao iguais pontofinal
+assim virgula temos que
+
+podemos obter a equacao seis virgula substituindo a eq oito na eq nove
+coordenadas homogeneas e matrizes de transformacao
+
+para a translacao virgula escala e rotacao virgula as matrizes de transformacao sao respectivamente
+p plica igual t operador adicao p tres
+p plica igual s ponto p cinco
+p plica igual r ponto p sete
+infelizmente virgula a translacao e tratada de forma diferente como uma soma das outras rotacao e escala que sao tratadas atraves de multiplicacoes pontofinal
+para que possamos combinar facilmente essas transformacoes virgula devemos poder tratar do mesmo modo todas as tres transformacoes de uma forma consistente pontofinal
+se os pontos sao expressos em coordenadas homogeneas virgula todas as tres transformacoes podem ser tratadas como multiplicacoes pontofinal
+em coordenadas homogeneas virgula adicionamos uma terceira coordenada ao ponto pontofinal
+logo virgula em vez de um ponto ser representado por um par de valores x virgula y virgula ele e representado por uma tripla x virgula y virgula w dizemos que dois conjuntos de coordenadas homogeneas x virgula y virgula w e x plica virgula y plica virgula w plica representam o mesmo ponto se e somente se um e multiplo do outro pontofinal
+assim virgula dois virgula tres virgula seis e quatro virgula seis virgula doze e o mesmo ponto representado por diferentes triplas pontofinal
+isto e virgula cada ponto tem muitas diferentes representacoes homogeneas pontofinal
+tambem virgula pelo menos uma das coordenadas homogeneas precisa ser diferente de zero virgula assim zero virgula zero virgula zero nao e permitido
+
+figura cinco o espaco de coordenadas homogeneas xyw virgula com o plano w igual um e o ponto p x virgula y virgula w projetado sobre o plano w igual um
+se w e a coordenada nao zero virgula podemos dividir x virgula y virgula w por ela virgula obtendo o mesmo ponto x w virgula y w virgula um os numeros x w e y w sao chamados de coordenadas cartesianas do ponto homogeneo pontofinal
+usualmente virgula triplas representam pontos em um espaco tres d virgula mas agora estao sendo usadas para representar pontos em dois d pontofinal
+observemos que virgula se tomarmos todas as triplas que representam o mesmo ponto virgula isto e virgula todas as triplas da forma tx virgula ty virgula tw com t diferente de zero virgula obtemos uma linha no espaco tres d pontofinal
+se homogeneizamos o ponto dividimos por w virgula obtemos um ponto da forma x virgula y virgula um logo virgula os pontos homogeneizados formam o plano definido pela equacao w igual um no espaco x virgula y virgula w a figura cinco virgula mostra esse relacionamento pontofinal
+como os pontos sao vectores de tres elementos virgula as matrizes de transformacoes que multiplicam um ponto por outro tambem precisam ser de tres x tres pontofinal
+a equacao de translacao um para coordenadas homogeneas fica
+assim virgula a equacao dez pode ser representada como
+p plica igual t dx virgula dy ponto p onze
+o que acontece se um ponto p e transladado por t dx um virgula dy um para p plica e entao transladado por t dx dois virgula dy dois para p plica plica ponto de interrogacao intuitivamente esperamos que essas translacoes sejam equivalentes a t dx um operador adicao dx dois virgula dy um operador adicao dy dois ou seja virgula se
+p plica igual t dx um virgula dy um p virgula treze p plica plica igual t dx dois virgula dy dois p plica catorze
+substituindo treze em catorze virgula temos
+p plica plica igual t dx dois virgula dy dois      t dx um virgula dy um p igual t dx dois virgula dy dois t dx um virgula dy um      p quinze e a matriz produto das matrizes t dx dois virgula dy dois t dx um virgula dy um virgula e
+e vemos que a translacao e aditiva pontofinal
+essa transformacao expressa pelas duas transformacoes virgula e chamada de transformacao de composicao pontofinal
+podemos mostrar similarmente que podemos realizar composicoes tambem com a escala e a rotacao pontofinal
+assim virgula as equacoes de escala quatro virgula sao representadas matricialmente
+
+e definindo virgula
+temos
+
+p plica igual s sx um virgula sy um p virgula dezanove      p plica plica igual s sx dois virgula sy dois p plica vinte
+e substituindo
+p plica plica igual s sx dois virgula sy dois      s sx um virgula sy um p igual s sx dois virgula sy dois s sx um virgula sy um      p
+
+a matriz produto s sx dois virgula sy dois s sx um virgula sy um e
+e temos que a escala e multiplicativa
+finalmente virgula verifiquemos como ficam as equacoes de rotacao
+definindo
+temos que
+como exercicio virgula mostre que duas rotacoes sao aditivas ponto de exclamacao
+figura seis um cubo unitario e rodados quarenta e cinco graus virgula posteriormente escalado nao uniformemente pontofinal
+obtem se dessa forma uma transformacao afim
+uma sequencia arbitraria de rotacoes virgula translacoes e escalas virgula sao chamadas de transformacoes afins pontofinal
+as transformacoes afins preservam paralelismo de linhas virgula mas nao comprimentos e angulos pontofinal
+a figura seis virgula mostra o resultado de se aplicar uma rotacao de quarenta e cinco graus e depois uma escala nao uniforme a um cubo unitario pontofinal
+uma matriz de transformacao da forma
+onde a submatriz dois x dois do canto superior esquerdo e ortogonal virgula preserva angulos e comprimentos pontofinal
+estas transformacoes sao chamadas de corpo rigido virgula porque o corpo do objeto nao e distorcido de forma alguma
+composicao de transformacoes
+
+usaremos composicao como uma combinacao de matrizes de transformacao r virgula s e t pontofinal
+o proposito de compor se transformacoes virgula e o ganho de eficiencia que se obtem ao aplicar se uma transformacao composta a um ponto em vez de aplicar lhe uma serie de transformacoes virgula uma apos a outra pontofinal
+considerando a rotacao de um objecto em torno de um ponto arbitrario p um pontofinal
+mas sabemos apenas rodar um ponto em relacao a origem pontofinal
+assim virgula podemos dividir este problema de rotacao em tres problemas simples virgula ou seja para rotacionar em relacao a p um virgula pode se usar a seguinte sequencia de transformacoes fundamentais
+
+um ponto efetuar uma translacao virgula levando p um a origem
+dois ponto efetuar a rotacao desejada
+tres ponto efetuar uma translacao oposta a realizada em um virgula levando p um a posicao anterior
+
+
+figura sete rotacao em relacao ao ponto p um virgula por um angulo teta
+
+
+esta sequencia e ilustrada na figura sete virgula onde a casa e rotacionada em relacao a p um x um virgula y um a primeira translacao e por x um virgula y um virgula e a ultima translacao oposta a primeira e por x um virgula y um a transformacao em sequencia e
+
+esse procedimento pode ser usado de forma similar para se efetuar a escala de um objeto em relacao a um ponto arbitrario p um pontofinal
+primeiramente o ponto p um e transladado para a origem virgula entao e feita a escala desejada virgula e entao o ponto p um e transladado de volta pontofinal
+dessa forma virgula a transformacao em sequencia e
+
+
+suponhamos que desejamos escalar virgula rotacionar e posicionar a casa mostrada na figura sete virgula com o ponto p um x um virgula y um como o centro da rotacao e da escala pontofinal
+a sequencia de transformacoes fica a seguinte
+
+um ponto transladar p um x um virgula y um para a origem ponto e virgula
+dois ponto efetuar a escala e a rotacao desejadas ponto e virgula
+tres ponto efetuar a translacao da origem para a nova posicao p dois x dois virgula y dois virgula onde a casa deve ser posicionada
+t x dois virgula y dois r zero s sx virgula sy t x um virgula y um e a matriz da transformacao composta
+
+se m um e m dois representam duas transformacoes fundamentais translacao virgula rotacao ou escala virgula em que casos m um m dois igual m dois m um ponto de interrogacao isto e virgula quando suas matrizes de transformacao comutam ponto de interrogacao sabemos que geralmente a multiplicacao de matrizes nao e comutativa pontofinal
+entretando e facil mostrar que em alguns casos especiais esta comutatividade existe
+
+
+onze ponto tres transformacao janela porta de visao window to viewport
+
+
+alguns sistemas graficos permitem ao programador especificar primitivas de saida em um sistema de coordenadas em ponto flutuante virgula chamado de sistema de coordenadas do mundo real virgula usando a unidade de medida que melhor se adeque ao seu programa de aplicacao angstrons virgula microns virgula metros virgula anos luz virgula etc o termo mundo world e usado para representar o ambiente interativamente criado ou apresentado para o usuario pontofinal
+como as primitivas sao especificadas em coordenadas do mundo virgula o pacote grafico precisa mapear as coordenadas do mundo em coordenadas de tela
+
+
+janela em coordenadas do mundo e porta de visao em coordenadas de tela
+figura oito duas portas de visao associadas a mesma janela
+uma forma de se efetuar esta transformacao e especificando uma regiao retangular em coordenadas do mundo virgula chamada de janela de coordenadas do mundo virgula e uma regiao retangular correspondente em coordenadas de tela virgula chamada de porta de visao viewport virgula em que a janela em coordenadas do mundo real e mapeada pontofinal
+a transformacao que mapeia a janela na porta de visao e aplicada a todas as primitivas de saida em coordenadas do mundo virgula mapeando as na tela pontofinal
+como pode ser visto pela figura virgula se a janela e a porta de visao nao possuem a mesma razao largura altura virgula uma escala nao uniforme e realizada pontofinal
+se o programa de aplicacao altera a janela ou a porta de visao virgula entao as novas primitivas de saida desenhadas sobre a tela precisam ser tambem atualizadas pontofinal
+outro ponto e que pode se ter multiplas portas de visao de uma mesma janela pontofinal
+dada uma janela e uma porta de visao virgula qual e a matriz de transformacao que mapeia a janela em coordenadas do mundo real virgula na porta de visao em coordenadas de tela ponto de interrogacao esta matriz pode ser desenvolvida como uma transformacao composta por tres passos virgula como e sugerido na figura oito a janela especificada pelo seu canto inferior esquerdo e canto superior direito virgula e primeiramente transladada para a origem do mundo de coordenadas pontofinal
+a seguir o tamanho da janela e escalonado para ser igual ao tamanho da porta de visao pontofinal
+finalmente virgula a translacao e usada para posicionar a porta de visao pontofinal
+a matriz global mjp e
+
+
+multiplicando p igual mjp parentesis reto esquerdox y um parentesis curvo direito t virgula temos
+
+
+figura nove os passos da transformacao janela porta de visao
+
+
+onze ponto quatro transformacoes em tres d
+
+
+a capacidade para representar e visualizar um objeto em tres dimensoes e fundamental para a percepcao de sua forma pontofinal
+porem virgula em muitas situacoes e necessario mais do que isto virgula ou seja virgula poder manusear o objeto virgula movimentando o atraves de rotacoes virgula translacoes e mesmo escala pontofinal
+assim virgula generalizando o que foi visto para tg em dois d virgula onde estas transformacoes foram representadas por matrizes tres x tres utilizando coordenadas homogeneas virgula as tgs em tres d serao representadas por matrizes quatro x quatro tambem em coordenadas homogeneas pontofinal
+dessa forma virgula um ponto p de coodenadas x virgula y virgula z sera representado por x virgula y virgula z virgula w padronizando ou homogeneizando o ponto virgula teremos se w for diferente de zero virgula x w virgula y w virgula z w virgula um
+o sistema de coordenadas para tres d utilizado sera o da regra da mao direita virgula com o eixo z perpendicular ao papel e saindo em direcao ao observador pontofinal
+o sentido positivo de uma rotacao virgula e dado quando observando se sobre um eixo positivo em direcao a origem virgula uma rotacao de noventa graus ira levar um eixo positivo em outro positivo pontofinal
+ou conforme a tabela abaixo
+a regra da mao direita foi escolhida porque este e o padrao utilizado na matematica lembre se da definicao do produto vetorial ponto de exclamacao
+todas estas matrizes de transformacao t virgula s e r possuem inversas pontofinal
+a inversa de t e obtida simplesmente negando se dx virgula dy e dz pontofinal
+para a matriz s virgula basta substituir sx virgula sy e sz por seus valores inversos pontofinal
+para cada uma das matrizes de rotacao r virgula basta negar o angulo de rotacao pontofinal
+alem disso virgula para uma matriz ortogonal b virgula sua inversa b um e a sua matriz transposta virgula ou seja b um igual bt
+uma sequencia arbitraria de transformacoes de translacao virgula escala e rotacao podem ser multiplicadas juntas virgula resultando uma matriz da seguinte forma
+como no caso de dois d virgula a submatriz tres x tres do canto superior esquerdo r virgula agrega as transformacoes de escala e rotacao virgula enquanto a ultima coluna a direita t agrega as translacoes pontofinal
+para obter se um pouco mais de eficiencia ganho computacional pode se executar a transformacao explicitamente como
+composicao de transformacoes em tres d
+
+a composicao de transformacoes em tres d pode ser entendida mais facilmente atraves do exemplo indicado na figura pontofinal
+o objetivo e transformar os segmentos de reta p um p dois e p um p tres da posicao inicial em a para a posicao final em b assim o ponto p um deve ser transladado para a origem virgula p um p dois devera ficar sobre o eixo z positivo virgula e p um p tres devera ficar no plano positivo de yz pontofinal
+alem disso virgula os comprimentos das linhas nao devem ser alterados
+
+uma primeira maneira de se obter a transformacao desejada e atraves da composicao das primitivas de transformacao t virgula rx virgula ry e rz pontofinal
+subdividindo o problema virgula teremos os seguintes quatro passos
+
+um ponto transladar p um para a origem
+dois ponto rotacionar o segmento p um p dois em relacao ao eixo y virgula de forma que ele p um p dois fique no plano y z
+tres ponto rotacionar o segmento p um p dois em relacao ao eixo x virgula de forma que ele p um p dois fique sobre o eixo z
+quatro ponto rotacionar o segmento p um p tres em relacao ao eixo z virgula de forma que ele p um p tres fique no plano y z
+
+
+doze representacao de funcoes dois d tres d
+
+
+como representar uma funcao ponto de interrogacao
+
+
+doze ponto um curvas parametricas
+
+
+uma curva parametrica e definida por uma funcao f u igual ponto de interrogacao a virgula b ponto de interrogacao ponto de interrogacao r maior que r dois pontofinal
+por outras palavras virgula a cada valor do parametro t no intervalo u igual ponto de interrogacao a virgula b ponto de interrogacao esta associado um ponto f t igual x t virgula y t do plano pontofinal
+por exemplo virgula o circulo unitario pode ser descrito parametricamente pela funcao f t ponto de interrogacao ponto de interrogacao a virgula b ponto de interrogacao      maior que cos t virgula sin t ponto de interrogacao r dois
+um caso particular importante de curva parametrica e uma funcao real de uma variavel f t ponto de interrogacao ponto de interrogacao a virgula b ponto de interrogacao      maior que t virgula f t varias parametrizacoes podem ter o mesmo traco virgula mas tem propriedades diferentes pontofinal
+por exemplo virgula o circulo unitario tambem pode ser descrito por t ponto de interrogacao ponto de interrogacao a virgula b ponto de interrogacao      maior que sin t virgula cos t ponto de interrogacao r dois ponto e virgula e tambem pela projeccao esterografica t ponto de interrogacao r maior que ponto de interrogacao r dois virgula a menos do ponto zero virgula um
+
+
+doze ponto dois aproximacao de curvas
+
+
+para construir uma aproximacao poligonal para uma curva definida em u virgula basta escolher pontos amostrais a igual to menor que t um menor que      menor que tn igual b em u e tomar a linha poligonal com vertices po virgula p um virgula virgula pn virgula onde pi igual f ti
+a eficiencia dos metodos de aproximacao depende da amostragem feita em u pontofinal
+o numero de vezes que a funcao f e calculada e uma boa medida de complexidade para comparacao de metodos genericos virgula que nao dependem de informacoes adicionais sobre f pontofinal
+como f e avaliada exactamente uma vez em cada ponto amostral virgula minimizar o numero de avaliacoes de f e equivalente a minimizar o tamanho da amostra pontofinal
+portanto virgula o desafio e escolher amostras pequenas que induzam uma boa aproximacao pontofinal
+como queremos metodos genericos virgula essa escolha tem que ser feita baseada somente nos valores de f
+
+
+considere uma funcao a sua representacao sera em r dois pois vamos considerar y igual x dois operador adicao tres virgula ou seja para todo o valor de x existe sempre a correspondente imagem y
+
+uma das representacoes possiveis sera para todo o x ponto de interrogacao ponto de interrogacao a virgula b ponto de interrogacao calcular o correspondente valor de y virgula seguidamente representa se o ponto x virgula y ponto e virgula no final ligam se todos os pontos atraves de segmentos de recta pontofinal
+note se que vamos escolher somente alguns pontos do intervalo ponto de interrogacao a virgula b ponto de interrogacao virgula estes pontos poderao ser com espacamento constante ou variavel
+
+
+doze ponto tres representacao com espacamento constante
+
+
+consiste em dividir o intervalo ponto de interrogacao a virgula b ponto de interrogacao num dado numero de pontos e seguidamente avaliar cada um desses pontos atraves da funcao pontofinal
+ex considere mos que se pretende dividir o intervalo ponto de interrogacao a virgula b ponto de interrogacao num dado numero n entao teremos de calcular os seguintes pontos
+xi virgula f xi virgula onde xi igual a operador adicao i asterisco b a n ponto e virgula ponto de interrogacao i ponto de interrogacao chaveta esquerda um virgula dois virgula virgula n chaveta direita
+
+
+doze ponto quatro representacao adaptativa
+
+
+a aproximacao poligonal construida a partir de uma amostra uniforme nao tem a mesma precisao em todas as partes a aproximacao e melhor nos trechos onde a curva e quase plana virgula e se aproxima de um segmento de recta virgula isto e virgula nos trechos de curvatura baixa
+nestes trechos uma amostragem fina nao e necessaria pois podemos substituir varios pequenos segmentos de recta quase colineares por um unico segmento de recta virgula evitando assim ter de calcular a funcao em varios pontos intermedios pontofinal
+portanto virgula deve ser possivel substituir amostragem uniforme virgula por uma amostragem nao uniforme virgula adaptada a geometria da curva virgula usando a curvatura como criterio de amostragem
+baseados no paradigma de dividir para conquistar virgula adotaremos a seguinte estrategia geral para obter metodos de amostragem adaptativa de um intervalo
+a escolha de um criterio de refinamento ponto e virgula
+b avaliar o criterio no intervalo dado ponto e virgula
+c se o intervalo e bom segundo o criterio virgula entao a amostra e dada pelos dois extremos do intervalo ponto e virgula
+d senao virgula divida o intervalo em dois e use recursao nas duas partes virgula voltando ao passo b
+
+esta estrategia e semelhante a usar o algoritmo de casteljau para curvas de bezier virgula terminando a recursao quando o poligono de controle for quase plano pontofinal
+discutiremos a seguir varios criterios de refinamento virgula que virgula embora heuristicos virgula sao aplicaveis a curvas mais gerais
+criterios de refinamento
+
+uma implementacao de um criterio de refinamento baseado na curvatura e escolher um ponto w no interior do intervalo ponto de interrogacao u virgula v ponto de interrogacao sendo considerado e verificar se os tres pontos correspondentes na curva virgula p igual f u virgula q igual f v virgula r igual f w virgula sao aproximadamente colineares pontofinal
+chamamos isso de verificacao de planaridade local por sondagem pontofinal
+existem varios criterios numericos naturais para verificar colinearidade de tres pontos p virgula q virgula r
+a area do triangulo pqr e pequena ponto e virgula
+o angulo menor que prq e grande virgula proximo de ponto de interrogacao ponto e virgula
+r esta proximo da corda pq ponto e virgula
+p r operador adicao r q e aproximadamente igual a p q ponto e virgula
+as rectas tangentes a f em p virgula q virgula e r sao aproximadamente paralelas
+note se que e necessario definir uma tolerancia para avaliacao destes criterios para dar sentido as palavras pequena virgula grande virgula proximo virgula aproximadamente
+
+
+doze ponto cinco superficies parametricas
+
+
+uma superficie parametrica e definida por uma funcao f u ponto de interrogacao r dois maior que r tres pontofinal
+por outras palavras virgula a cada ponto p do dominio u esta associado um ponto f p do espaco pontofinal
+tipicamente virgula o dominio u e um rectangulo ponto de interrogacao a virgula b ponto de interrogacao x ponto de interrogacao c virgula d ponto de interrogacao neste caso virgula escrevemos f u virgula v para o ponto em r tres correspondente ao ponto u virgula v de u pontofinal
+por exemplo a esfera unitaria pode ser descrita parametricamente pela funcao
+
+f u virgula v igual cos u asterisco sin v virgula sin u asterisco sin v virgula cos v definida em u igual ponto de interrogacao zero virgula dois ponto de interrogacao ponto de interrogacao x ponto de interrogacao zero virgula dois ponto de interrogacao ponto de interrogacao como curvas virgula um caso particular importante de superficie parametrica e uma funcao real de duas variaveis g ponto de interrogacao a virgula b ponto de interrogacao x ponto de interrogacao c virgula d ponto de interrogacao maior que r pontofinal
+neste caso virgula a superficie importante e o grafico de f virgula dada por f x virgula y igual x virgula y virgula g x virgula y
+
+considere uma funcao a sua representacao sera em r tres pois vamos considerar z igual x dois operador adicao y dois operador adicao tres virgula ou seja para todo o valor de x e y existe sempre a correspondente imagem z
+
+bastara considerar o intervalo u igual ponto de interrogacao a virgula b ponto de interrogacao ponto de interrogacao ponto de interrogacao c virgula d ponto de interrogacao e fazer divisao uniforme de u virgula ou divisao adaptativa
+
+
+doze ponto seis objectos implicitos
+
+
+um dos principais objectivos da matematica e resolver equacoes pontofinal
+pode se mesmo dizer que grande parte do desenvolvimento da matematica teve origem na procura de metodos de solucao de equacoes e tambem na definicao do que e uma solucao
+objectos implicitos sao dados por equacoes em varias variaveis virgula e ocorrem naturalmente em varias areas da matematica e em aplicacoes pontofinal
+mais precisamente virgula um objecto v e dado implicitamente quando ele e o conjunto de zeros de uma funcao h ponto de interrogacao ponto de interrogacao rd maior que rm virgula i e virgula v igual chaveta esquerda x ponto de interrogacao ponto de interrogacao h x igual zero chaveta direita consideramos aqui somente m igual um virgula e d igual dois ou d igual tres virgula isto e virgula uma so equacao em duas ou tres variaveis pontofinal
+o teorema da funcao implicita diz que o conjunto de solucoes de uma tal equacao e uma curva no plano d igual dois ou uma superficie no espaco d igual tres virgula se a equacao nao for singular virgula no sentido que as derivadas parciais de h nao se anulam simultaneamente em nenhum ponto da solucao
+uma curva implicita e o conjunto de zeros de uma funcao h ponto de interrogacao ponto de interrogacao r dois maior que r pontofinal
+por outras palavras virgula temos uma funcao real h tambem chamada em campo escalar definida num subconjunto ponto de interrogacao do plano e estamos interessados nos pontos aonde h se anula chaveta esquerda x virgula y ponto de interrogacao ponto de interrogacao h x virgula y igual zero chaveta direita novamente virgula o objecto mais importante e esse conjunto virgula embora varias funcoes possam ter o mesmo conjunto de zeros por exemplo virgula qualquer potencia de h um mesmo conjunto pode ser descrito tanto parametricamente quanto implicitamente pontofinal
+por exemplo virgula o circulo unitario pode ser descrito implicitamente pela funcao h x virgula y igual x dois operador adicao y dois um pontofinal
+este facto e um teorema importante sobre as funcoes seno e coseno analogamente virgula uma superficie implicita e um conjunto de zeros de uma funcao h ponto de interrogacao ponto de interrogacao r tres maior que r
+
+
+treze rendering
+
+
+treze ponto um introducao
+
+
+a computacao grafica trata da sintese de imagens atraves do computador pontofinal
+este processo e denominado rendering pontofinal
+existem varios tipos de processos de rendering virgula sendo que vamos nos concentrar em tecnicas para gerar imagens de cenas tridimensionais pontofinal
+para sintetizar imagens e necessario partir de uma descricao da cena em termos da definicao dos objetos que a compoem geometria da cena virgula informacoes sobre os materiais de que sao feitos os objetos virgula como cor virgula a textura virgula etc ponto e virgula das condicoes de iluminacao ambiente ponto e virgula e da posicao do ponto de observacao pontofinal
+podemos interpretar o processo de rendering como o de converter dados graficos em uma imagem
+o processo fisico
+
+a figura ilustra virgula de forma simplificada virgula o que acontece quando olhamos para um objeto virgula ou para uma cena pontofinal
+os raios de luz sao emitidos virgula por uma fonte de luz virgula em todas as direcoes pontofinal
+alguns destes raios atingem o objeto que estamos observando pontofinal
+o cubo absorve parte da luz que o atinge virgula e o restante e refletido por sua superficie pontofinal
+parte desta luz refletida pode atingir os nossos olhos quando isso ocorre virgula vemos o objeto
+uma tecnica comum e bastante eficiente usada em computacao grafica e a emissao de raios virgula ou ray tracing pontofinal
+o ray tracing simula a interacao dos raios de luz com o ambiente virgula seguindo o caminho percorrido por cada raio pontofinal
+observe que a fonte de luz emite uma enorme quantidade de raios de luz virgula sendo que poucos destes atingem de fato o nosso olho pontofinal
+simular este processo computacionalmente teria um custo proibitivo pontofinal
+por isso virgula seguimos o caminho do raio ao contrario a partir do ponto em que ele atinge o olho do observador virgula voltamos para determinar quais objetos ele atingiu pontofinal
+quando o raio atinge o objeto em um certo ponto virgula podemos determinar se o ponto esta sendo iluminado pela fonte virgula tracando o raio a partir do ponto de interseccao ate a fonte de luz pontofinal
+se o raio intercepta a fonte virgula o ponto esta sendo iluminado pontofinal
+a ideia e lancar pelos menos um raio para cada pixel que compoe a imagem virgula e traca lo de volta bem como todos os raios gerados por ele na interacao com os objetos da cena ate que ele intercepte uma fonte de luz pontofinal
+o ray tracing gera imagens realisticas virgula mas para isso incorre em um alto custo computacional virgula e e lento geralmente implementado em software
+metodos image order x object order
+
+o ray tracing e um metodo do tipo image order virgula que funciona tentando determinar o que acontece para cada raio de luz virgula um de cada vez ou seja virgula determina a imagem pixel a pixel um processo do tipo object order funciona renderizando os objetos que compoem a cena virgula um de cada vez pontofinal
+no exemplo acima virgula um processo deste tipo tentaria renderizar o chao virgula e depois o cubo de forma analoga a que um pintor pintaria um quadro em geral virgula este tipo de processo pode ser implementado em hardware existe hardware dedicado para renderizar certos tipos de primitivas virgula como triangulos virgula por exemplo virgula garantindo sua rapidez
+surface rendering x volume rendering
+
+observe que assumimos que ao renderizar os objetos virgula consideramos a interacao de sua superficie com os raios de luz em termos dos raios que sao refletidos e transmitidos pontofinal
+ou seja virgula renderizamos as superficies apenas virgula sendo que o interior do objeto nao e considerado explicitamente virgula apesar de estar definido pela fronteira virgula ou superficie virgula do objeto pontofinal
+esse tipo de rendering e denominado surface rendering virgula sendo que vamos nos concentrar nele pontofinal
+entretanto virgula esta estrategia nao e adequada para renderizar objetos como nuvens virgula agua e neblina virgula que sao translucidos e deixam a luz passar por eles virgula esparramando os raios de luz em todas as direcoes pontofinal
+nesse caso virgula usa se outra estrategia de renderizacao virgula denominada volume rendering virgula que considera tambem a interacao da luz com o interior dos objetos
+
+
+treze ponto dois cor
+
+
+a renderizacao de imagens coloridas requer algum tipo de representacao de cor pontofinal
+a forma de armazenar e representar cores no computador pode ser vista virgula de certa forma virgula como uma simplificacao da forma que o olho humano usa para reconhecer as cores pontofinal
+o espectro luminoso visivel para os seres humanos contem comprimentos de onda entre quatrocentos e setecentos nm pontofinal
+a luz que penetra os nossos olhos consiste de diferentes intensidades destes comprimentos de onda virgula sendo que o grafico de intensidades do comprimento de onda no intervalo quatrocentos setecentosnm define a cor da luz pontofinal
+na verdade virgula o olho humano ignora a maior parte desta informacao existem tres tipos de receptores de cores no nosso olho virgula sendo que cada tipo responde a um subconjunto do intervalo de intensidades entre quatrocentos setecentosnm pontofinal
+simplificadamente virgula um tipo de receptor absorve intensidades em uma faixa na regiao do espectro associada a cor azul virgula outro na faixa do verde virgula e outro na faixa do vermelho
+dois sistemas de cores bastante usados na representacao computacional de cores sao o rgb red virgula green virgula blue e o hsv hue virgula saturation virgula value o sistema rgb representa as cores com base nas suas intensidades de vermelho virgula verde e azul pontofinal
+este sistema pode ser visto como um espaco tridimensional onde os tres eixos correspondem as intensidades de vermelho virgula verde e azul pontofinal
+o sistema hsv representa as cores com base no matiz virgula saturacao e brilho pontofinal
+o componente de brilho ou intensidade representa a quantidade de luz presente na cor zero para preto virgula ou nenhum brilho virgula um para cor brilhante o matiz define o comprimento de onda dominante da cor ilustrado geralmente atraves de um circulo no qual o angulo de rotacao representa o matiz pode ser descrito como um valor entre zero e um virgula sendo que zero corresponde a zero graus no circulo virgula e um corresponde a trezentos e sessenta graus pontofinal
+a saturacao indica a quantidade de matiz acrescentada a cor zero nenhum matiz virgula cor fica branca ponto e virgula um o maximo virgula tem se uma cor primaria por exemplo virgula se v igual um virgula h igual zero virgula sessenta e seis regiao cujo comprimento de onda dominante e o azul virgula e s igual um virgula tem se um azul primario brilhante pontofinal
+se s igual zero virgula cinco virgula temos um azul celeste brilhante pontofinal
+se s igual zero tem se o branco
+
+
+treze ponto tres fontes de luz
+
+
+a definicao das fontes de luz e essencial para o rendering sem elas virgula a imagem ficara toda preta ponto de exclamacao e a interacao entre a luz emitida pelas fontes e os objetos que compoem a cena que define o que vemos da cena pontofinal
+uma fonte de luz pode ser considerada simplesmente como mais um objeto na especificacao da cena virgula sendo que se distingue pelo fato de emitir luz diretamente pontofinal
+na especificacao de fontes de luz deve se definir as seguintes grandezas
+geometria formato fisico da fonte ponto e virgula
+intensidade funcao que associa a cada ponto do espaco a intensidade luminosa da fonte de luz nesse ponto ponto e virgula
+distribuicao espectral contribuicao da fonte em cada comprimento de onda cor do espectro visivel
+
+quanto ao aspecto geometrico pode se classificar as fontes de luz em tres tipos
+fontes direcionais a fonte de luz e considerada no infinito virgula e pode ser determinada por um vetor unitario que define a sua direcao pontofinal
+em geral sao utilizadas para aproximar fontes de luz pontuais a uma distancia infinita virgula como por exemplo virgula o sol
+fontes pontuais sao definidas por um vetor posicao x virgula y virgula z no espaco de cena virgula e um vetor unitario que define a sua direcao pontofinal
+esta tem dimensoes despreziveis se comparadas a dimensao dos objetos da cena
+fontes de area possuem uma superficie nao pontual emissiva virgula e um sistema de coordenadas local associado que e utilizado para especificar a sua posicao no espaco e a direcao de iluminacao
+vamos considerar o caso mais simples uma fonte direcional virgula que e uma simplificacao da luz incandescente que usamos normalmente em casa pontofinal
+o posicionamento no infinito e interessante porque implica em que todos os raios de luz que atingem a cena sao paralelos entre si o que nao e o caso se a fonte for pontual e local a cena pontofinal
+normalmente virgula assume se que a intensidade da luz emitida por esta fonte permanece constante a medida em que percorre o espaco virgula ou entao que decresce segundo um fator de atenuacao linear com a distancia percorrida pontofinal
+isso nao corresponde ao modelo real do processo fisico virgula que afirma que a luz e atenuada segundo um fator inversamente proporcional ao quadrado da distancia percorrida
+
+
+treze ponto quatro propriedades das superficies um modelo de iluminacao
+
+
+ao atravessarem o espaco virgula alguns dos raios de luz interceptam os objetos da cena pontofinal
+quando isso ocorre virgula os raios interagem com a superficie conforme as propriedades do objeto virgula de forma a produzir uma cor pontofinal
+vamos apresentar uma visao geral do fenomeno fisico da propagacao da energia luminosa e de sua interacao com a superficie de um objeto pontofinal
+devido a complexidade e alto custo computacional dos modelos reais de iluminacao virgula o modelo fisico apresentado e uma aproximacao simplificada para o fenomeno real que conserva um bom grau de realismo nas imagens geradas a partir de sua aplicacao quando uma energia luminosa incide sobre a superficie de um objeto virgula ela pode ser absorvida virgula refletida ou transmitida pontofinal
+uma parte da energia luminosa incidente na superficie e absorvida e convertida em calor pontofinal
+a parte restante e refletida ou transmitida virgula sendo que a reflexao ou transmissao da luz e que torna um objeto visivel pontofinal
+se toda a luz incidente e absorvida virgula o objeto e invisivel e e chamado de corpo negro
+a caracteristica da luz refletida pela superficie de um objeto depende da composicao virgula direcao e geometria da fonte de luz virgula da orientacao da superficie e das propriedades da superficie do objeto pontofinal
+a luz refletida por um objeto e tambem caracterizada por ser refletida difusamente ou especularmente virgula dependendo das propriedades da superficie
+a reflexao especular e o resultado de uma reflexao perfeita virgula cujo efeito e analogo a uma bola elastica pulando sobre uma superficie lisa pontofinal
+o angulo segundo o qual a bola deixa a superficie e determinado pelo angulo segundo o qual a bola a atinge angulo de incidencia a reflexao difusa e como uma bola elastica pulando sobre uma superficie completamente rugosa virgula onde nao se pode determinar a priori a direcao que a bola ira tomar pontofinal
+ao contrario da reflexao especular virgula a luz refletida difusamente e emitida pela superficie com igual intensidade em todas as direcoes virgula sendo de menor intensidade que a luz incidente pontofinal
+ha dois tipos extremos de superficies que se distinguem quando se considera esse fenomeno
+
+refletoras idealmente especulares aquelas que atuam como perfeitos espelhos ex metais polidos virgula agua parada
+
+refletoras idealmente difusas aquelas que sao opacas ou foscas ex cortica ou gesso ponto e virgula
+
+entretanto virgula grande parte dos objetos possui superficies com caracteristicas intermediarias entre estes dois extremos pontofinal
+a seguir virgula e apresentado o desenvolvimento de um modelo de iluminacao simples virgula que considera inicialmente a reflexao de luz direta por uma superficie idealmente difusa
+a lei dos co senos de lambert governa a reflexao de uma luz proveniente da fonte de luz por uma superficie idealmente difusa pontofinal
+esta lei determina que a intensidade da luz refletida por uma superficie idealmente difusa e proporcional ao co seno do angulo entre a direcao da luz incidente e a normal a superficie pontofinal
+especificamente virgula
+
+onde i e a intensidade da luz refletida virgula il e a intensidade da luz emitida pela fonte e incidente a superficie virgula kd zero ponto de interrogacao kd ponto de interrogacao um e a constante de difusao da superficie e ponto de interrogacao e o angulo entre a direcao da luz incidente l e a normal a superficie n figura um o coeficiente kd depende do material e do comprimento de onda da luz incidente pontofinal
+entretanto virgula para modelos de iluminacao simples virgula pode ser assumido como sendo constante
+como esse modelo assume que apenas a fonte de luz e emissora de energia luminosa virgula os objetos que nao recebem luz diretamente da fonte aparecem escuros ou pretos pontofinal
+entretanto virgula em uma cena real cada objeto tambem recebe luz refletida indiretamente pelos outros objetos da cena virgula o que caracteriza uma fonte de luz distribuida pontofinal
+a fim de simplificar os calculos associados a essa iluminacao indireta virgula considera se uma componente de luz constante vinda do meio ambiente pontofinal
+esta luz ambiente pode ser acrescentada a equacao de lambert como um termo constante de difusao que caracteriza o componente de luz ambiente pontofinal
+o modelo de iluminacao fica virgula entao
+
+onde ia e a intensidade da luz ambiente incidente e ka zero ponto de interrogacao ka ponto de interrogacao um e a constante de reflexao difusa da luz ambiente pontofinal
+observe que virgula se o modelo acima for usado para determinar a intensidade de luz refletida por dois objetos iluminados pela mesma fonte de luz virgula mas a distancias diferentes dessa fonte virgula o resultado seria a mesma intensidade de luz refletida para ambos os objetos pontofinal
+como vimos virgula isto e uma simplificacao virgula pois e sabido que a intensidade da luz decresce de forma inversamente proporcional ao quadrado da distancia do objeto em relacao a fonte pontofinal
+alguns modelos usam uma constante de atenuacao linear ver rogers se a superficie e colorida virgula o modelo de iluminacao e aplicado individualmente para calcular as intensidades de cada uma das tres primarias vermelho virgula verde e azul a seguir virgula o modelo acima e estendido para incluir a emissao de luz refletida especularmente pelos objetos
+a equacao que governa a reflexao especular e a equacao de fresnel virgula que afirma que a reflexao especular da luz e direcional pontofinal
+para uma superficie idealmente especular virgula o angulo de reflexao sera igual ao angulo de incidencia e toda energia refletida sera na direcao do raio refletido r isto implica que o vetor de visao s figura um virgula e coincidente com o vetor de reflexao r ponto e virgula isto e virgula o angulo ponto de interrogacao e zero pontofinal
+porem virgula para superficies em geral a luz e refletida em todas as direcoes de um modo nao uniforme e aleatorio virgula com intensidade dependendo do angulo do raio incidente pontofinal
+este tipo de reflexao nao uniforme e tambem denominada reflexao nao coerente pontofinal
+para superficies polidas proximas as idealmente especulares virgula a distribuicao espacial dos raios de luz refletidos especularmente e limitada ou focalizada virgula criando o efeito conhecido como highlight virgula enquanto que para superficies rugosas a luz refletida e espalhada
+
+figura dez reflexao especular
+
+o modelo empirico de bui tuong phong e frequentemente usado em modelos simples de iluminacao pontofinal
+especificamente virgula
+
+onde w i virgula ponto de interrogacao e a curva de reflexao que da a razao entre a luz refletida especularmente e a luz incidente em funcao do angulo de incidencia i e do comprimento de onda virgula e n e a aproximacao da distribuicao espacial da luz refletida especularmente pontofinal
+valores grandes de n caracterizam distribuicoes espaciais de metais e outras superficies especulares pontofinal
+valores pequenos de n caracterizam superficies nao metalicas e opacas
+a reflexao especular e direcional virgula isto e virgula depende do angulo com que a luz incidente atinge a superficie pontofinal
+para alguns materiais nao metalicos a reflexao pode ser pequena virgula em torno de quatro por cento virgula enquanto que para materiais metalicos pode exceder oitenta por cento combinando os resultados obtidos anteriormente virgula tem se um modelo de iluminacao dado pela equacao
+
+onde ks e uma constante frequentemente utilizada para representar w i virgula ponto de interrogacao
+se multiplas fontes de luz estiverem presentes virgula os efeitos sao linearmente adicionados e o modelo de iluminacao torna se
+
+onde m e o numero de fontes de luz pontofinal
+utilizando o produto escalar de dois vetores virgula pode se escrever
+
+onde sao as unidades vetoriais da normal a superficie e da direcao da fonte de luz virgula respectivamente
+similarmente virgula
+
+onde sao unidades vetoriais para a luz refletida e a direcao da linha de visao pontofinal
+entao virgula o modelo de iluminacao para uma unica fonte de luz e dado por
+
+em computacao grafica este modelo e frequentemente chamado de funcao de iluminacao pontofinal
+a funcao de iluminacao e aplicada individualmente a cada uma das tres cores primarias em uma imagem colorida pontofinal
+isso e uma simplificacao em geral virgula a reflexao varia para cada componente espectral virgula mas e simples de implementar e produz resultados aceitaveis
+
+
+treze ponto cinco tonalizacao
+
+
+o rendering da cena pode ser feito aplicando se a equacao de iluminacao acima a cada ponto pixel da superficie de cada objeto que compoem a cena pontofinal
+na verdade virgula isso e feito a cada ponto que aparece de fato na imagem da cena a ser gerada virgula ou a cada ponto visivel pontofinal
+isso implica em que o processo deve ser precedido de algum procedimento para determinar os pontos nao visiveis virgula um seja virgula um procedimento de remocao de superficies ocultas pontofinal
+no caso de uma cena modelada por conjuntos de poligonos virgula o algoritmo scan line para preenchimento de poligonos pode ser aplicado virgula e o modelo de iluminacao e usado para calcular a intensidade cor a ser associada a cada pixel pontofinal
+observe que esse processo de rendering e baseado em modelo local de iluminacao ou seja virgula fora a luz ambiente virgula modelada como uma constante no modelo virgula apenas os raios de luz que incidem diretamente sobre cada ponto da superficie sao considerados no calculo da cor pontofinal
+a interacao dos raios refletidos ou transmitidos com os demais objetos da cena e ignorada pontofinal
+o ray tracing virgula por outro lado virgula considera estas interacoes virgula e por isso diz se que e baseado em um modelo global de iluminacao
+as tecnicas de tonalizacao shading utilizam algum modelo de iluminacao virgula por exemplo virgula o que foi visto acima virgula para determinar as cores associadas aos pixels de cada poligono que compoe uma cena pontofinal
+as tecnicas mais comumente utilizadas sao a tonalizacao constante virgula ou flat shading virgula a tonalizacao por gouraud virgula ou gouraud shading virgula e a tonalizacao por phong virgula ou phong shading pontofinal
+na tonalizacao constante virgula sao considerados apenas os termos da iluminacao ambiente e da reflexao difusa virgula com uma unica fonte de luz posicionada no infinito e na direcao de visao do observador virgula de modo a evitar o surgimento de sombras pontofinal
+o processo e um dos mais simples e mais eficientes virgula porem virgula nao considera o fato de que virgula em geral virgula a representacao poliedral de um modelo representa uma aproximacao linear por partes do modelo real pontofinal
+ele assume que a representacao poligonal e o modelo real em estudo pontofinal
+desse modo virgula cada poligono representa uma parte do modelo onde o vetor normal e constante virgula e virgula portanto a intensidade de luz calculada usando a equacao local de iluminacao tambem e constante no poligono pontofinal
+dai o termo flat shading virgula devido a aparencia facetada da imagem resultante pontofinal
+as tecnicas desenvolvidas por gouraud e phong permitem a obtencao de uma aparencia mais suave virgula sendo virgula portanto mais utilizadas em superficies que representam uma aproximacao linear da superficie realmente desejada pontofinal
+ambas consideram as componentes de iluminacao ambiente virgula difusa e especular pontofinal
+a tecnica de gouraud consiste em aplicar o modelo de iluminacao para calcular as intensidades nos vertices do poligono virgula e interpolar os valores obtidos para obter a iluminacao ao longo de cada aresta e nos pontos interiores pontofinal
+a tecnica de phong calcula as normais nos vertices virgula e interpola as normais para calcular o modelo de iluminacao em cada pixel do poligono pontofinal
+ela apresenta os melhores resultados para superficies especulares virgula mas tambem e a de custo computacional mais alto pontofinal
+
+
+treze ponto seis transparencia
+
+
+o modelo de iluminacao apresentado anteriormente considera apenas objetos e superficies opacas pontofinal
+entretanto virgula nem todos os materiais utilizados para confeccionar objetos sao opacos alguns virgula como o vidro e a agua virgula transmitem luz pontofinal
+quando um raio de luz passa de um meio para outro virgula normalmente ocorre o fenomeno de refracao pontofinal
+a intensidade com que o raio de luz e inclinado na refracao e governada pela lei de snell virgula
+
+onde sao os indices de refracao no primeiro e segundo meios virgula respectivamente virgula ponto de interrogacao e o angulo de incidencia e ponto de interrogacao plica e o angulo de refracao pontofinal
+nenhum material transmite toda a luz incidente pontofinal
+uma parte da luz e refletida
+por analogia com reflexao especular e difusa virgula a luz pode ser transmitida especularmente ou difusamente pontofinal
+materiais transparentes transmitem a luz especularmente virgula enquanto que materiais que transmitem a luz difusamente tem aparencia fosca ou translucida
+as implementacoes mais simples do efeito de transparencia ignoram a refracao e seus efeitos ver rogers efeitos simples de transparencia podem ser diretamente incorporados ao processo de tonalizacao pontofinal
+a ideia e primeiro marcar todas as superficies transparentes pontofinal
+quando uma superficie visivel e transparente virgula uma combinacao linear das duas superficies mais proximas e armazenada no frame buffer para ser mostrada pontofinal
+a intensidade e entao virgula
+
+onde i um e a superficie visivel virgula i dois e a superficie imediatamente atras da superficie visivel virgula e t e o fator de transparencia para i um pontofinal
+se i dois tambem e transparente virgula o algoritmo e aplicado recursivamente ate encontrar uma superficie opaca ou o fundo da cena pontofinal
+essa aproximacao linear nao e adequada para superficies curvas virgula ou objetos complexos que espalham a luz virgula como nuvens virgula etc
+
+
+catorze uma abordagem matematica
+
+
+catorze ponto um definicao de vectores linearmente independentes dependentes
+
+
+considere se os vectores u um virgula u dois virgula un diz se que sao linearmente independentes se ponto de interrogacao um u um operador adicao ponto de interrogacao dois u dois operador adicao operador adicao ponto de interrogacao n un igual zero igual maior que ponto de interrogacao um igual ponto de interrogacao dois igual igual ponto de interrogacao n igual zero
+se nao se verificar a relacao anterior entao sao linearmente dependentes
+ex um verificar se os vectores u um igual um virgula zero virgula dois ponto e virgula u dois igual tres virgula dois virgula um ponto e virgula u tres igual zero virgula um virgula dois sao linearmente independentes
+ponto de interrogacao u um operador adicao ponto de interrogacao u dois operador adicao ponto de interrogacao u tres igual zero virgula zero virgula zero equivalente ponto de interrogacao um virgula zero virgula dois operador adicao ponto de interrogacao tres virgula dois virgula um operador adicao ponto de interrogacao zero virgula um virgula dois igual zero virgula zero virgula zero
+logo sao linearmente independentes
+
+para ver se sao linearmente independentes podemos ver atraves do determinante
+
+logo sao linearmente independentes virgula quando nao e possivel calcular o determinante virgula poderemos calcular a caracteristica da matriz virgula e se a caracteristica da matriz for igual ao numero de vectores entao o conjunto de vectores sao linearmente independentes
+
+
+ex dois verificar se os vectores u um igual um virgula zero virgula dois ponto e virgula u dois igual tres virgula dois virgula um ponto e virgula u tres igual quatro virgula dois virgula tres sao linearmente independentes
+ponto de interrogacao u um operador adicao ponto de interrogacao u dois operador adicao ponto de interrogacao u tres igual zero virgula zero virgula zero equivalente ponto de interrogacao um virgula zero virgula dois operador adicao ponto de interrogacao tres virgula dois virgula um operador adicao ponto de interrogacao quatro virgula dois virgula tres igual zero virgula zero virgula zero
+logo tem infinitas solucoes
+
+
+catorze ponto dois definicao de um conjunto de vectores que geram um espaco
+
+
+um conjunto de vectores chaveta esquerda u um virgula u dois virgula virgula un chaveta direita geram um espaco se ponto de interrogacao elemento u do espaco poder ser escrito como combinacao linear dos vectores do conjunto
+
+ponto de interrogacao um u um operador adicao ponto de interrogacao dois u dois operador adicao operador adicao ponto de interrogacao n un igual u implica o sistema resultante tera de ser possivel
+
+
+catorze ponto tres definicao de base e dimensao
+
+
+uma base e um conjunto de vectores linearmente independentes e que geram o espaco
+
+ex mostrar que os vectores u um igual um virgula dois ponto e virgula u dois igual tres virgula dois ponto e virgula sao uma base de r dois
+
+um mostrar que sao linearmente independentes
+
+logo sao linearmente independentes
+
+dois geram r dois
+ponto de interrogacao u um operador adicao ponto de interrogacao u dois igual u equivalente ponto de interrogacao um virgula dois operador adicao ponto de interrogacao tres virgula dois igual x virgula y equivalente
+regra de cramer
+
+logo ponto de interrogacao x virgula y ponto de interrogacao r dois virgula e sempre possivel escreve lo como combinacao linear dos vectores u um virgula u dois logo estes vectores geram r dois
+
+como sao linearmente independentes e geram entao formam uma base de r dois
+a dimensao da base e o numero de vectores dessa base
+
+
+quinze transformacoes aplicacoes lineares uma abordagem matematica
+
+
+uma transformacao linear e uma funcao que pega em elementos de um espaco a e os transforma para um espaco b
+como exemplo de uma transformacao linear sera
+uma projeccao ortogonal de r tres em r dois
+
+def f e uma aplicacao linear se obedece as seguintes propriedades
+ponto de interrogacao x virgula y ponto de interrogacao a
+
+a f x operador adicao y igual f x operador adicao f y
+b f ponto de interrogacao x igual ponto de interrogacao f x
+
+seja f r dois      maior que r dois tal que f x virgula y igual x operador adicao y virgula x y mostrar que f e transformacao linear aplicacao linear
+a f x operador adicao y igual f x operador adicao f y ponto de interrogacao vamos ver
+atencao x e y sao elemento de a ponto de interrogacao r dois logo x igual x zero virgula y zero e y igual x um virgula y um
+f x zero virgula y zero operador adicao x um virgula y um igual f x zero virgula y zero operador adicao f x um virgula y um ponto de interrogacao
+f x zero operador adicao x um virgula y zero operador adicao y um igual x zero operador adicao y zero virgula x zero y zero operador adicao x um operador adicao y um virgula x um y um ponto de interrogacao
+x zero operador adicao x um operador adicao y zero operador adicao y um virgula x zero operador adicao x um y zero operador adicao y um igual x zero operador adicao y zero operador adicao x um operador adicao y um operador adicao x zero y zero operador adicao x um y um ponto de interrogacao
+x zero operador adicao x um operador adicao y zero operador adicao y um virgula x zero operador adicao x um y zero y um igual x zero operador adicao x um operador adicao y zero operador adicao y um virgula x zero operador adicao x um y zero y um v
+
+b f ponto de interrogacao x igual ponto de interrogacao f x ponto de interrogacao vamos ver ponto de exclamacao
+f ponto de interrogacao x virgula y igual ponto de interrogacao f x virgula y ponto de interrogacao
+f ponto de interrogacao x virgula ponto de interrogacao y igual ponto de interrogacao x operador adicao y virgula x y ponto de interrogacao
+ponto de interrogacao x operador adicao ponto de interrogacao y virgula ponto de interrogacao x ponto de interrogacao y igual ponto de interrogacao x operador adicao ponto de interrogacao y virgula ponto de interrogacao x ponto de interrogacao y v
+como f verifica as duas propriedades entao f e aplicacao linear
+
+toda a transformacao linear e representavel por uma matriz
+
+como determinar a matriz de uma transformacao ponto de interrogacao
+para isso teremos de determinar o transformado dos elementos da base virgula considere se a transformacao anterior
+f um virgula zero igual um operador adicao zero virgula um zero igual um virgula um
+f zero virgula um igual zero operador adicao um virgula zero um igual um virgula um
+logo a matriz de f e mf igual
+
+ou seja
+
+nucleo de f igual chaveta esquerda x ponto de interrogacao a f x igual zero b chaveta direita
+no exemplo anterior teremos
+
+n f igual chaveta esquerda x virgula y ponto de interrogacao r dois f x virgula y igual zero virgula zero chaveta direita
+f x virgula y igual zero virgula zero
+x operador adicao y virgula x y igual zero virgula zero
+solucao e chaveta esquerda zero virgula zero chaveta direita
+
+uma transformacao e injectiva sse o n f igual chaveta esquerda zero virgula zero chaveta direita
+
+ex verifique se sao transformacoes lineares e se for caso disso virgula determine a matriz da transformacao e o respectivo nucleo
+f x virgula y igual dois asterisco x operador adicao y virgula y x
+f x virgula y igual dois asterisco x operador adicao tres asterisco y virgula y tres asterisco x
+f x virgula y virgula z igual dois asterisco x operador adicao y virgula y x operador adicao z
+f x virgula y virgula z igual dois asterisco x operador adicao y virgula y x virgula z x
+
+
+considere agora uma transformacao linear virgula da qual conhecemos a matriz de transformacao
+
+repare se que se uma matriz e do tipo dois virgula tres entao a transformacao e de r tres em r dois
+para determinar a transformacao bastara calcular
+
+
+uma transformacao fica bem definida se conhecermos o transformado dos elementos da base pontofinal
+ex
+f um virgula zero virgula zero igual dois virgula um virgula zero
+f zero virgula um virgula zero igual um virgula um virgula zero
+f zero virgula zero virgula um igual zero virgula dois virgula um
+entao a matriz de f e
+
+sabendo que f e transformacao linear e que
+f um virgula dois igual dois virgula tres
+f dois virgula tres igual quatro virgula cinco
+como determinar f x virgula y ponto de interrogacao
+para determinar f x virgula y teremos de escrever x virgula y como combinacao linear de um virgula dois e dois virgula tres
+x virgula y igual ponto de interrogacao um virgula dois operador adicao ponto de interrogacao dois virgula tres
+sol
+logo f x virgula y igual f ponto de interrogacao um virgula dois operador adicao ponto de interrogacao dois virgula tres mas como f e linear entao teremos
+
+f x virgula y igual ponto de interrogacao f um virgula dois operador adicao ponto de interrogacao f dois virgula tres igual ponto de interrogacao dois virgula tres operador adicao ponto de interrogacao quatro virgula cinco
+igual
+estando determinada a sua transformacao virgula este metodo e bastante usado pois permite definir a transformacao linear a custa das imagens de objectos conhecidos
+
+exemplos de transformacoes lineares
+a projeccao de pontos no espaco tres d no plano xoy ou xoz ou yoz
+
+
+quinze ponto um mudancas de base
+
+por vezes e importante alterar o nosso referencial sobre o qual nos guiamos
+quando e dito que um vector u tem as coordenadas um virgula tres virgula dois quer dizer que um virgula tres virgula dois igual um asterisco um virgula zero virgula zero operador adicao tres asterisco zero virgula um virgula zero operador adicao dois asterisco zero virgula zero virgula um onde menor que um virgula zero virgula zero ponto e virgula zero virgula um virgula zero ponto e virgula zero virgula zero virgula um maior que representa a base canonica de r tres virgula como representar u noutra base ponto de interrogacao
+u igual ponto de interrogacao v um operador adicao ponto de interrogacao v dois operador adicao ponto de interrogacao v tres sendo menor que v um ponto e virgula v dois ponto e virgula v tres maior que a nova base e ponto de interrogacao virgula ponto de interrogacao virgula ponto de interrogacao as novas coordenadas nessa base
+ex v um igual um virgula um virgula zero ponto e virgula v dois igual um virgula dois virgula zero ponto e virgula v tres igual zero virgula tres virgula quatro
+u igual ponto de interrogacao v um operador adicao ponto de interrogacao v dois operador adicao ponto de interrogacao v tres equivalente um virgula tres virgula dois igual ponto de interrogacao um virgula um virgula zero operador adicao ponto de interrogacao um virgula dois virgula zero operador adicao ponto de interrogacao zero virgula tres virgula quatro equivalente
+
+ou seja u igual sete um virgula um virgula zero um um virgula dois virgula zero operador adicao um zero virgula tres virgula quatro
+
+exercicio determinar a matriz de mudanca de base do sistema a para o sistema b
+
+considere que os elementos da base de a sao um virgula zero virgula zero ponto e virgula um virgula dois virgula zero ponto e virgula um virgula dois virgula quatro e os elementos da base de b sao um virgula tres virgula zero ponto e virgula dois virgula tres virgula um ponto e virgula tres virgula cinco virgula dois
+
+
+dezasseis geometria em tres d
+
+
+em computacao grafica usa se muito as primitivas mais simples da geometria ponto virgula recta virgula plano morgado noventa e seis
+
+
+dezasseis ponto um ponto
+
+
+ponto imaginario no espaco virgula definido pelas suas coordenadas x zero virgula y zero virgula z zero sendo cada uma das componentes uma distancia segundo o eixo definido
+
+
+dezasseis ponto dois vector
+
+
+um vector e definido por dois pontos virgula considere se a x zero virgula y zero virgula z zero e b x um virgula y um virgula z um entao o vector
+a norma de um vector
+para normalizar um vector teremos de dividir o vector pela sua norma virgula dai resultara
+
+
+dezasseis ponto tres recta
+
+
+definida por dois ponto a x zero virgula y zero virgula z zero e b x um virgula y um virgula z um
+
+equacao vectorial
+
+equacao parametrica
+
+equacao continua
+
+definida por um ponto a x zero virgula y zero virgula z zero e uma direccao v vx virgula vy virgula vz
+equacao vectorial
+
+equacao parametrica
+
+equacao continua
+
+
+qual sera a representacao mais generica ponto de interrogacao e a que dara menos problemas em termos de implementacao em linguagem de programacao ponto de interrogacao
+
+
+dezasseis ponto quatro plano
+
+
+definido por tres pontos a x zero virgula y zero virgula z zero ponto e virgula b x um virgula y um virgula z um ponto e virgula c x dois virgula y dois virgula z dois
+considere se
+equacao vectorial
+
+equacao cartesiana
+
+
+dezassete exercicios a resolver
+
+
+determinar a recta que passa em a um virgula dois virgula tres e b quatro virgula tres virgula dois
+sug ver exercicio anterior
+determinar o ponto da recta anterior com abcissa cinco
+sugestao considere a equacao da recta para determinar o ponto de abcissa cinco resolva o seguinte sistema
+
+a primeira equacao determina se o valor de k virgula seguidamente substitui se nas equacoes dois e tres e determina se a ordenada e a cota
+
+determinar os pontos da recta anterior que diste cinco unidades do ponto a
+sugestao considere a equacao
+para determinar o ponto que dista cinco unidades de a virgula devemos normalizar o vector director da recta virgula ou seja
+virgula logo o ponto pretendido sera
+
+
+determinar o angulo da recta com o eixo dos xx
+sugestao considere o vector director da recta e o vector director do eixo dos xx u um virgula zero virgula zero entao o angulo da recta com ox pode ser determinado por
+
+determinar o angulo da recta com o plano xoy
+sugestao considere o vector director da recta e o vector director do plano xoy v zero virgula zero virgula um virgula determine o angulo ponto de interrogacao entre estes dois vectores virgula seguidamente o angulo entre a recta e o plano e noventa ponto de interrogacao
+
+
+determine o plano que passa em a e e perpendicular a recta ab
+sugestao considere o vector director da recta virgula virgula entao a equacao do plano e vx asterisco x x zero operador adicao vy asterisco y y zero operador adicao vz asterisco z z zero igual zero
+
+como verificar se tres pontos sao ou nao colineares
+sugestao considere uma recta que passa pelos dois pontos virgula seguidamente verifique se o outro ponto pertence ou nao a recta
+
+
+considere o seguinte problema
+pretende se determinar o centro da circunferencia de arco virgula sabendo que no ponto medio tera de existir uma distancia d virgula e o raio da circunferencia e r
+
+resolucao
+primeiro determinar o vector ab virgula por ex av igual v igual vx virgula vy
+segundo determinar o ponto medio de ab virgula m x zero virgula y zero
+terceiro determinar uma recta perpendicular a ab e que passe em m
+
+quarto normalizar o vector director da recta
+
+quinto determinar o ponto da recta que diste r d do ponto m
+
+
+
+com os exercicios anteriores deve criar classes em c operador adicao operador adicao onde implementa esses metodos
+
+
+dezoito bibliografia
+
+
+c n lenz cesar virgula um modulo eficiente para a visualizacao de solidos b rep dissertacao de mestrado virgula icmsc usp virgula mil novecentos e noventa e cinco
+d f rogers virgula procedural elements for computer graphics
+
+foley et al computer graphics virgula principles and practice
+
+schroeder et al the visualization toolkit virgula capitulo um
+
+
+
+
+
+
+introducao
+dispositivos
+extra lcd displays
+preenchimento de poligonos
+transformacoes dois d e tres d
+recorte de primitivas
+curvas e superficies
+apostila modelagem postscript
+rendering
+
+
+um
+
+
+vinte
+

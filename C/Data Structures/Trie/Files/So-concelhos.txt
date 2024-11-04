@@ -1,0 +1,309 @@
+cod distritocod concelhonome concelho
+castelo de paiva
+espinho
+estarreja
+santa maria da feira
+ilhavo
+mealhada
+murtosa
+oliveira de azemeis
+oliveira do bairro
+ovar
+sao joao da madeira
+sever do vouga
+vagos
+vale de cambra
+agueda
+albergaria a velha
+anadia
+arouca
+aveiro
+castro verde
+cuba
+ferreira do alentejo
+mertola
+moura
+odemira
+ourique
+serpa
+vidigueira
+aljustrel
+almodovar
+alvito
+barrancos
+beja
+esposende
+fafe
+guimaraes
+povoa de lanhoso
+terras de bouro
+vieira do minho
+vila nova de famalicao
+vila verde
+vizela
+amares
+barcelos
+braga
+cabeceiras de basto
+celorico de basto
+miranda do douro
+mirandela
+mogadouro
+torre de moncorvo
+vila flor
+vimioso
+vinhais
+alfandega da fe
+braganca
+carrazeda de ansiaes
+freixo de espada a cinta
+macedo de cavaleiros
+oleiros
+penamacor
+proenca a nova
+serta
+vila de rei
+vila velha de rodao
+belmonte
+castelo branco
+covilha
+fundao
+idanha a nova
+gois
+lousa
+mira
+miranda do corvo
+montemor o velho
+oliveira do hospital
+pampilhosa da serra
+penacova
+penela
+soure
+tabua
+vila nova de poiares
+arganil
+cantanhede
+coimbra
+condeixa a nova
+figueira da foz
+montemor o novo
+mora
+mourao
+portel
+redondo
+reguengos de monsaraz
+vendas novas
+viana do alentejo
+vila vicosa
+alandroal
+arraiolos
+borba
+estremoz
+evora
+lagoa algarve 
+lagos
+loule
+monchique
+olhao
+portimao
+sao bras de alportel
+silves
+tavira
+vila do bispo
+vila real de santo antonio
+albufeira
+alcoutim
+aljezur
+castro marim
+faro
+gouveia
+guarda
+manteigas
+meda
+pinhel
+sabugal
+seia
+trancoso
+vila nova de foz coa
+aguiar da beira
+almeida
+celorico da beira
+figueira de castelo rodrigo
+fornos de algodres
+caldas da rainha
+castanheira de pera
+figueiro dos vinhos
+leiria
+marinha grande
+nazare
+obidos
+pedrogao grande
+peniche
+pombal
+porto de mos
+alcobaca
+alvaiazere
+ansiao
+batalha
+bombarral
+lisboa
+loures
+lourinha
+mafra
+oeiras
+sintra
+sobral de monte agraco
+torres vedras
+vila franca de xira
+amadora
+odivelas
+alenquer
+arruda dos vinhos
+azambuja
+cadaval
+cascais
+crato
+elvas
+fronteira
+gaviao
+marvao
+monforte
+nisa
+ponte de sor
+portalegre
+sousel
+alter do chao
+arronches
+avis
+campo maior
+castelo de vide
+maia
+marco de canaveses
+matosinhos
+pacos de ferreira
+paredes
+penafiel
+porto
+povoa de varzim
+santo tirso
+valongo
+vila do conde
+vila nova de gaia
+trofa
+amarante
+baiao
+felgueiras
+gondomar
+lousada
+cartaxo
+chamusca
+constancia
+coruche
+entroncamento
+ferreira do zezere
+golega
+macao
+rio maior
+salvaterra de magos
+santarem
+sardoal
+tomar
+torres novas
+vila nova da barquinha
+ourem
+abrantes
+alcanena
+almeirim
+alpiarca
+benavente
+moita
+montijo
+palmela
+santiago do cacem
+seixal
+sesimbra
+setubal
+sines
+alcacer do sal
+alcochete
+almada
+barreiro
+grandola
+ponte da barca
+ponte de lima
+valenca
+viana do castelo
+vila nova de cerveira
+arcos de valdevez
+caminha
+melgaco
+moncao
+paredes de coura
+mondim de basto
+montalegre
+murca
+peso da regua
+ribeira de pena
+sabrosa
+santa marta de penaguiao
+valpacos
+vila pouca de aguiar
+vila real
+alijo
+boticas
+chaves
+mesao frio
+lamego
+mangualde
+moimenta da beira
+mortagua
+nelas
+oliveira de frades
+penalva do castelo
+penedono
+resende
+santa comba dao
+sao joao da pesqueira
+sao pedro do sul
+satao
+sernancelhe
+tabuaco
+tarouca
+tondela
+vila nova de paiva
+viseu
+vouzela
+armamar
+carregal do sal
+castro daire
+cinfaes
+ponta do sol
+porto moniz
+ribeira brava
+santa cruz
+santana
+sao vicente
+calheta madeira 
+camara de lobos
+funchal
+machico
+porto santo
+vila do porto
+ribeira grande
+vila franca do campo
+lagoa sao miguel 
+nordeste
+ponta delgada
+povoacao
+angra do heroismo
+praia da vitoria
+santa cruz da graciosa
+calheta sao jorge 
+velas
+lajes do pico
+madalena
+sao roque do pico
+horta
+lajes das flores
+santa cruz das flores
+corvo
